@@ -1,0 +1,8 @@
+model,is_correct
+CLIP,0.0
+ConvNeXt,0.0
+DeiT,0.0
+RL_Attention,0.040697674418604654
+ResNet101,0.0
+ResNet50,0.0
+ViT-B/16,0.0

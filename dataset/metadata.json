@@ -1,0 +1,3602 @@
+[
+    {
+        "id": 0,
+        "filename": "00000_adain_high.png",
+        "class1": 0,
+        "class2": 4,
+        "composition_type": "adain",
+        "salience": "high",
+        "split": "val"
+    },
+    {
+        "id": 1,
+        "filename": "00001_adain_low.png",
+        "class1": 0,
+        "class2": 4,
+        "composition_type": "adain",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 2,
+        "filename": "00002_occlusion_high.png",
+        "class1": 0,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 3,
+        "filename": "00003_occlusion_low.png",
+        "class1": 0,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 4,
+        "filename": "00004_superimposition_high.png",
+        "class1": 0,
+        "class2": 4,
+        "composition_type": "superimposition",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 5,
+        "filename": "00005_superimposition_low.png",
+        "class1": 0,
+        "class2": 4,
+        "composition_type": "superimposition",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 6,
+        "filename": "00006_texture_shape_high.png",
+        "class1": 0,
+        "class2": 4,
+        "composition_type": "texture_shape",
+        "salience": "high",
+        "split": "test"
+    },
+    {
+        "id": 7,
+        "filename": "00007_texture_shape_low.png",
+        "class1": 0,
+        "class2": 4,
+        "composition_type": "texture_shape",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 8,
+        "filename": "00008_adain_high.png",
+        "class1": 1,
+        "class2": 37,
+        "composition_type": "adain",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 9,
+        "filename": "00009_adain_low.png",
+        "class1": 1,
+        "class2": 37,
+        "composition_type": "adain",
+        "salience": "low",
+        "split": "val"
+    },
+    {
+        "id": 10,
+        "filename": "00010_occlusion_high.png",
+        "class1": 1,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 11,
+        "filename": "00011_occlusion_low.png",
+        "class1": 1,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 12,
+        "filename": "00012_superimposition_high.png",
+        "class1": 1,
+        "class2": 37,
+        "composition_type": "superimposition",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 13,
+        "filename": "00013_superimposition_low.png",
+        "class1": 1,
+        "class2": 37,
+        "composition_type": "superimposition",
+        "salience": "low",
+        "split": "val"
+    },
+    {
+        "id": 14,
+        "filename": "00014_texture_shape_high.png",
+        "class1": 1,
+        "class2": 37,
+        "composition_type": "texture_shape",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 15,
+        "filename": "00015_texture_shape_low.png",
+        "class1": 1,
+        "class2": 37,
+        "composition_type": "texture_shape",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 16,
+        "filename": "00016_adain_high.png",
+        "class1": 2,
+        "class2": 38,
+        "composition_type": "adain",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 17,
+        "filename": "00017_adain_low.png",
+        "class1": 2,
+        "class2": 38,
+        "composition_type": "adain",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 18,
+        "filename": "00018_occlusion_high.png",
+        "class1": 2,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 19,
+        "filename": "00019_occlusion_low.png",
+        "class1": 2,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 20,
+        "filename": "00020_superimposition_high.png",
+        "class1": 2,
+        "class2": 38,
+        "composition_type": "superimposition",
+        "salience": "high",
+        "split": "test"
+    },
+    {
+        "id": 21,
+        "filename": "00021_superimposition_low.png",
+        "class1": 2,
+        "class2": 38,
+        "composition_type": "superimposition",
+        "salience": "low",
+        "split": "val"
+    },
+    {
+        "id": 22,
+        "filename": "00022_texture_shape_high.png",
+        "class1": 2,
+        "class2": 38,
+        "composition_type": "texture_shape",
+        "salience": "high",
+        "split": "test"
+    },
+    {
+        "id": 23,
+        "filename": "00023_texture_shape_low.png",
+        "class1": 2,
+        "class2": 38,
+        "composition_type": "texture_shape",
+        "salience": "low",
+        "split": "val"
+    },
+    {
+        "id": 24,
+        "filename": "00024_adain_high.png",
+        "class1": 3,
+        "class2": 21,
+        "composition_type": "adain",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 25,
+        "filename": "00025_adain_low.png",
+        "class1": 3,
+        "class2": 21,
+        "composition_type": "adain",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 26,
+        "filename": "00026_occlusion_high.png",
+        "class1": 3,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 27,
+        "filename": "00027_occlusion_low.png",
+        "class1": 3,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 28,
+        "filename": "00028_superimposition_high.png",
+        "class1": 3,
+        "class2": 21,
+        "composition_type": "superimposition",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 29,
+        "filename": "00029_superimposition_low.png",
+        "class1": 3,
+        "class2": 21,
+        "composition_type": "superimposition",
+        "salience": "low",
+        "split": "test"
+    },
+    {
+        "id": 30,
+        "filename": "00030_texture_shape_high.png",
+        "class1": 3,
+        "class2": 21,
+        "composition_type": "texture_shape",
+        "salience": "high",
+        "split": "val"
+    },
+    {
+        "id": 31,
+        "filename": "00031_texture_shape_low.png",
+        "class1": 3,
+        "class2": 21,
+        "composition_type": "texture_shape",
+        "salience": "low",
+        "split": "test"
+    },
+    {
+        "id": 32,
+        "filename": "00032_adain_high.png",
+        "class1": 4,
+        "class2": 39,
+        "composition_type": "adain",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 33,
+        "filename": "00033_adain_low.png",
+        "class1": 4,
+        "class2": 39,
+        "composition_type": "adain",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 34,
+        "filename": "00034_occlusion_high.png",
+        "class1": 4,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 35,
+        "filename": "00035_occlusion_low.png",
+        "class1": 4,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "low",
+        "split": "test"
+    },
+    {
+        "id": 36,
+        "filename": "00036_superimposition_high.png",
+        "class1": 4,
+        "class2": 39,
+        "composition_type": "superimposition",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 37,
+        "filename": "00037_superimposition_low.png",
+        "class1": 4,
+        "class2": 39,
+        "composition_type": "superimposition",
+        "salience": "low",
+        "split": "val"
+    },
+    {
+        "id": 38,
+        "filename": "00038_texture_shape_high.png",
+        "class1": 4,
+        "class2": 39,
+        "composition_type": "texture_shape",
+        "salience": "high",
+        "split": "test"
+    },
+    {
+        "id": 39,
+        "filename": "00039_texture_shape_low.png",
+        "class1": 4,
+        "class2": 39,
+        "composition_type": "texture_shape",
+        "salience": "low",
+        "split": "val"
+    },
+    {
+        "id": 40,
+        "filename": "00040_adain_high.png",
+        "class1": 5,
+        "class2": 39,
+        "composition_type": "adain",
+        "salience": "high",
+        "split": "test"
+    },
+    {
+        "id": 41,
+        "filename": "00041_adain_low.png",
+        "class1": 5,
+        "class2": 39,
+        "composition_type": "adain",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 42,
+        "filename": "00042_occlusion_high.png",
+        "class1": 5,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 43,
+        "filename": "00043_occlusion_low.png",
+        "class1": 5,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "low",
+        "split": "test"
+    },
+    {
+        "id": 44,
+        "filename": "00044_superimposition_high.png",
+        "class1": 5,
+        "class2": 39,
+        "composition_type": "superimposition",
+        "salience": "high",
+        "split": "val"
+    },
+    {
+        "id": 45,
+        "filename": "00045_superimposition_low.png",
+        "class1": 5,
+        "class2": 39,
+        "composition_type": "superimposition",
+        "salience": "low",
+        "split": "test"
+    },
+    {
+        "id": 46,
+        "filename": "00046_texture_shape_high.png",
+        "class1": 5,
+        "class2": 39,
+        "composition_type": "texture_shape",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 47,
+        "filename": "00047_texture_shape_low.png",
+        "class1": 5,
+        "class2": 39,
+        "composition_type": "texture_shape",
+        "salience": "low",
+        "split": "val"
+    },
+    {
+        "id": 48,
+        "filename": "00048_adain_high.png",
+        "class1": 6,
+        "class2": 5,
+        "composition_type": "adain",
+        "salience": "high",
+        "split": "test"
+    },
+    {
+        "id": 49,
+        "filename": "00049_adain_low.png",
+        "class1": 6,
+        "class2": 5,
+        "composition_type": "adain",
+        "salience": "low",
+        "split": "val"
+    },
+    {
+        "id": 50,
+        "filename": "00050_occlusion_high.png",
+        "class1": 6,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "high",
+        "split": "val"
+    },
+    {
+        "id": 51,
+        "filename": "00051_occlusion_low.png",
+        "class1": 6,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "low",
+        "split": "val"
+    },
+    {
+        "id": 52,
+        "filename": "00052_superimposition_high.png",
+        "class1": 6,
+        "class2": 5,
+        "composition_type": "superimposition",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 53,
+        "filename": "00053_superimposition_low.png",
+        "class1": 6,
+        "class2": 5,
+        "composition_type": "superimposition",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 54,
+        "filename": "00054_texture_shape_high.png",
+        "class1": 6,
+        "class2": 5,
+        "composition_type": "texture_shape",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 55,
+        "filename": "00055_texture_shape_low.png",
+        "class1": 6,
+        "class2": 5,
+        "composition_type": "texture_shape",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 56,
+        "filename": "00056_adain_high.png",
+        "class1": 7,
+        "class2": 13,
+        "composition_type": "adain",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 57,
+        "filename": "00057_adain_low.png",
+        "class1": 7,
+        "class2": 13,
+        "composition_type": "adain",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 58,
+        "filename": "00058_occlusion_high.png",
+        "class1": 7,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 59,
+        "filename": "00059_occlusion_low.png",
+        "class1": 7,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 60,
+        "filename": "00060_superimposition_high.png",
+        "class1": 7,
+        "class2": 13,
+        "composition_type": "superimposition",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 61,
+        "filename": "00061_superimposition_low.png",
+        "class1": 7,
+        "class2": 13,
+        "composition_type": "superimposition",
+        "salience": "low",
+        "split": "val"
+    },
+    {
+        "id": 62,
+        "filename": "00062_texture_shape_high.png",
+        "class1": 7,
+        "class2": 13,
+        "composition_type": "texture_shape",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 63,
+        "filename": "00063_texture_shape_low.png",
+        "class1": 7,
+        "class2": 13,
+        "composition_type": "texture_shape",
+        "salience": "low",
+        "split": "val"
+    },
+    {
+        "id": 64,
+        "filename": "00064_adain_high.png",
+        "class1": 8,
+        "class2": 27,
+        "composition_type": "adain",
+        "salience": "high",
+        "split": "val"
+    },
+    {
+        "id": 65,
+        "filename": "00065_adain_low.png",
+        "class1": 8,
+        "class2": 27,
+        "composition_type": "adain",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 66,
+        "filename": "00066_occlusion_high.png",
+        "class1": 8,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 67,
+        "filename": "00067_occlusion_low.png",
+        "class1": 8,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "low",
+        "split": "test"
+    },
+    {
+        "id": 68,
+        "filename": "00068_superimposition_high.png",
+        "class1": 8,
+        "class2": 27,
+        "composition_type": "superimposition",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 69,
+        "filename": "00069_superimposition_low.png",
+        "class1": 8,
+        "class2": 27,
+        "composition_type": "superimposition",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 70,
+        "filename": "00070_texture_shape_high.png",
+        "class1": 8,
+        "class2": 27,
+        "composition_type": "texture_shape",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 71,
+        "filename": "00071_texture_shape_low.png",
+        "class1": 8,
+        "class2": 27,
+        "composition_type": "texture_shape",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 72,
+        "filename": "00072_adain_high.png",
+        "class1": 9,
+        "class2": 49,
+        "composition_type": "adain",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 73,
+        "filename": "00073_adain_low.png",
+        "class1": 9,
+        "class2": 49,
+        "composition_type": "adain",
+        "salience": "low",
+        "split": "val"
+    },
+    {
+        "id": 74,
+        "filename": "00074_occlusion_high.png",
+        "class1": 9,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "high",
+        "split": "val"
+    },
+    {
+        "id": 75,
+        "filename": "00075_occlusion_low.png",
+        "class1": 9,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "low",
+        "split": "val"
+    },
+    {
+        "id": 76,
+        "filename": "00076_superimposition_high.png",
+        "class1": 9,
+        "class2": 49,
+        "composition_type": "superimposition",
+        "salience": "high",
+        "split": "val"
+    },
+    {
+        "id": 77,
+        "filename": "00077_superimposition_low.png",
+        "class1": 9,
+        "class2": 49,
+        "composition_type": "superimposition",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 78,
+        "filename": "00078_texture_shape_high.png",
+        "class1": 9,
+        "class2": 49,
+        "composition_type": "texture_shape",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 79,
+        "filename": "00079_texture_shape_low.png",
+        "class1": 9,
+        "class2": 49,
+        "composition_type": "texture_shape",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 80,
+        "filename": "00080_adain_high.png",
+        "class1": 10,
+        "class2": 21,
+        "composition_type": "adain",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 81,
+        "filename": "00081_adain_low.png",
+        "class1": 10,
+        "class2": 21,
+        "composition_type": "adain",
+        "salience": "low",
+        "split": "val"
+    },
+    {
+        "id": 82,
+        "filename": "00082_occlusion_high.png",
+        "class1": 10,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 83,
+        "filename": "00083_occlusion_low.png",
+        "class1": 10,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 84,
+        "filename": "00084_superimposition_high.png",
+        "class1": 10,
+        "class2": 21,
+        "composition_type": "superimposition",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 85,
+        "filename": "00085_superimposition_low.png",
+        "class1": 10,
+        "class2": 21,
+        "composition_type": "superimposition",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 86,
+        "filename": "00086_texture_shape_high.png",
+        "class1": 10,
+        "class2": 21,
+        "composition_type": "texture_shape",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 87,
+        "filename": "00087_texture_shape_low.png",
+        "class1": 10,
+        "class2": 21,
+        "composition_type": "texture_shape",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 88,
+        "filename": "00088_adain_high.png",
+        "class1": 11,
+        "class2": 1,
+        "composition_type": "adain",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 89,
+        "filename": "00089_adain_low.png",
+        "class1": 11,
+        "class2": 1,
+        "composition_type": "adain",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 90,
+        "filename": "00090_occlusion_high.png",
+        "class1": 11,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 91,
+        "filename": "00091_occlusion_low.png",
+        "class1": 11,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 92,
+        "filename": "00092_superimposition_high.png",
+        "class1": 11,
+        "class2": 1,
+        "composition_type": "superimposition",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 93,
+        "filename": "00093_superimposition_low.png",
+        "class1": 11,
+        "class2": 1,
+        "composition_type": "superimposition",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 94,
+        "filename": "00094_texture_shape_high.png",
+        "class1": 11,
+        "class2": 1,
+        "composition_type": "texture_shape",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 95,
+        "filename": "00095_texture_shape_low.png",
+        "class1": 11,
+        "class2": 1,
+        "composition_type": "texture_shape",
+        "salience": "low",
+        "split": "test"
+    },
+    {
+        "id": 96,
+        "filename": "00096_adain_high.png",
+        "class1": 12,
+        "class2": 14,
+        "composition_type": "adain",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 97,
+        "filename": "00097_adain_low.png",
+        "class1": 12,
+        "class2": 14,
+        "composition_type": "adain",
+        "salience": "low",
+        "split": "val"
+    },
+    {
+        "id": 98,
+        "filename": "00098_occlusion_high.png",
+        "class1": 12,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "high",
+        "split": "test"
+    },
+    {
+        "id": 99,
+        "filename": "00099_occlusion_low.png",
+        "class1": 12,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "low",
+        "split": "test"
+    },
+    {
+        "id": 100,
+        "filename": "00100_superimposition_high.png",
+        "class1": 12,
+        "class2": 14,
+        "composition_type": "superimposition",
+        "salience": "high",
+        "split": "test"
+    },
+    {
+        "id": 101,
+        "filename": "00101_superimposition_low.png",
+        "class1": 12,
+        "class2": 14,
+        "composition_type": "superimposition",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 102,
+        "filename": "00102_texture_shape_high.png",
+        "class1": 12,
+        "class2": 14,
+        "composition_type": "texture_shape",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 103,
+        "filename": "00103_texture_shape_low.png",
+        "class1": 12,
+        "class2": 14,
+        "composition_type": "texture_shape",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 104,
+        "filename": "00104_adain_high.png",
+        "class1": 13,
+        "class2": 28,
+        "composition_type": "adain",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 105,
+        "filename": "00105_adain_low.png",
+        "class1": 13,
+        "class2": 28,
+        "composition_type": "adain",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 106,
+        "filename": "00106_occlusion_high.png",
+        "class1": 13,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 107,
+        "filename": "00107_occlusion_low.png",
+        "class1": 13,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 108,
+        "filename": "00108_superimposition_high.png",
+        "class1": 13,
+        "class2": 28,
+        "composition_type": "superimposition",
+        "salience": "high",
+        "split": "test"
+    },
+    {
+        "id": 109,
+        "filename": "00109_superimposition_low.png",
+        "class1": 13,
+        "class2": 28,
+        "composition_type": "superimposition",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 110,
+        "filename": "00110_texture_shape_high.png",
+        "class1": 13,
+        "class2": 28,
+        "composition_type": "texture_shape",
+        "salience": "high",
+        "split": "test"
+    },
+    {
+        "id": 111,
+        "filename": "00111_texture_shape_low.png",
+        "class1": 13,
+        "class2": 28,
+        "composition_type": "texture_shape",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 112,
+        "filename": "00112_adain_high.png",
+        "class1": 14,
+        "class2": 40,
+        "composition_type": "adain",
+        "salience": "high",
+        "split": "test"
+    },
+    {
+        "id": 113,
+        "filename": "00113_adain_low.png",
+        "class1": 14,
+        "class2": 40,
+        "composition_type": "adain",
+        "salience": "low",
+        "split": "val"
+    },
+    {
+        "id": 114,
+        "filename": "00114_occlusion_high.png",
+        "class1": 14,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "high",
+        "split": "val"
+    },
+    {
+        "id": 115,
+        "filename": "00115_occlusion_low.png",
+        "class1": 14,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "low",
+        "split": "test"
+    },
+    {
+        "id": 116,
+        "filename": "00116_superimposition_high.png",
+        "class1": 14,
+        "class2": 40,
+        "composition_type": "superimposition",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 117,
+        "filename": "00117_superimposition_low.png",
+        "class1": 14,
+        "class2": 40,
+        "composition_type": "superimposition",
+        "salience": "low",
+        "split": "test"
+    },
+    {
+        "id": 118,
+        "filename": "00118_texture_shape_high.png",
+        "class1": 14,
+        "class2": 40,
+        "composition_type": "texture_shape",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 119,
+        "filename": "00119_texture_shape_low.png",
+        "class1": 14,
+        "class2": 40,
+        "composition_type": "texture_shape",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 120,
+        "filename": "00120_adain_high.png",
+        "class1": 15,
+        "class2": 41,
+        "composition_type": "adain",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 121,
+        "filename": "00121_adain_low.png",
+        "class1": 15,
+        "class2": 41,
+        "composition_type": "adain",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 122,
+        "filename": "00122_occlusion_high.png",
+        "class1": 15,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "high",
+        "split": "val"
+    },
+    {
+        "id": 123,
+        "filename": "00123_occlusion_low.png",
+        "class1": 15,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 124,
+        "filename": "00124_superimposition_high.png",
+        "class1": 15,
+        "class2": 41,
+        "composition_type": "superimposition",
+        "salience": "high",
+        "split": "val"
+    },
+    {
+        "id": 125,
+        "filename": "00125_superimposition_low.png",
+        "class1": 15,
+        "class2": 41,
+        "composition_type": "superimposition",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 126,
+        "filename": "00126_texture_shape_high.png",
+        "class1": 15,
+        "class2": 41,
+        "composition_type": "texture_shape",
+        "salience": "high",
+        "split": "test"
+    },
+    {
+        "id": 127,
+        "filename": "00127_texture_shape_low.png",
+        "class1": 15,
+        "class2": 41,
+        "composition_type": "texture_shape",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 128,
+        "filename": "00128_adain_high.png",
+        "class1": 16,
+        "class2": 4,
+        "composition_type": "adain",
+        "salience": "high",
+        "split": "val"
+    },
+    {
+        "id": 129,
+        "filename": "00129_adain_low.png",
+        "class1": 16,
+        "class2": 4,
+        "composition_type": "adain",
+        "salience": "low",
+        "split": "val"
+    },
+    {
+        "id": 130,
+        "filename": "00130_occlusion_high.png",
+        "class1": 16,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "high",
+        "split": "val"
+    },
+    {
+        "id": 131,
+        "filename": "00131_occlusion_low.png",
+        "class1": 16,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 132,
+        "filename": "00132_superimposition_high.png",
+        "class1": 16,
+        "class2": 4,
+        "composition_type": "superimposition",
+        "salience": "high",
+        "split": "val"
+    },
+    {
+        "id": 133,
+        "filename": "00133_superimposition_low.png",
+        "class1": 16,
+        "class2": 4,
+        "composition_type": "superimposition",
+        "salience": "low",
+        "split": "val"
+    },
+    {
+        "id": 134,
+        "filename": "00134_texture_shape_high.png",
+        "class1": 16,
+        "class2": 4,
+        "composition_type": "texture_shape",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 135,
+        "filename": "00135_texture_shape_low.png",
+        "class1": 16,
+        "class2": 4,
+        "composition_type": "texture_shape",
+        "salience": "low",
+        "split": "test"
+    },
+    {
+        "id": 136,
+        "filename": "00136_adain_high.png",
+        "class1": 17,
+        "class2": 38,
+        "composition_type": "adain",
+        "salience": "high",
+        "split": "val"
+    },
+    {
+        "id": 137,
+        "filename": "00137_adain_low.png",
+        "class1": 17,
+        "class2": 38,
+        "composition_type": "adain",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 138,
+        "filename": "00138_occlusion_high.png",
+        "class1": 17,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 139,
+        "filename": "00139_occlusion_low.png",
+        "class1": 17,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "low",
+        "split": "test"
+    },
+    {
+        "id": 140,
+        "filename": "00140_superimposition_high.png",
+        "class1": 17,
+        "class2": 38,
+        "composition_type": "superimposition",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 141,
+        "filename": "00141_superimposition_low.png",
+        "class1": 17,
+        "class2": 38,
+        "composition_type": "superimposition",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 142,
+        "filename": "00142_texture_shape_high.png",
+        "class1": 17,
+        "class2": 38,
+        "composition_type": "texture_shape",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 143,
+        "filename": "00143_texture_shape_low.png",
+        "class1": 17,
+        "class2": 38,
+        "composition_type": "texture_shape",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 144,
+        "filename": "00144_adain_high.png",
+        "class1": 18,
+        "class2": 13,
+        "composition_type": "adain",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 145,
+        "filename": "00145_adain_low.png",
+        "class1": 18,
+        "class2": 13,
+        "composition_type": "adain",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 146,
+        "filename": "00146_occlusion_high.png",
+        "class1": 18,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 147,
+        "filename": "00147_occlusion_low.png",
+        "class1": 18,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "low",
+        "split": "val"
+    },
+    {
+        "id": 148,
+        "filename": "00148_superimposition_high.png",
+        "class1": 18,
+        "class2": 13,
+        "composition_type": "superimposition",
+        "salience": "high",
+        "split": "val"
+    },
+    {
+        "id": 149,
+        "filename": "00149_superimposition_low.png",
+        "class1": 18,
+        "class2": 13,
+        "composition_type": "superimposition",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 150,
+        "filename": "00150_texture_shape_high.png",
+        "class1": 18,
+        "class2": 13,
+        "composition_type": "texture_shape",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 151,
+        "filename": "00151_texture_shape_low.png",
+        "class1": 18,
+        "class2": 13,
+        "composition_type": "texture_shape",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 152,
+        "filename": "00152_adain_high.png",
+        "class1": 19,
+        "class2": 28,
+        "composition_type": "adain",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 153,
+        "filename": "00153_adain_low.png",
+        "class1": 19,
+        "class2": 28,
+        "composition_type": "adain",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 154,
+        "filename": "00154_occlusion_high.png",
+        "class1": 19,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "high",
+        "split": "val"
+    },
+    {
+        "id": 155,
+        "filename": "00155_occlusion_low.png",
+        "class1": 19,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 156,
+        "filename": "00156_superimposition_high.png",
+        "class1": 19,
+        "class2": 28,
+        "composition_type": "superimposition",
+        "salience": "high",
+        "split": "val"
+    },
+    {
+        "id": 157,
+        "filename": "00157_superimposition_low.png",
+        "class1": 19,
+        "class2": 28,
+        "composition_type": "superimposition",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 158,
+        "filename": "00158_texture_shape_high.png",
+        "class1": 19,
+        "class2": 28,
+        "composition_type": "texture_shape",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 159,
+        "filename": "00159_texture_shape_low.png",
+        "class1": 19,
+        "class2": 28,
+        "composition_type": "texture_shape",
+        "salience": "low",
+        "split": "val"
+    },
+    {
+        "id": 160,
+        "filename": "00160_adain_high.png",
+        "class1": 20,
+        "class2": 11,
+        "composition_type": "adain",
+        "salience": "high",
+        "split": "test"
+    },
+    {
+        "id": 161,
+        "filename": "00161_adain_low.png",
+        "class1": 20,
+        "class2": 11,
+        "composition_type": "adain",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 162,
+        "filename": "00162_occlusion_high.png",
+        "class1": 20,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 163,
+        "filename": "00163_occlusion_low.png",
+        "class1": 20,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 164,
+        "filename": "00164_superimposition_high.png",
+        "class1": 20,
+        "class2": 11,
+        "composition_type": "superimposition",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 165,
+        "filename": "00165_superimposition_low.png",
+        "class1": 20,
+        "class2": 11,
+        "composition_type": "superimposition",
+        "salience": "low",
+        "split": "val"
+    },
+    {
+        "id": 166,
+        "filename": "00166_texture_shape_high.png",
+        "class1": 20,
+        "class2": 11,
+        "composition_type": "texture_shape",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 167,
+        "filename": "00167_texture_shape_low.png",
+        "class1": 20,
+        "class2": 11,
+        "composition_type": "texture_shape",
+        "salience": "low",
+        "split": "val"
+    },
+    {
+        "id": 168,
+        "filename": "00168_adain_high.png",
+        "class1": 21,
+        "class2": 11,
+        "composition_type": "adain",
+        "salience": "high",
+        "split": "test"
+    },
+    {
+        "id": 169,
+        "filename": "00169_adain_low.png",
+        "class1": 21,
+        "class2": 11,
+        "composition_type": "adain",
+        "salience": "low",
+        "split": "val"
+    },
+    {
+        "id": 170,
+        "filename": "00170_occlusion_high.png",
+        "class1": 21,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 171,
+        "filename": "00171_occlusion_low.png",
+        "class1": 21,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "low",
+        "split": "val"
+    },
+    {
+        "id": 172,
+        "filename": "00172_superimposition_high.png",
+        "class1": 21,
+        "class2": 11,
+        "composition_type": "superimposition",
+        "salience": "high",
+        "split": "val"
+    },
+    {
+        "id": 173,
+        "filename": "00173_superimposition_low.png",
+        "class1": 21,
+        "class2": 11,
+        "composition_type": "superimposition",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 174,
+        "filename": "00174_texture_shape_high.png",
+        "class1": 21,
+        "class2": 11,
+        "composition_type": "texture_shape",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 175,
+        "filename": "00175_texture_shape_low.png",
+        "class1": 21,
+        "class2": 11,
+        "composition_type": "texture_shape",
+        "salience": "low",
+        "split": "test"
+    },
+    {
+        "id": 176,
+        "filename": "00176_adain_high.png",
+        "class1": 22,
+        "class2": 2,
+        "composition_type": "adain",
+        "salience": "high",
+        "split": "val"
+    },
+    {
+        "id": 177,
+        "filename": "00177_adain_low.png",
+        "class1": 22,
+        "class2": 2,
+        "composition_type": "adain",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 178,
+        "filename": "00178_occlusion_high.png",
+        "class1": 22,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 179,
+        "filename": "00179_occlusion_low.png",
+        "class1": 22,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "low",
+        "split": "val"
+    },
+    {
+        "id": 180,
+        "filename": "00180_superimposition_high.png",
+        "class1": 22,
+        "class2": 2,
+        "composition_type": "superimposition",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 181,
+        "filename": "00181_superimposition_low.png",
+        "class1": 22,
+        "class2": 2,
+        "composition_type": "superimposition",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 182,
+        "filename": "00182_texture_shape_high.png",
+        "class1": 22,
+        "class2": 2,
+        "composition_type": "texture_shape",
+        "salience": "high",
+        "split": "test"
+    },
+    {
+        "id": 183,
+        "filename": "00183_texture_shape_low.png",
+        "class1": 22,
+        "class2": 2,
+        "composition_type": "texture_shape",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 184,
+        "filename": "00184_adain_high.png",
+        "class1": 23,
+        "class2": 38,
+        "composition_type": "adain",
+        "salience": "high",
+        "split": "test"
+    },
+    {
+        "id": 185,
+        "filename": "00185_adain_low.png",
+        "class1": 23,
+        "class2": 38,
+        "composition_type": "adain",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 186,
+        "filename": "00186_occlusion_high.png",
+        "class1": 23,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "high",
+        "split": "test"
+    },
+    {
+        "id": 187,
+        "filename": "00187_occlusion_low.png",
+        "class1": 23,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "low",
+        "split": "val"
+    },
+    {
+        "id": 188,
+        "filename": "00188_superimposition_high.png",
+        "class1": 23,
+        "class2": 38,
+        "composition_type": "superimposition",
+        "salience": "high",
+        "split": "test"
+    },
+    {
+        "id": 189,
+        "filename": "00189_superimposition_low.png",
+        "class1": 23,
+        "class2": 38,
+        "composition_type": "superimposition",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 190,
+        "filename": "00190_texture_shape_high.png",
+        "class1": 23,
+        "class2": 38,
+        "composition_type": "texture_shape",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 191,
+        "filename": "00191_texture_shape_low.png",
+        "class1": 23,
+        "class2": 38,
+        "composition_type": "texture_shape",
+        "salience": "low",
+        "split": "test"
+    },
+    {
+        "id": 192,
+        "filename": "00192_adain_high.png",
+        "class1": 24,
+        "class2": 5,
+        "composition_type": "adain",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 193,
+        "filename": "00193_adain_low.png",
+        "class1": 24,
+        "class2": 5,
+        "composition_type": "adain",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 194,
+        "filename": "00194_occlusion_high.png",
+        "class1": 24,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 195,
+        "filename": "00195_occlusion_low.png",
+        "class1": 24,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "low",
+        "split": "test"
+    },
+    {
+        "id": 196,
+        "filename": "00196_superimposition_high.png",
+        "class1": 24,
+        "class2": 5,
+        "composition_type": "superimposition",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 197,
+        "filename": "00197_superimposition_low.png",
+        "class1": 24,
+        "class2": 5,
+        "composition_type": "superimposition",
+        "salience": "low",
+        "split": "test"
+    },
+    {
+        "id": 198,
+        "filename": "00198_texture_shape_high.png",
+        "class1": 24,
+        "class2": 5,
+        "composition_type": "texture_shape",
+        "salience": "high",
+        "split": "val"
+    },
+    {
+        "id": 199,
+        "filename": "00199_texture_shape_low.png",
+        "class1": 24,
+        "class2": 5,
+        "composition_type": "texture_shape",
+        "salience": "low",
+        "split": "test"
+    },
+    {
+        "id": 200,
+        "filename": "00200_adain_high.png",
+        "class1": 25,
+        "class2": 9,
+        "composition_type": "adain",
+        "salience": "high",
+        "split": "val"
+    },
+    {
+        "id": 201,
+        "filename": "00201_adain_low.png",
+        "class1": 25,
+        "class2": 9,
+        "composition_type": "adain",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 202,
+        "filename": "00202_occlusion_high.png",
+        "class1": 25,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 203,
+        "filename": "00203_occlusion_low.png",
+        "class1": 25,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 204,
+        "filename": "00204_superimposition_high.png",
+        "class1": 25,
+        "class2": 9,
+        "composition_type": "superimposition",
+        "salience": "high",
+        "split": "val"
+    },
+    {
+        "id": 205,
+        "filename": "00205_superimposition_low.png",
+        "class1": 25,
+        "class2": 9,
+        "composition_type": "superimposition",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 206,
+        "filename": "00206_texture_shape_high.png",
+        "class1": 25,
+        "class2": 9,
+        "composition_type": "texture_shape",
+        "salience": "high",
+        "split": "test"
+    },
+    {
+        "id": 207,
+        "filename": "00207_texture_shape_low.png",
+        "class1": 25,
+        "class2": 9,
+        "composition_type": "texture_shape",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 208,
+        "filename": "00208_adain_high.png",
+        "class1": 26,
+        "class2": 36,
+        "composition_type": "adain",
+        "salience": "high",
+        "split": "test"
+    },
+    {
+        "id": 209,
+        "filename": "00209_adain_low.png",
+        "class1": 26,
+        "class2": 36,
+        "composition_type": "adain",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 210,
+        "filename": "00210_occlusion_high.png",
+        "class1": 26,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "high",
+        "split": "test"
+    },
+    {
+        "id": 211,
+        "filename": "00211_occlusion_low.png",
+        "class1": 26,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 212,
+        "filename": "00212_superimposition_high.png",
+        "class1": 26,
+        "class2": 36,
+        "composition_type": "superimposition",
+        "salience": "high",
+        "split": "test"
+    },
+    {
+        "id": 213,
+        "filename": "00213_superimposition_low.png",
+        "class1": 26,
+        "class2": 36,
+        "composition_type": "superimposition",
+        "salience": "low",
+        "split": "test"
+    },
+    {
+        "id": 214,
+        "filename": "00214_texture_shape_high.png",
+        "class1": 26,
+        "class2": 36,
+        "composition_type": "texture_shape",
+        "salience": "high",
+        "split": "test"
+    },
+    {
+        "id": 215,
+        "filename": "00215_texture_shape_low.png",
+        "class1": 26,
+        "class2": 36,
+        "composition_type": "texture_shape",
+        "salience": "low",
+        "split": "val"
+    },
+    {
+        "id": 216,
+        "filename": "00216_adain_high.png",
+        "class1": 27,
+        "class2": 21,
+        "composition_type": "adain",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 217,
+        "filename": "00217_adain_low.png",
+        "class1": 27,
+        "class2": 21,
+        "composition_type": "adain",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 218,
+        "filename": "00218_occlusion_high.png",
+        "class1": 27,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 219,
+        "filename": "00219_occlusion_low.png",
+        "class1": 27,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "low",
+        "split": "test"
+    },
+    {
+        "id": 220,
+        "filename": "00220_superimposition_high.png",
+        "class1": 27,
+        "class2": 21,
+        "composition_type": "superimposition",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 221,
+        "filename": "00221_superimposition_low.png",
+        "class1": 27,
+        "class2": 21,
+        "composition_type": "superimposition",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 222,
+        "filename": "00222_texture_shape_high.png",
+        "class1": 27,
+        "class2": 21,
+        "composition_type": "texture_shape",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 223,
+        "filename": "00223_texture_shape_low.png",
+        "class1": 27,
+        "class2": 21,
+        "composition_type": "texture_shape",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 224,
+        "filename": "00224_adain_high.png",
+        "class1": 28,
+        "class2": 9,
+        "composition_type": "adain",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 225,
+        "filename": "00225_adain_low.png",
+        "class1": 28,
+        "class2": 9,
+        "composition_type": "adain",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 226,
+        "filename": "00226_occlusion_high.png",
+        "class1": 28,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "high",
+        "split": "test"
+    },
+    {
+        "id": 227,
+        "filename": "00227_occlusion_low.png",
+        "class1": 28,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "low",
+        "split": "val"
+    },
+    {
+        "id": 228,
+        "filename": "00228_superimposition_high.png",
+        "class1": 28,
+        "class2": 9,
+        "composition_type": "superimposition",
+        "salience": "high",
+        "split": "test"
+    },
+    {
+        "id": 229,
+        "filename": "00229_superimposition_low.png",
+        "class1": 28,
+        "class2": 9,
+        "composition_type": "superimposition",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 230,
+        "filename": "00230_texture_shape_high.png",
+        "class1": 28,
+        "class2": 9,
+        "composition_type": "texture_shape",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 231,
+        "filename": "00231_texture_shape_low.png",
+        "class1": 28,
+        "class2": 9,
+        "composition_type": "texture_shape",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 232,
+        "filename": "00232_adain_high.png",
+        "class1": 29,
+        "class2": 35,
+        "composition_type": "adain",
+        "salience": "high",
+        "split": "test"
+    },
+    {
+        "id": 233,
+        "filename": "00233_adain_low.png",
+        "class1": 29,
+        "class2": 35,
+        "composition_type": "adain",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 234,
+        "filename": "00234_occlusion_high.png",
+        "class1": 29,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "high",
+        "split": "val"
+    },
+    {
+        "id": 235,
+        "filename": "00235_occlusion_low.png",
+        "class1": 29,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 236,
+        "filename": "00236_superimposition_high.png",
+        "class1": 29,
+        "class2": 35,
+        "composition_type": "superimposition",
+        "salience": "high",
+        "split": "test"
+    },
+    {
+        "id": 237,
+        "filename": "00237_superimposition_low.png",
+        "class1": 29,
+        "class2": 35,
+        "composition_type": "superimposition",
+        "salience": "low",
+        "split": "test"
+    },
+    {
+        "id": 238,
+        "filename": "00238_texture_shape_high.png",
+        "class1": 29,
+        "class2": 35,
+        "composition_type": "texture_shape",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 239,
+        "filename": "00239_texture_shape_low.png",
+        "class1": 29,
+        "class2": 35,
+        "composition_type": "texture_shape",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 240,
+        "filename": "00240_adain_high.png",
+        "class1": 30,
+        "class2": 17,
+        "composition_type": "adain",
+        "salience": "high",
+        "split": "test"
+    },
+    {
+        "id": 241,
+        "filename": "00241_adain_low.png",
+        "class1": 30,
+        "class2": 17,
+        "composition_type": "adain",
+        "salience": "low",
+        "split": "val"
+    },
+    {
+        "id": 242,
+        "filename": "00242_occlusion_high.png",
+        "class1": 30,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 243,
+        "filename": "00243_occlusion_low.png",
+        "class1": 30,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "low",
+        "split": "test"
+    },
+    {
+        "id": 244,
+        "filename": "00244_superimposition_high.png",
+        "class1": 30,
+        "class2": 17,
+        "composition_type": "superimposition",
+        "salience": "high",
+        "split": "val"
+    },
+    {
+        "id": 245,
+        "filename": "00245_superimposition_low.png",
+        "class1": 30,
+        "class2": 17,
+        "composition_type": "superimposition",
+        "salience": "low",
+        "split": "val"
+    },
+    {
+        "id": 246,
+        "filename": "00246_texture_shape_high.png",
+        "class1": 30,
+        "class2": 17,
+        "composition_type": "texture_shape",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 247,
+        "filename": "00247_texture_shape_low.png",
+        "class1": 30,
+        "class2": 17,
+        "composition_type": "texture_shape",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 248,
+        "filename": "00248_adain_high.png",
+        "class1": 31,
+        "class2": 23,
+        "composition_type": "adain",
+        "salience": "high",
+        "split": "test"
+    },
+    {
+        "id": 249,
+        "filename": "00249_adain_low.png",
+        "class1": 31,
+        "class2": 23,
+        "composition_type": "adain",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 250,
+        "filename": "00250_occlusion_high.png",
+        "class1": 31,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 251,
+        "filename": "00251_occlusion_low.png",
+        "class1": 31,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 252,
+        "filename": "00252_superimposition_high.png",
+        "class1": 31,
+        "class2": 23,
+        "composition_type": "superimposition",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 253,
+        "filename": "00253_superimposition_low.png",
+        "class1": 31,
+        "class2": 23,
+        "composition_type": "superimposition",
+        "salience": "low",
+        "split": "val"
+    },
+    {
+        "id": 254,
+        "filename": "00254_texture_shape_high.png",
+        "class1": 31,
+        "class2": 23,
+        "composition_type": "texture_shape",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 255,
+        "filename": "00255_texture_shape_low.png",
+        "class1": 31,
+        "class2": 23,
+        "composition_type": "texture_shape",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 256,
+        "filename": "00256_adain_high.png",
+        "class1": 32,
+        "class2": 1,
+        "composition_type": "adain",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 257,
+        "filename": "00257_adain_low.png",
+        "class1": 32,
+        "class2": 1,
+        "composition_type": "adain",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 258,
+        "filename": "00258_occlusion_high.png",
+        "class1": 32,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "high",
+        "split": "val"
+    },
+    {
+        "id": 259,
+        "filename": "00259_occlusion_low.png",
+        "class1": 32,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 260,
+        "filename": "00260_superimposition_high.png",
+        "class1": 32,
+        "class2": 1,
+        "composition_type": "superimposition",
+        "salience": "high",
+        "split": "test"
+    },
+    {
+        "id": 261,
+        "filename": "00261_superimposition_low.png",
+        "class1": 32,
+        "class2": 1,
+        "composition_type": "superimposition",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 262,
+        "filename": "00262_texture_shape_high.png",
+        "class1": 32,
+        "class2": 1,
+        "composition_type": "texture_shape",
+        "salience": "high",
+        "split": "val"
+    },
+    {
+        "id": 263,
+        "filename": "00263_texture_shape_low.png",
+        "class1": 32,
+        "class2": 1,
+        "composition_type": "texture_shape",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 264,
+        "filename": "00264_adain_high.png",
+        "class1": 33,
+        "class2": 41,
+        "composition_type": "adain",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 265,
+        "filename": "00265_adain_low.png",
+        "class1": 33,
+        "class2": 41,
+        "composition_type": "adain",
+        "salience": "low",
+        "split": "test"
+    },
+    {
+        "id": 266,
+        "filename": "00266_occlusion_high.png",
+        "class1": 33,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "high",
+        "split": "test"
+    },
+    {
+        "id": 267,
+        "filename": "00267_occlusion_low.png",
+        "class1": 33,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "low",
+        "split": "val"
+    },
+    {
+        "id": 268,
+        "filename": "00268_superimposition_high.png",
+        "class1": 33,
+        "class2": 41,
+        "composition_type": "superimposition",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 269,
+        "filename": "00269_superimposition_low.png",
+        "class1": 33,
+        "class2": 41,
+        "composition_type": "superimposition",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 270,
+        "filename": "00270_texture_shape_high.png",
+        "class1": 33,
+        "class2": 41,
+        "composition_type": "texture_shape",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 271,
+        "filename": "00271_texture_shape_low.png",
+        "class1": 33,
+        "class2": 41,
+        "composition_type": "texture_shape",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 272,
+        "filename": "00272_adain_high.png",
+        "class1": 34,
+        "class2": 15,
+        "composition_type": "adain",
+        "salience": "high",
+        "split": "test"
+    },
+    {
+        "id": 273,
+        "filename": "00273_adain_low.png",
+        "class1": 34,
+        "class2": 15,
+        "composition_type": "adain",
+        "salience": "low",
+        "split": "test"
+    },
+    {
+        "id": 274,
+        "filename": "00274_occlusion_high.png",
+        "class1": 34,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 275,
+        "filename": "00275_occlusion_low.png",
+        "class1": 34,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 276,
+        "filename": "00276_superimposition_high.png",
+        "class1": 34,
+        "class2": 15,
+        "composition_type": "superimposition",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 277,
+        "filename": "00277_superimposition_low.png",
+        "class1": 34,
+        "class2": 15,
+        "composition_type": "superimposition",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 278,
+        "filename": "00278_texture_shape_high.png",
+        "class1": 34,
+        "class2": 15,
+        "composition_type": "texture_shape",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 279,
+        "filename": "00279_texture_shape_low.png",
+        "class1": 34,
+        "class2": 15,
+        "composition_type": "texture_shape",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 280,
+        "filename": "00280_adain_high.png",
+        "class1": 35,
+        "class2": 29,
+        "composition_type": "adain",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 281,
+        "filename": "00281_adain_low.png",
+        "class1": 35,
+        "class2": 29,
+        "composition_type": "adain",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 282,
+        "filename": "00282_occlusion_high.png",
+        "class1": 35,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 283,
+        "filename": "00283_occlusion_low.png",
+        "class1": 35,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 284,
+        "filename": "00284_superimposition_high.png",
+        "class1": 35,
+        "class2": 29,
+        "composition_type": "superimposition",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 285,
+        "filename": "00285_superimposition_low.png",
+        "class1": 35,
+        "class2": 29,
+        "composition_type": "superimposition",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 286,
+        "filename": "00286_texture_shape_high.png",
+        "class1": 35,
+        "class2": 29,
+        "composition_type": "texture_shape",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 287,
+        "filename": "00287_texture_shape_low.png",
+        "class1": 35,
+        "class2": 29,
+        "composition_type": "texture_shape",
+        "salience": "low",
+        "split": "val"
+    },
+    {
+        "id": 288,
+        "filename": "00288_adain_high.png",
+        "class1": 36,
+        "class2": 2,
+        "composition_type": "adain",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 289,
+        "filename": "00289_adain_low.png",
+        "class1": 36,
+        "class2": 2,
+        "composition_type": "adain",
+        "salience": "low",
+        "split": "val"
+    },
+    {
+        "id": 290,
+        "filename": "00290_occlusion_high.png",
+        "class1": 36,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 291,
+        "filename": "00291_occlusion_low.png",
+        "class1": 36,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "low",
+        "split": "test"
+    },
+    {
+        "id": 292,
+        "filename": "00292_superimposition_high.png",
+        "class1": 36,
+        "class2": 2,
+        "composition_type": "superimposition",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 293,
+        "filename": "00293_superimposition_low.png",
+        "class1": 36,
+        "class2": 2,
+        "composition_type": "superimposition",
+        "salience": "low",
+        "split": "test"
+    },
+    {
+        "id": 294,
+        "filename": "00294_texture_shape_high.png",
+        "class1": 36,
+        "class2": 2,
+        "composition_type": "texture_shape",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 295,
+        "filename": "00295_texture_shape_low.png",
+        "class1": 36,
+        "class2": 2,
+        "composition_type": "texture_shape",
+        "salience": "low",
+        "split": "val"
+    },
+    {
+        "id": 296,
+        "filename": "00296_adain_high.png",
+        "class1": 37,
+        "class2": 6,
+        "composition_type": "adain",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 297,
+        "filename": "00297_adain_low.png",
+        "class1": 37,
+        "class2": 6,
+        "composition_type": "adain",
+        "salience": "low",
+        "split": "test"
+    },
+    {
+        "id": 298,
+        "filename": "00298_occlusion_high.png",
+        "class1": 37,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 299,
+        "filename": "00299_occlusion_low.png",
+        "class1": 37,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 300,
+        "filename": "00300_superimposition_high.png",
+        "class1": 37,
+        "class2": 6,
+        "composition_type": "superimposition",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 301,
+        "filename": "00301_superimposition_low.png",
+        "class1": 37,
+        "class2": 6,
+        "composition_type": "superimposition",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 302,
+        "filename": "00302_texture_shape_high.png",
+        "class1": 37,
+        "class2": 6,
+        "composition_type": "texture_shape",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 303,
+        "filename": "00303_texture_shape_low.png",
+        "class1": 37,
+        "class2": 6,
+        "composition_type": "texture_shape",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 304,
+        "filename": "00304_adain_high.png",
+        "class1": 38,
+        "class2": 36,
+        "composition_type": "adain",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 305,
+        "filename": "00305_adain_low.png",
+        "class1": 38,
+        "class2": 36,
+        "composition_type": "adain",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 306,
+        "filename": "00306_occlusion_high.png",
+        "class1": 38,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 307,
+        "filename": "00307_occlusion_low.png",
+        "class1": 38,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 308,
+        "filename": "00308_superimposition_high.png",
+        "class1": 38,
+        "class2": 36,
+        "composition_type": "superimposition",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 309,
+        "filename": "00309_superimposition_low.png",
+        "class1": 38,
+        "class2": 36,
+        "composition_type": "superimposition",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 310,
+        "filename": "00310_texture_shape_high.png",
+        "class1": 38,
+        "class2": 36,
+        "composition_type": "texture_shape",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 311,
+        "filename": "00311_texture_shape_low.png",
+        "class1": 38,
+        "class2": 36,
+        "composition_type": "texture_shape",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 312,
+        "filename": "00312_adain_high.png",
+        "class1": 39,
+        "class2": 5,
+        "composition_type": "adain",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 313,
+        "filename": "00313_adain_low.png",
+        "class1": 39,
+        "class2": 5,
+        "composition_type": "adain",
+        "salience": "low",
+        "split": "test"
+    },
+    {
+        "id": 314,
+        "filename": "00314_occlusion_high.png",
+        "class1": 39,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 315,
+        "filename": "00315_occlusion_low.png",
+        "class1": 39,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 316,
+        "filename": "00316_superimposition_high.png",
+        "class1": 39,
+        "class2": 5,
+        "composition_type": "superimposition",
+        "salience": "high",
+        "split": "val"
+    },
+    {
+        "id": 317,
+        "filename": "00317_superimposition_low.png",
+        "class1": 39,
+        "class2": 5,
+        "composition_type": "superimposition",
+        "salience": "low",
+        "split": "val"
+    },
+    {
+        "id": 318,
+        "filename": "00318_texture_shape_high.png",
+        "class1": 39,
+        "class2": 5,
+        "composition_type": "texture_shape",
+        "salience": "high",
+        "split": "test"
+    },
+    {
+        "id": 319,
+        "filename": "00319_texture_shape_low.png",
+        "class1": 39,
+        "class2": 5,
+        "composition_type": "texture_shape",
+        "salience": "low",
+        "split": "val"
+    },
+    {
+        "id": 320,
+        "filename": "00320_adain_high.png",
+        "class1": 40,
+        "class2": 13,
+        "composition_type": "adain",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 321,
+        "filename": "00321_adain_low.png",
+        "class1": 40,
+        "class2": 13,
+        "composition_type": "adain",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 322,
+        "filename": "00322_occlusion_high.png",
+        "class1": 40,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "high",
+        "split": "val"
+    },
+    {
+        "id": 323,
+        "filename": "00323_occlusion_low.png",
+        "class1": 40,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 324,
+        "filename": "00324_superimposition_high.png",
+        "class1": 40,
+        "class2": 13,
+        "composition_type": "superimposition",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 325,
+        "filename": "00325_superimposition_low.png",
+        "class1": 40,
+        "class2": 13,
+        "composition_type": "superimposition",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 326,
+        "filename": "00326_texture_shape_high.png",
+        "class1": 40,
+        "class2": 13,
+        "composition_type": "texture_shape",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 327,
+        "filename": "00327_texture_shape_low.png",
+        "class1": 40,
+        "class2": 13,
+        "composition_type": "texture_shape",
+        "salience": "low",
+        "split": "test"
+    },
+    {
+        "id": 328,
+        "filename": "00328_adain_high.png",
+        "class1": 41,
+        "class2": 31,
+        "composition_type": "adain",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 329,
+        "filename": "00329_adain_low.png",
+        "class1": 41,
+        "class2": 31,
+        "composition_type": "adain",
+        "salience": "low",
+        "split": "test"
+    },
+    {
+        "id": 330,
+        "filename": "00330_occlusion_high.png",
+        "class1": 41,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "high",
+        "split": "val"
+    },
+    {
+        "id": 331,
+        "filename": "00331_occlusion_low.png",
+        "class1": 41,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "low",
+        "split": "val"
+    },
+    {
+        "id": 332,
+        "filename": "00332_superimposition_high.png",
+        "class1": 41,
+        "class2": 31,
+        "composition_type": "superimposition",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 333,
+        "filename": "00333_superimposition_low.png",
+        "class1": 41,
+        "class2": 31,
+        "composition_type": "superimposition",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 334,
+        "filename": "00334_texture_shape_high.png",
+        "class1": 41,
+        "class2": 31,
+        "composition_type": "texture_shape",
+        "salience": "high",
+        "split": "test"
+    },
+    {
+        "id": 335,
+        "filename": "00335_texture_shape_low.png",
+        "class1": 41,
+        "class2": 31,
+        "composition_type": "texture_shape",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 336,
+        "filename": "00336_adain_high.png",
+        "class1": 42,
+        "class2": 29,
+        "composition_type": "adain",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 337,
+        "filename": "00337_adain_low.png",
+        "class1": 42,
+        "class2": 29,
+        "composition_type": "adain",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 338,
+        "filename": "00338_occlusion_high.png",
+        "class1": 42,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 339,
+        "filename": "00339_occlusion_low.png",
+        "class1": 42,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 340,
+        "filename": "00340_superimposition_high.png",
+        "class1": 42,
+        "class2": 29,
+        "composition_type": "superimposition",
+        "salience": "high",
+        "split": "test"
+    },
+    {
+        "id": 341,
+        "filename": "00341_superimposition_low.png",
+        "class1": 42,
+        "class2": 29,
+        "composition_type": "superimposition",
+        "salience": "low",
+        "split": "val"
+    },
+    {
+        "id": 342,
+        "filename": "00342_texture_shape_high.png",
+        "class1": 42,
+        "class2": 29,
+        "composition_type": "texture_shape",
+        "salience": "high",
+        "split": "val"
+    },
+    {
+        "id": 343,
+        "filename": "00343_texture_shape_low.png",
+        "class1": 42,
+        "class2": 29,
+        "composition_type": "texture_shape",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 344,
+        "filename": "00344_adain_high.png",
+        "class1": 43,
+        "class2": 20,
+        "composition_type": "adain",
+        "salience": "high",
+        "split": "val"
+    },
+    {
+        "id": 345,
+        "filename": "00345_adain_low.png",
+        "class1": 43,
+        "class2": 20,
+        "composition_type": "adain",
+        "salience": "low",
+        "split": "test"
+    },
+    {
+        "id": 346,
+        "filename": "00346_occlusion_high.png",
+        "class1": 43,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 347,
+        "filename": "00347_occlusion_low.png",
+        "class1": 43,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "low",
+        "split": "val"
+    },
+    {
+        "id": 348,
+        "filename": "00348_superimposition_high.png",
+        "class1": 43,
+        "class2": 20,
+        "composition_type": "superimposition",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 349,
+        "filename": "00349_superimposition_low.png",
+        "class1": 43,
+        "class2": 20,
+        "composition_type": "superimposition",
+        "salience": "low",
+        "split": "val"
+    },
+    {
+        "id": 350,
+        "filename": "00350_texture_shape_high.png",
+        "class1": 43,
+        "class2": 20,
+        "composition_type": "texture_shape",
+        "salience": "high",
+        "split": "test"
+    },
+    {
+        "id": 351,
+        "filename": "00351_texture_shape_low.png",
+        "class1": 43,
+        "class2": 20,
+        "composition_type": "texture_shape",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 352,
+        "filename": "00352_adain_high.png",
+        "class1": 44,
+        "class2": 41,
+        "composition_type": "adain",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 353,
+        "filename": "00353_adain_low.png",
+        "class1": 44,
+        "class2": 41,
+        "composition_type": "adain",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 354,
+        "filename": "00354_occlusion_high.png",
+        "class1": 44,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "high",
+        "split": "test"
+    },
+    {
+        "id": 355,
+        "filename": "00355_occlusion_low.png",
+        "class1": 44,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "low",
+        "split": "test"
+    },
+    {
+        "id": 356,
+        "filename": "00356_superimposition_high.png",
+        "class1": 44,
+        "class2": 41,
+        "composition_type": "superimposition",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 357,
+        "filename": "00357_superimposition_low.png",
+        "class1": 44,
+        "class2": 41,
+        "composition_type": "superimposition",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 358,
+        "filename": "00358_texture_shape_high.png",
+        "class1": 44,
+        "class2": 41,
+        "composition_type": "texture_shape",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 359,
+        "filename": "00359_texture_shape_low.png",
+        "class1": 44,
+        "class2": 41,
+        "composition_type": "texture_shape",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 360,
+        "filename": "00360_adain_high.png",
+        "class1": 45,
+        "class2": 40,
+        "composition_type": "adain",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 361,
+        "filename": "00361_adain_low.png",
+        "class1": 45,
+        "class2": 40,
+        "composition_type": "adain",
+        "salience": "low",
+        "split": "val"
+    },
+    {
+        "id": 362,
+        "filename": "00362_occlusion_high.png",
+        "class1": 45,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 363,
+        "filename": "00363_occlusion_low.png",
+        "class1": 45,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 364,
+        "filename": "00364_superimposition_high.png",
+        "class1": 45,
+        "class2": 40,
+        "composition_type": "superimposition",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 365,
+        "filename": "00365_superimposition_low.png",
+        "class1": 45,
+        "class2": 40,
+        "composition_type": "superimposition",
+        "salience": "low",
+        "split": "val"
+    },
+    {
+        "id": 366,
+        "filename": "00366_texture_shape_high.png",
+        "class1": 45,
+        "class2": 40,
+        "composition_type": "texture_shape",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 367,
+        "filename": "00367_texture_shape_low.png",
+        "class1": 45,
+        "class2": 40,
+        "composition_type": "texture_shape",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 368,
+        "filename": "00368_adain_high.png",
+        "class1": 46,
+        "class2": 11,
+        "composition_type": "adain",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 369,
+        "filename": "00369_adain_low.png",
+        "class1": 46,
+        "class2": 11,
+        "composition_type": "adain",
+        "salience": "low",
+        "split": "test"
+    },
+    {
+        "id": 370,
+        "filename": "00370_occlusion_high.png",
+        "class1": 46,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 371,
+        "filename": "00371_occlusion_low.png",
+        "class1": 46,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 372,
+        "filename": "00372_superimposition_high.png",
+        "class1": 46,
+        "class2": 11,
+        "composition_type": "superimposition",
+        "salience": "high",
+        "split": "test"
+    },
+    {
+        "id": 373,
+        "filename": "00373_superimposition_low.png",
+        "class1": 46,
+        "class2": 11,
+        "composition_type": "superimposition",
+        "salience": "low",
+        "split": "test"
+    },
+    {
+        "id": 374,
+        "filename": "00374_texture_shape_high.png",
+        "class1": 46,
+        "class2": 11,
+        "composition_type": "texture_shape",
+        "salience": "high",
+        "split": "test"
+    },
+    {
+        "id": 375,
+        "filename": "00375_texture_shape_low.png",
+        "class1": 46,
+        "class2": 11,
+        "composition_type": "texture_shape",
+        "salience": "low",
+        "split": "test"
+    },
+    {
+        "id": 376,
+        "filename": "00376_adain_high.png",
+        "class1": 47,
+        "class2": 31,
+        "composition_type": "adain",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 377,
+        "filename": "00377_adain_low.png",
+        "class1": 47,
+        "class2": 31,
+        "composition_type": "adain",
+        "salience": "low",
+        "split": "val"
+    },
+    {
+        "id": 378,
+        "filename": "00378_occlusion_high.png",
+        "class1": 47,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 379,
+        "filename": "00379_occlusion_low.png",
+        "class1": 47,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 380,
+        "filename": "00380_superimposition_high.png",
+        "class1": 47,
+        "class2": 31,
+        "composition_type": "superimposition",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 381,
+        "filename": "00381_superimposition_low.png",
+        "class1": 47,
+        "class2": 31,
+        "composition_type": "superimposition",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 382,
+        "filename": "00382_texture_shape_high.png",
+        "class1": 47,
+        "class2": 31,
+        "composition_type": "texture_shape",
+        "salience": "high",
+        "split": "test"
+    },
+    {
+        "id": 383,
+        "filename": "00383_texture_shape_low.png",
+        "class1": 47,
+        "class2": 31,
+        "composition_type": "texture_shape",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 384,
+        "filename": "00384_adain_high.png",
+        "class1": 48,
+        "class2": 39,
+        "composition_type": "adain",
+        "salience": "high",
+        "split": "test"
+    },
+    {
+        "id": 385,
+        "filename": "00385_adain_low.png",
+        "class1": 48,
+        "class2": 39,
+        "composition_type": "adain",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 386,
+        "filename": "00386_occlusion_high.png",
+        "class1": 48,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "high",
+        "split": "val"
+    },
+    {
+        "id": 387,
+        "filename": "00387_occlusion_low.png",
+        "class1": 48,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 388,
+        "filename": "00388_superimposition_high.png",
+        "class1": 48,
+        "class2": 39,
+        "composition_type": "superimposition",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 389,
+        "filename": "00389_superimposition_low.png",
+        "class1": 48,
+        "class2": 39,
+        "composition_type": "superimposition",
+        "salience": "low",
+        "split": "val"
+    },
+    {
+        "id": 390,
+        "filename": "00390_texture_shape_high.png",
+        "class1": 48,
+        "class2": 39,
+        "composition_type": "texture_shape",
+        "salience": "high",
+        "split": "val"
+    },
+    {
+        "id": 391,
+        "filename": "00391_texture_shape_low.png",
+        "class1": 48,
+        "class2": 39,
+        "composition_type": "texture_shape",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 392,
+        "filename": "00392_adain_high.png",
+        "class1": 49,
+        "class2": 38,
+        "composition_type": "adain",
+        "salience": "high",
+        "split": "val"
+    },
+    {
+        "id": 393,
+        "filename": "00393_adain_low.png",
+        "class1": 49,
+        "class2": 38,
+        "composition_type": "adain",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 394,
+        "filename": "00394_occlusion_high.png",
+        "class1": 49,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "high",
+        "split": "test"
+    },
+    {
+        "id": 395,
+        "filename": "00395_occlusion_low.png",
+        "class1": 49,
+        "class2": null,
+        "composition_type": "occlusion",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 396,
+        "filename": "00396_superimposition_high.png",
+        "class1": 49,
+        "class2": 38,
+        "composition_type": "superimposition",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 397,
+        "filename": "00397_superimposition_low.png",
+        "class1": 49,
+        "class2": 38,
+        "composition_type": "superimposition",
+        "salience": "low",
+        "split": "train"
+    },
+    {
+        "id": 398,
+        "filename": "00398_texture_shape_high.png",
+        "class1": 49,
+        "class2": 38,
+        "composition_type": "texture_shape",
+        "salience": "high",
+        "split": "train"
+    },
+    {
+        "id": 399,
+        "filename": "00399_texture_shape_low.png",
+        "class1": 49,
+        "class2": 38,
+        "composition_type": "texture_shape",
+        "salience": "low",
+        "split": "train"
+    }
+]
