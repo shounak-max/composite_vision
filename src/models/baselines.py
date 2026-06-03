@@ -12,9 +12,11 @@ import pandas as pd
 from tqdm import tqdm
 
 class CompositeDataset(Dataset):
-    def __init__(self, metadata_path, images_dir, transform=None):
+    def __init__(self, metadata_path, images_dir, transform=None, split=None):
         with open(metadata_path, 'r') as f:
             self.metadata = json.load(f)
+        if split:
+            self.metadata = [item for item in self.metadata if item.get('split') == split]
         self.images_dir = images_dir
         self.transform = transform
 
@@ -62,11 +64,13 @@ def evaluate_models(metadata_path, images_dir, output_dir):
         transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
     ])
     
-    dataset = CompositeDataset(metadata_path, images_dir, transform=standard_transform)
+    dataset = CompositeDataset(metadata_path, images_dir, transform=standard_transform, split="test")
     dataloader = DataLoader(dataset, batch_size=16, shuffle=False)
     
     clip_tokenizer = open_clip.get_tokenizer('ViT-B-32')
-    imagenet_classes = [f"a photo of class {i}" for i in range(1000)]
+    classes_path = os.path.join(os.path.dirname(__file__), 'imagenet_classes.txt')
+    with open(classes_path, 'r') as f:
+        imagenet_classes = [f"a photo of a {line.strip()}" for line in f.readlines()]
     text = clip_tokenizer(imagenet_classes).to(device)
     with torch.no_grad():
         text_features = models['CLIP'].encode_text(text)

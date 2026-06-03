@@ -13,8 +13,8 @@ def compute_error_consistency(df):
     consistency_matrix = pd.DataFrame(index=models, columns=models)
     for m1 in models:
         for m2 in models:
-            preds1 = df[df['model'] == m1].sort_values('filename')['is_correct'].values
-            preds2 = df[df['model'] == m2].sort_values('filename')['is_correct'].values
+            preds1 = df[df['model'] == m1].sort_values('filename')['top1_pred'].values
+            preds2 = df[df['model'] == m2].sort_values('filename')['top1_pred'].values
             agreement = np.mean(preds1 == preds2)
             consistency_matrix.loc[m1, m2] = agreement
             
@@ -25,8 +25,8 @@ def compute_error_consistency(df):
         agreements = []
         for i, m1 in enumerate(models):
             for m2 in models[i+1:]:
-                p1 = df_comp[df_comp['model'] == m1].sort_values('filename')['is_correct'].values
-                p2 = df_comp[df_comp['model'] == m2].sort_values('filename')['is_correct'].values
+                p1 = df_comp[df_comp['model'] == m1].sort_values('filename')['top1_pred'].values
+                p2 = df_comp[df_comp['model'] == m2].sort_values('filename')['top1_pred'].values
                 agreements.append(np.mean(p1 == p2))
         comp_consistency[comp] = np.mean(agreements) if agreements else 0.0
         
@@ -37,8 +37,8 @@ def compute_error_consistency(df):
         agreements = []
         for i, m1 in enumerate(models):
             for m2 in models[i+1:]:
-                p1 = df_sal[df_sal['model'] == m1].sort_values('filename')['is_correct'].values
-                p2 = df_sal[df_sal['model'] == m2].sort_values('filename')['is_correct'].values
+                p1 = df_sal[df_sal['model'] == m1].sort_values('filename')['top1_pred'].values
+                p2 = df_sal[df_sal['model'] == m2].sort_values('filename')['top1_pred'].values
                 agreements.append(np.mean(p1 == p2))
         sal_consistency[sal] = np.mean(agreements) if agreements else 0.0
 

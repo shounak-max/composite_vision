@@ -1,0 +1,4184 @@
+[
+    {
+        "filename": "00001_adain_low.png",
+        "class1": 0,
+        "class2": 491,
+        "composition_type": "adain",
+        "salience": "low",
+        "model": "ResNet50",
+        "top1_pred": 0,
+        "top1_conf": 0.8851655721664429,
+        "top5_preds": [
+            0,
+            391,
+            758,
+            389,
+            394
+        ]
+    },
+    {
+        "filename": "00003_occlusion_low.png",
+        "class1": 0,
+        "class2": -1,
+        "composition_type": "occlusion",
+        "salience": "low",
+        "model": "ResNet50",
+        "top1_pred": 0,
+        "top1_conf": 0.7310652136802673,
+        "top5_preds": [
+            0,
+            389,
+            391,
+            394,
+            851
+        ]
+    },
+    {
+        "filename": "00006_texture_shape_high.png",
+        "class1": 0,
+        "class2": 491,
+        "composition_type": "texture_shape",
+        "salience": "high",
+        "model": "ResNet50",
+        "top1_pred": 0,
+        "top1_conf": 0.9216164350509644,
+        "top5_preds": [
+            0,
+            389,
+            391,
+            395,
+            394
+        ]
+    },
+    {
+        "filename": "00009_adain_low.png",
+        "class1": 0,
+        "class2": 569,
+        "composition_type": "adain",
+        "salience": "low",
+        "model": "ResNet50",
+        "top1_pred": 0,
+        "top1_conf": 0.936476469039917,
+        "top5_preds": [
+            0,
+            389,
+            394,
+            395,
+            912
+        ]
+    },
+    {
+        "filename": "00012_superimposition_high.png",
+        "class1": 0,
+        "class2": 569,
+        "composition_type": "superimposition",
+        "salience": "high",
+        "model": "ResNet50",
+        "top1_pred": 0,
+        "top1_conf": 0.12804803252220154,
+        "top5_preds": [
+            0,
+            389,
+            830,
+            672,
+            807
+        ]
+    },
+    {
+        "filename": "00014_texture_shape_high.png",
+        "class1": 0,
+        "class2": 569,
+        "composition_type": "texture_shape",
+        "salience": "high",
+        "model": "ResNet50",
+        "top1_pred": 0,
+        "top1_conf": 0.469987690448761,
+        "top5_preds": [
+            0,
+            997,
+            36,
+            825,
+            35
+        ]
+    },
+    {
+        "filename": "00015_texture_shape_low.png",
+        "class1": 0,
+        "class2": 569,
+        "composition_type": "texture_shape",
+        "salience": "low",
+        "model": "ResNet50",
+        "top1_pred": 825,
+        "top1_conf": 0.9549878835678101,
+        "top5_preds": [
+            825,
+            730,
+            460,
+            858,
+            944
+        ]
+    },
+    {
+        "filename": "00020_superimposition_high.png",
+        "class1": 217,
+        "class2": 482,
+        "composition_type": "superimposition",
+        "salience": "high",
+        "model": "ResNet50",
+        "top1_pred": 257,
+        "top1_conf": 0.17709647119045258,
+        "top5_preds": [
+            257,
+            216,
+            170,
+            218,
+            176
+        ]
+    },
+    {
+        "filename": "00021_superimposition_low.png",
+        "class1": 217,
+        "class2": 482,
+        "composition_type": "superimposition",
+        "salience": "low",
+        "model": "ResNet50",
+        "top1_pred": 575,
+        "top1_conf": 0.17476584017276764,
+        "top5_preds": [
+            575,
+            408,
+            866,
+            586,
+            621
+        ]
+    },
+    {
+        "filename": "00025_adain_low.png",
+        "class1": 217,
+        "class2": 571,
+        "composition_type": "adain",
+        "salience": "low",
+        "model": "ResNet50",
+        "top1_pred": 215,
+        "top1_conf": 0.4510945677757263,
+        "top5_preds": [
+            215,
+            210,
+            217,
+            220,
+            218
+        ]
+    },
+    {
+        "filename": "00033_adain_low.png",
+        "class1": 482,
+        "class2": 217,
+        "composition_type": "adain",
+        "salience": "low",
+        "model": "ResNet50",
+        "top1_pred": 626,
+        "top1_conf": 0.28189608454704285,
+        "top5_preds": [
+            626,
+            593,
+            487,
+            632,
+            844
+        ]
+    },
+    {
+        "filename": "00034_occlusion_high.png",
+        "class1": 482,
+        "class2": -1,
+        "composition_type": "occlusion",
+        "salience": "high",
+        "model": "ResNet50",
+        "top1_pred": 918,
+        "top1_conf": 0.2172633707523346,
+        "top5_preds": [
+            918,
+            646,
+            599,
+            972,
+            919
+        ]
+    },
+    {
+        "filename": "00039_texture_shape_low.png",
+        "class1": 482,
+        "class2": 217,
+        "composition_type": "texture_shape",
+        "salience": "low",
+        "model": "ResNet50",
+        "top1_pred": 392,
+        "top1_conf": 0.12755993008613586,
+        "top5_preds": [
+            392,
+            973,
+            824,
+            741,
+            361
+        ]
+    },
+    {
+        "filename": "00042_occlusion_high.png",
+        "class1": 482,
+        "class2": -1,
+        "composition_type": "occlusion",
+        "salience": "high",
+        "model": "ResNet50",
+        "top1_pred": 598,
+        "top1_conf": 0.4517783224582672,
+        "top5_preds": [
+            598,
+            548,
+            632,
+            851,
+            599
+        ]
+    },
+    {
+        "filename": "00043_occlusion_low.png",
+        "class1": 482,
+        "class2": -1,
+        "composition_type": "occlusion",
+        "salience": "low",
+        "model": "ResNet50",
+        "top1_pred": 848,
+        "top1_conf": 0.2870738208293915,
+        "top5_preds": [
+            848,
+            548,
+            598,
+            482,
+            485
+        ]
+    },
+    {
+        "filename": "00045_superimposition_low.png",
+        "class1": 482,
+        "class2": 491,
+        "composition_type": "superimposition",
+        "salience": "low",
+        "model": "ResNet50",
+        "top1_pred": 595,
+        "top1_conf": 0.7055624723434448,
+        "top5_preds": [
+            595,
+            856,
+            634,
+            491,
+            730
+        ]
+    },
+    {
+        "filename": "00001_adain_low.png",
+        "class1": 0,
+        "class2": 491,
+        "composition_type": "adain",
+        "salience": "low",
+        "model": "ResNet101",
+        "top1_pred": 0,
+        "top1_conf": 0.9794310927391052,
+        "top5_preds": [
+            0,
+            391,
+            389,
+            394,
+            395
+        ]
+    },
+    {
+        "filename": "00003_occlusion_low.png",
+        "class1": 0,
+        "class2": -1,
+        "composition_type": "occlusion",
+        "salience": "low",
+        "model": "ResNet101",
+        "top1_pred": 0,
+        "top1_conf": 0.5067753791809082,
+        "top5_preds": [
+            0,
+            851,
+            598,
+            389,
+            739
+        ]
+    },
+    {
+        "filename": "00006_texture_shape_high.png",
+        "class1": 0,
+        "class2": 491,
+        "composition_type": "texture_shape",
+        "salience": "high",
+        "model": "ResNet101",
+        "top1_pred": 0,
+        "top1_conf": 0.9785109758377075,
+        "top5_preds": [
+            0,
+            389,
+            391,
+            122,
+            394
+        ]
+    },
+    {
+        "filename": "00009_adain_low.png",
+        "class1": 0,
+        "class2": 569,
+        "composition_type": "adain",
+        "salience": "low",
+        "model": "ResNet101",
+        "top1_pred": 0,
+        "top1_conf": 0.9088761806488037,
+        "top5_preds": [
+            0,
+            389,
+            34,
+            394,
+            998
+        ]
+    },
+    {
+        "filename": "00012_superimposition_high.png",
+        "class1": 0,
+        "class2": 569,
+        "composition_type": "superimposition",
+        "salience": "high",
+        "model": "ResNet101",
+        "top1_pred": 0,
+        "top1_conf": 0.3473365604877472,
+        "top5_preds": [
+            0,
+            807,
+            672,
+            389,
+            34
+        ]
+    },
+    {
+        "filename": "00014_texture_shape_high.png",
+        "class1": 0,
+        "class2": 569,
+        "composition_type": "texture_shape",
+        "salience": "high",
+        "model": "ResNet101",
+        "top1_pred": 0,
+        "top1_conf": 0.7198105454444885,
+        "top5_preds": [
+            0,
+            34,
+            389,
+            394,
+            33
+        ]
+    },
+    {
+        "filename": "00015_texture_shape_low.png",
+        "class1": 0,
+        "class2": 569,
+        "composition_type": "texture_shape",
+        "salience": "low",
+        "model": "ResNet101",
+        "top1_pred": 825,
+        "top1_conf": 0.5355120897293091,
+        "top5_preds": [
+            825,
+            611,
+            944,
+            972,
+            116
+        ]
+    },
+    {
+        "filename": "00020_superimposition_high.png",
+        "class1": 217,
+        "class2": 482,
+        "composition_type": "superimposition",
+        "salience": "high",
+        "model": "ResNet101",
+        "top1_pred": 198,
+        "top1_conf": 0.5927689075469971,
+        "top5_preds": [
+            198,
+            176,
+            170,
+            249,
+            188
+        ]
+    },
+    {
+        "filename": "00021_superimposition_low.png",
+        "class1": 217,
+        "class2": 482,
+        "composition_type": "superimposition",
+        "salience": "low",
+        "model": "ResNet101",
+        "top1_pred": 836,
+        "top1_conf": 0.12237705290317535,
+        "top5_preds": [
+            836,
+            482,
+            551,
+            848,
+            901
+        ]
+    },
+    {
+        "filename": "00025_adain_low.png",
+        "class1": 217,
+        "class2": 571,
+        "composition_type": "adain",
+        "salience": "low",
+        "model": "ResNet101",
+        "top1_pred": 217,
+        "top1_conf": 0.5996882319450378,
+        "top5_preds": [
+            217,
+            215,
+            210,
+            220,
+            218
+        ]
+    },
+    {
+        "filename": "00033_adain_low.png",
+        "class1": 482,
+        "class2": 217,
+        "composition_type": "adain",
+        "salience": "low",
+        "model": "ResNet101",
+        "top1_pred": 482,
+        "top1_conf": 0.3665069043636322,
+        "top5_preds": [
+            482,
+            848,
+            487,
+            826,
+            632
+        ]
+    },
+    {
+        "filename": "00034_occlusion_high.png",
+        "class1": 482,
+        "class2": -1,
+        "composition_type": "occlusion",
+        "salience": "high",
+        "model": "ResNet101",
+        "top1_pred": 500,
+        "top1_conf": 0.8270753026008606,
+        "top5_preds": [
+            500,
+            902,
+            972,
+            599,
+            632
+        ]
+    },
+    {
+        "filename": "00039_texture_shape_low.png",
+        "class1": 482,
+        "class2": 217,
+        "composition_type": "texture_shape",
+        "salience": "low",
+        "model": "ResNet101",
+        "top1_pred": 973,
+        "top1_conf": 0.038374196738004684,
+        "top5_preds": [
+            973,
+            295,
+            5,
+            116,
+            392
+        ]
+    },
+    {
+        "filename": "00042_occlusion_high.png",
+        "class1": 482,
+        "class2": -1,
+        "composition_type": "occlusion",
+        "salience": "high",
+        "model": "ResNet101",
+        "top1_pred": 548,
+        "top1_conf": 0.32132548093795776,
+        "top5_preds": [
+            548,
+            598,
+            632,
+            848,
+            482
+        ]
+    },
+    {
+        "filename": "00043_occlusion_low.png",
+        "class1": 482,
+        "class2": -1,
+        "composition_type": "occlusion",
+        "salience": "low",
+        "model": "ResNet101",
+        "top1_pred": 848,
+        "top1_conf": 0.3863934576511383,
+        "top5_preds": [
+            848,
+            482,
+            548,
+            598,
+            632
+        ]
+    },
+    {
+        "filename": "00045_superimposition_low.png",
+        "class1": 482,
+        "class2": 491,
+        "composition_type": "superimposition",
+        "salience": "low",
+        "model": "ResNet101",
+        "top1_pred": 856,
+        "top1_conf": 0.3785408139228821,
+        "top5_preds": [
+            856,
+            634,
+            491,
+            595,
+            517
+        ]
+    },
+    {
+        "filename": "00001_adain_low.png",
+        "class1": 0,
+        "class2": 491,
+        "composition_type": "adain",
+        "salience": "low",
+        "model": "ConvNeXt",
+        "top1_pred": 0,
+        "top1_conf": 0.7556484937667847,
+        "top5_preds": [
+            0,
+            389,
+            621,
+            758,
+            975
+        ]
+    },
+    {
+        "filename": "00003_occlusion_low.png",
+        "class1": 0,
+        "class2": -1,
+        "composition_type": "occlusion",
+        "salience": "low",
+        "model": "ConvNeXt",
+        "top1_pred": 0,
+        "top1_conf": 0.7762142419815063,
+        "top5_preds": [
+            0,
+            389,
+            621,
+            975,
+            758
+        ]
+    },
+    {
+        "filename": "00006_texture_shape_high.png",
+        "class1": 0,
+        "class2": 491,
+        "composition_type": "texture_shape",
+        "salience": "high",
+        "model": "ConvNeXt",
+        "top1_pred": 0,
+        "top1_conf": 0.5428264737129211,
+        "top5_preds": [
+            0,
+            389,
+            621,
+            758,
+            975
+        ]
+    },
+    {
+        "filename": "00009_adain_low.png",
+        "class1": 0,
+        "class2": 569,
+        "composition_type": "adain",
+        "salience": "low",
+        "model": "ConvNeXt",
+        "top1_pred": 0,
+        "top1_conf": 0.5525527000427246,
+        "top5_preds": [
+            0,
+            389,
+            630,
+            575,
+            758
+        ]
+    },
+    {
+        "filename": "00012_superimposition_high.png",
+        "class1": 0,
+        "class2": 569,
+        "composition_type": "superimposition",
+        "salience": "high",
+        "model": "ConvNeXt",
+        "top1_pred": 0,
+        "top1_conf": 0.31881627440452576,
+        "top5_preds": [
+            0,
+            678,
+            665,
+            477,
+            466
+        ]
+    },
+    {
+        "filename": "00014_texture_shape_high.png",
+        "class1": 0,
+        "class2": 569,
+        "composition_type": "texture_shape",
+        "salience": "high",
+        "model": "ConvNeXt",
+        "top1_pred": 0,
+        "top1_conf": 0.37232276797294617,
+        "top5_preds": [
+            0,
+            389,
+            206,
+            165,
+            34
+        ]
+    },
+    {
+        "filename": "00015_texture_shape_low.png",
+        "class1": 0,
+        "class2": 569,
+        "composition_type": "texture_shape",
+        "salience": "low",
+        "model": "ConvNeXt",
+        "top1_pred": 825,
+        "top1_conf": 0.014395107515156269,
+        "top5_preds": [
+            825,
+            5,
+            735,
+            178,
+            944
+        ]
+    },
+    {
+        "filename": "00020_superimposition_high.png",
+        "class1": 217,
+        "class2": 482,
+        "composition_type": "superimposition",
+        "salience": "high",
+        "model": "ConvNeXt",
+        "top1_pred": 169,
+        "top1_conf": 0.19869530200958252,
+        "top5_preds": [
+            169,
+            216,
+            160,
+            257,
+            176
+        ]
+    },
+    {
+        "filename": "00021_superimposition_low.png",
+        "class1": 217,
+        "class2": 482,
+        "composition_type": "superimposition",
+        "salience": "low",
+        "model": "ConvNeXt",
+        "top1_pred": 482,
+        "top1_conf": 0.25878283381462097,
+        "top5_preds": [
+            482,
+            848,
+            101,
+            176,
+            169
+        ]
+    },
+    {
+        "filename": "00025_adain_low.png",
+        "class1": 217,
+        "class2": 571,
+        "composition_type": "adain",
+        "salience": "low",
+        "model": "ConvNeXt",
+        "top1_pred": 217,
+        "top1_conf": 0.3684607148170471,
+        "top5_preds": [
+            217,
+            215,
+            218,
+            210,
+            220
+        ]
+    },
+    {
+        "filename": "00033_adain_low.png",
+        "class1": 482,
+        "class2": 217,
+        "composition_type": "adain",
+        "salience": "low",
+        "model": "ConvNeXt",
+        "top1_pred": 482,
+        "top1_conf": 0.16538459062576294,
+        "top5_preds": [
+            482,
+            848,
+            481,
+            972,
+            485
+        ]
+    },
+    {
+        "filename": "00034_occlusion_high.png",
+        "class1": 482,
+        "class2": -1,
+        "composition_type": "occlusion",
+        "salience": "high",
+        "model": "ConvNeXt",
+        "top1_pred": 482,
+        "top1_conf": 0.1607964187860489,
+        "top5_preds": [
+            482,
+            848,
+            972,
+            481,
+            485
+        ]
+    },
+    {
+        "filename": "00039_texture_shape_low.png",
+        "class1": 482,
+        "class2": 217,
+        "composition_type": "texture_shape",
+        "salience": "low",
+        "model": "ConvNeXt",
+        "top1_pred": 210,
+        "top1_conf": 0.016614314168691635,
+        "top5_preds": [
+            210,
+            227,
+            174,
+            494,
+            215
+        ]
+    },
+    {
+        "filename": "00042_occlusion_high.png",
+        "class1": 482,
+        "class2": -1,
+        "composition_type": "occlusion",
+        "salience": "high",
+        "model": "ConvNeXt",
+        "top1_pred": 848,
+        "top1_conf": 0.22860372066497803,
+        "top5_preds": [
+            848,
+            482,
+            481,
+            598,
+            548
+        ]
+    },
+    {
+        "filename": "00043_occlusion_low.png",
+        "class1": 482,
+        "class2": -1,
+        "composition_type": "occlusion",
+        "salience": "low",
+        "model": "ConvNeXt",
+        "top1_pred": 482,
+        "top1_conf": 0.35183459520339966,
+        "top5_preds": [
+            482,
+            848,
+            481,
+            598,
+            632
+        ]
+    },
+    {
+        "filename": "00045_superimposition_low.png",
+        "class1": 482,
+        "class2": 491,
+        "composition_type": "superimposition",
+        "salience": "low",
+        "model": "ConvNeXt",
+        "top1_pred": 856,
+        "top1_conf": 0.3292888104915619,
+        "top5_preds": [
+            856,
+            595,
+            958,
+            844,
+            621
+        ]
+    },
+    {
+        "filename": "00001_adain_low.png",
+        "class1": 0,
+        "class2": 491,
+        "composition_type": "adain",
+        "salience": "low",
+        "model": "ViT-B/16",
+        "top1_pred": 0,
+        "top1_conf": 0.9111104011535645,
+        "top5_preds": [
+            0,
+            389,
+            226,
+            395,
+            323
+        ]
+    },
+    {
+        "filename": "00003_occlusion_low.png",
+        "class1": 0,
+        "class2": -1,
+        "composition_type": "occlusion",
+        "salience": "low",
+        "model": "ViT-B/16",
+        "top1_pred": 0,
+        "top1_conf": 0.9046995043754578,
+        "top5_preds": [
+            0,
+            389,
+            226,
+            395,
+            621
+        ]
+    },
+    {
+        "filename": "00006_texture_shape_high.png",
+        "class1": 0,
+        "class2": 491,
+        "composition_type": "texture_shape",
+        "salience": "high",
+        "model": "ViT-B/16",
+        "top1_pred": 0,
+        "top1_conf": 0.8373222351074219,
+        "top5_preds": [
+            0,
+            389,
+            493,
+            395,
+            1
+        ]
+    },
+    {
+        "filename": "00009_adain_low.png",
+        "class1": 0,
+        "class2": 569,
+        "composition_type": "adain",
+        "salience": "low",
+        "model": "ViT-B/16",
+        "top1_pred": 0,
+        "top1_conf": 0.8524357676506042,
+        "top5_preds": [
+            0,
+            998,
+            987,
+            940,
+            785
+        ]
+    },
+    {
+        "filename": "00012_superimposition_high.png",
+        "class1": 0,
+        "class2": 569,
+        "composition_type": "superimposition",
+        "salience": "high",
+        "model": "ViT-B/16",
+        "top1_pred": 0,
+        "top1_conf": 0.6881383061408997,
+        "top5_preds": [
+            0,
+            830,
+            389,
+            477,
+            456
+        ]
+    },
+    {
+        "filename": "00014_texture_shape_high.png",
+        "class1": 0,
+        "class2": 569,
+        "composition_type": "texture_shape",
+        "salience": "high",
+        "model": "ViT-B/16",
+        "top1_pred": 0,
+        "top1_conf": 0.7406908273696899,
+        "top5_preds": [
+            0,
+            389,
+            490,
+            676,
+            785
+        ]
+    },
+    {
+        "filename": "00015_texture_shape_low.png",
+        "class1": 0,
+        "class2": 569,
+        "composition_type": "texture_shape",
+        "salience": "low",
+        "model": "ViT-B/16",
+        "top1_pred": 652,
+        "top1_conf": 0.09216523915529251,
+        "top5_preds": [
+            652,
+            413,
+            54,
+            764,
+            67
+        ]
+    },
+    {
+        "filename": "00020_superimposition_high.png",
+        "class1": 217,
+        "class2": 482,
+        "composition_type": "superimposition",
+        "salience": "high",
+        "model": "ViT-B/16",
+        "top1_pred": 217,
+        "top1_conf": 0.4102686941623688,
+        "top5_preds": [
+            217,
+            176,
+            210,
+            212,
+            169
+        ]
+    },
+    {
+        "filename": "00021_superimposition_low.png",
+        "class1": 217,
+        "class2": 482,
+        "composition_type": "superimposition",
+        "salience": "low",
+        "model": "ViT-B/16",
+        "top1_pred": 482,
+        "top1_conf": 0.3857472538948059,
+        "top5_preds": [
+            482,
+            485,
+            848,
+            216,
+            222
+        ]
+    },
+    {
+        "filename": "00025_adain_low.png",
+        "class1": 217,
+        "class2": 571,
+        "composition_type": "adain",
+        "salience": "low",
+        "model": "ViT-B/16",
+        "top1_pred": 210,
+        "top1_conf": 0.7406690716743469,
+        "top5_preds": [
+            210,
+            217,
+            215,
+            218,
+            188
+        ]
+    },
+    {
+        "filename": "00033_adain_low.png",
+        "class1": 482,
+        "class2": 217,
+        "composition_type": "adain",
+        "salience": "low",
+        "model": "ViT-B/16",
+        "top1_pred": 482,
+        "top1_conf": 0.2642580270767212,
+        "top5_preds": [
+            482,
+            848,
+            481,
+            632,
+            485
+        ]
+    },
+    {
+        "filename": "00034_occlusion_high.png",
+        "class1": 482,
+        "class2": -1,
+        "composition_type": "occlusion",
+        "salience": "high",
+        "model": "ViT-B/16",
+        "top1_pred": 482,
+        "top1_conf": 0.2006530612707138,
+        "top5_preds": [
+            482,
+            848,
+            481,
+            764,
+            487
+        ]
+    },
+    {
+        "filename": "00039_texture_shape_low.png",
+        "class1": 482,
+        "class2": 217,
+        "composition_type": "texture_shape",
+        "salience": "low",
+        "model": "ViT-B/16",
+        "top1_pred": 33,
+        "top1_conf": 0.04491298645734787,
+        "top5_preds": [
+            33,
+            34,
+            147,
+            149,
+            5
+        ]
+    },
+    {
+        "filename": "00042_occlusion_high.png",
+        "class1": 482,
+        "class2": -1,
+        "composition_type": "occlusion",
+        "salience": "high",
+        "model": "ViT-B/16",
+        "top1_pred": 848,
+        "top1_conf": 0.40775737166404724,
+        "top5_preds": [
+            848,
+            482,
+            481,
+            598,
+            548
+        ]
+    },
+    {
+        "filename": "00043_occlusion_low.png",
+        "class1": 482,
+        "class2": -1,
+        "composition_type": "occlusion",
+        "salience": "low",
+        "model": "ViT-B/16",
+        "top1_pred": 848,
+        "top1_conf": 0.4302266240119934,
+        "top5_preds": [
+            848,
+            482,
+            481,
+            598,
+            485
+        ]
+    },
+    {
+        "filename": "00045_superimposition_low.png",
+        "class1": 482,
+        "class2": 491,
+        "composition_type": "superimposition",
+        "salience": "low",
+        "model": "ViT-B/16",
+        "top1_pred": 856,
+        "top1_conf": 0.3643719553947449,
+        "top5_preds": [
+            856,
+            766,
+            595,
+            958,
+            651
+        ]
+    },
+    {
+        "filename": "00001_adain_low.png",
+        "class1": 0,
+        "class2": 491,
+        "composition_type": "adain",
+        "salience": "low",
+        "model": "DeiT",
+        "top1_pred": 0,
+        "top1_conf": 0.8530387878417969,
+        "top5_preds": [
+            0,
+            389,
+            391,
+            758,
+            395
+        ]
+    },
+    {
+        "filename": "00003_occlusion_low.png",
+        "class1": 0,
+        "class2": -1,
+        "composition_type": "occlusion",
+        "salience": "low",
+        "model": "DeiT",
+        "top1_pred": 0,
+        "top1_conf": 0.8655916452407837,
+        "top5_preds": [
+            0,
+            389,
+            391,
+            395,
+            394
+        ]
+    },
+    {
+        "filename": "00006_texture_shape_high.png",
+        "class1": 0,
+        "class2": 491,
+        "composition_type": "texture_shape",
+        "salience": "high",
+        "model": "DeiT",
+        "top1_pred": 0,
+        "top1_conf": 0.8336213231086731,
+        "top5_preds": [
+            0,
+            389,
+            391,
+            390,
+            395
+        ]
+    },
+    {
+        "filename": "00009_adain_low.png",
+        "class1": 0,
+        "class2": 569,
+        "composition_type": "adain",
+        "salience": "low",
+        "model": "DeiT",
+        "top1_pred": 0,
+        "top1_conf": 0.8244574666023254,
+        "top5_preds": [
+            0,
+            389,
+            998,
+            987,
+            382
+        ]
+    },
+    {
+        "filename": "00012_superimposition_high.png",
+        "class1": 0,
+        "class2": 569,
+        "composition_type": "superimposition",
+        "salience": "high",
+        "model": "DeiT",
+        "top1_pred": 0,
+        "top1_conf": 0.6423352956771851,
+        "top5_preds": [
+            0,
+            456,
+            594,
+            389,
+            569
+        ]
+    },
+    {
+        "filename": "00014_texture_shape_high.png",
+        "class1": 0,
+        "class2": 569,
+        "composition_type": "texture_shape",
+        "salience": "high",
+        "model": "DeiT",
+        "top1_pred": 0,
+        "top1_conf": 0.7867089509963989,
+        "top5_preds": [
+            0,
+            389,
+            396,
+            390,
+            955
+        ]
+    },
+    {
+        "filename": "00015_texture_shape_low.png",
+        "class1": 0,
+        "class2": 569,
+        "composition_type": "texture_shape",
+        "salience": "low",
+        "model": "DeiT",
+        "top1_pred": 652,
+        "top1_conf": 0.08549226075410843,
+        "top5_preds": [
+            652,
+            465,
+            419,
+            764,
+            796
+        ]
+    },
+    {
+        "filename": "00020_superimposition_high.png",
+        "class1": 217,
+        "class2": 482,
+        "composition_type": "superimposition",
+        "salience": "high",
+        "model": "DeiT",
+        "top1_pred": 170,
+        "top1_conf": 0.0960274338722229,
+        "top5_preds": [
+            170,
+            188,
+            198,
+            181,
+            257
+        ]
+    },
+    {
+        "filename": "00021_superimposition_low.png",
+        "class1": 217,
+        "class2": 482,
+        "composition_type": "superimposition",
+        "salience": "low",
+        "model": "DeiT",
+        "top1_pred": 482,
+        "top1_conf": 0.45183131098747253,
+        "top5_preds": [
+            482,
+            848,
+            485,
+            212,
+            169
+        ]
+    },
+    {
+        "filename": "00025_adain_low.png",
+        "class1": 217,
+        "class2": 571,
+        "composition_type": "adain",
+        "salience": "low",
+        "model": "DeiT",
+        "top1_pred": 210,
+        "top1_conf": 0.48078709840774536,
+        "top5_preds": [
+            210,
+            215,
+            217,
+            220,
+            218
+        ]
+    },
+    {
+        "filename": "00033_adain_low.png",
+        "class1": 482,
+        "class2": 217,
+        "composition_type": "adain",
+        "salience": "low",
+        "model": "DeiT",
+        "top1_pred": 482,
+        "top1_conf": 0.21682703495025635,
+        "top5_preds": [
+            482,
+            632,
+            848,
+            485,
+            972
+        ]
+    },
+    {
+        "filename": "00034_occlusion_high.png",
+        "class1": 482,
+        "class2": -1,
+        "composition_type": "occlusion",
+        "salience": "high",
+        "model": "DeiT",
+        "top1_pred": 972,
+        "top1_conf": 0.18088039755821228,
+        "top5_preds": [
+            972,
+            763,
+            764,
+            458,
+            413
+        ]
+    },
+    {
+        "filename": "00039_texture_shape_low.png",
+        "class1": 482,
+        "class2": 217,
+        "composition_type": "texture_shape",
+        "salience": "low",
+        "model": "DeiT",
+        "top1_pred": 494,
+        "top1_conf": 0.0427599735558033,
+        "top5_preds": [
+            494,
+            699,
+            233,
+            658,
+            591
+        ]
+    },
+    {
+        "filename": "00042_occlusion_high.png",
+        "class1": 482,
+        "class2": -1,
+        "composition_type": "occlusion",
+        "salience": "high",
+        "model": "DeiT",
+        "top1_pred": 848,
+        "top1_conf": 0.3729616105556488,
+        "top5_preds": [
+            848,
+            482,
+            481,
+            632,
+            598
+        ]
+    },
+    {
+        "filename": "00043_occlusion_low.png",
+        "class1": 482,
+        "class2": -1,
+        "composition_type": "occlusion",
+        "salience": "low",
+        "model": "DeiT",
+        "top1_pred": 482,
+        "top1_conf": 0.41026371717453003,
+        "top5_preds": [
+            482,
+            848,
+            481,
+            598,
+            548
+        ]
+    },
+    {
+        "filename": "00045_superimposition_low.png",
+        "class1": 482,
+        "class2": 491,
+        "composition_type": "superimposition",
+        "salience": "low",
+        "model": "DeiT",
+        "top1_pred": 856,
+        "top1_conf": 0.3235892355442047,
+        "top5_preds": [
+            856,
+            766,
+            634,
+            958,
+            491
+        ]
+    },
+    {
+        "filename": "00001_adain_low.png",
+        "class1": 0,
+        "class2": 491,
+        "composition_type": "adain",
+        "salience": "low",
+        "model": "CLIP",
+        "top1_pred": 391,
+        "top1_conf": 0.4216404855251312,
+        "top5_preds": [
+            391,
+            395,
+            0,
+            394,
+            693
+        ]
+    },
+    {
+        "filename": "00003_occlusion_low.png",
+        "class1": 0,
+        "class2": -1,
+        "composition_type": "occlusion",
+        "salience": "low",
+        "model": "CLIP",
+        "top1_pred": 0,
+        "top1_conf": 0.6754666566848755,
+        "top5_preds": [
+            0,
+            395,
+            391,
+            428,
+            394
+        ]
+    },
+    {
+        "filename": "00006_texture_shape_high.png",
+        "class1": 0,
+        "class2": 491,
+        "composition_type": "texture_shape",
+        "salience": "high",
+        "model": "CLIP",
+        "top1_pred": 0,
+        "top1_conf": 0.5608873963356018,
+        "top5_preds": [
+            0,
+            395,
+            391,
+            394,
+            26
+        ]
+    },
+    {
+        "filename": "00009_adain_low.png",
+        "class1": 0,
+        "class2": 569,
+        "composition_type": "adain",
+        "salience": "low",
+        "model": "CLIP",
+        "top1_pred": 0,
+        "top1_conf": 0.9949856996536255,
+        "top5_preds": [
+            0,
+            391,
+            394,
+            395,
+            658
+        ]
+    },
+    {
+        "filename": "00012_superimposition_high.png",
+        "class1": 0,
+        "class2": 569,
+        "composition_type": "superimposition",
+        "salience": "high",
+        "model": "CLIP",
+        "top1_pred": 669,
+        "top1_conf": 0.45112690329551697,
+        "top5_preds": [
+            669,
+            971,
+            636,
+            728,
+            0
+        ]
+    },
+    {
+        "filename": "00014_texture_shape_high.png",
+        "class1": 0,
+        "class2": 569,
+        "composition_type": "texture_shape",
+        "salience": "high",
+        "model": "CLIP",
+        "top1_pred": 394,
+        "top1_conf": 0.49425846338272095,
+        "top5_preds": [
+            394,
+            395,
+            0,
+            391,
+            714
+        ]
+    },
+    {
+        "filename": "00015_texture_shape_low.png",
+        "class1": 0,
+        "class2": 569,
+        "composition_type": "texture_shape",
+        "salience": "low",
+        "model": "CLIP",
+        "top1_pred": 392,
+        "top1_conf": 0.5417467951774597,
+        "top5_preds": [
+            392,
+            825,
+            972,
+            782,
+            60
+        ]
+    },
+    {
+        "filename": "00020_superimposition_high.png",
+        "class1": 217,
+        "class2": 482,
+        "composition_type": "superimposition",
+        "salience": "high",
+        "model": "CLIP",
+        "top1_pred": 166,
+        "top1_conf": 0.44690456986427307,
+        "top5_preds": [
+            166,
+            210,
+            172,
+            246,
+            167
+        ]
+    },
+    {
+        "filename": "00021_superimposition_low.png",
+        "class1": 217,
+        "class2": 482,
+        "composition_type": "superimposition",
+        "salience": "low",
+        "model": "CLIP",
+        "top1_pred": 621,
+        "top1_conf": 0.2055116593837738,
+        "top5_preds": [
+            621,
+            475,
+            428,
+            847,
+            787
+        ]
+    },
+    {
+        "filename": "00025_adain_low.png",
+        "class1": 217,
+        "class2": 571,
+        "composition_type": "adain",
+        "salience": "low",
+        "model": "CLIP",
+        "top1_pred": 215,
+        "top1_conf": 0.6755405068397522,
+        "top5_preds": [
+            215,
+            218,
+            156,
+            217,
+            161
+        ]
+    },
+    {
+        "filename": "00033_adain_low.png",
+        "class1": 482,
+        "class2": 217,
+        "composition_type": "adain",
+        "salience": "low",
+        "model": "CLIP",
+        "top1_pred": 482,
+        "top1_conf": 0.37086522579193115,
+        "top5_preds": [
+            482,
+            848,
+            481,
+            754,
+            485
+        ]
+    },
+    {
+        "filename": "00034_occlusion_high.png",
+        "class1": 482,
+        "class2": -1,
+        "composition_type": "occlusion",
+        "salience": "high",
+        "model": "CLIP",
+        "top1_pred": 759,
+        "top1_conf": 0.2812407314777374,
+        "top5_preds": [
+            759,
+            633,
+            666,
+            68,
+            764
+        ]
+    },
+    {
+        "filename": "00039_texture_shape_low.png",
+        "class1": 482,
+        "class2": 217,
+        "composition_type": "texture_shape",
+        "salience": "low",
+        "model": "CLIP",
+        "top1_pred": 782,
+        "top1_conf": 0.22288928925991058,
+        "top5_preds": [
+            782,
+            481,
+            759,
+            754,
+            447
+        ]
+    },
+    {
+        "filename": "00042_occlusion_high.png",
+        "class1": 482,
+        "class2": -1,
+        "composition_type": "occlusion",
+        "salience": "high",
+        "model": "CLIP",
+        "top1_pred": 848,
+        "top1_conf": 0.623718798160553,
+        "top5_preds": [
+            848,
+            482,
+            481,
+            732,
+            754
+        ]
+    },
+    {
+        "filename": "00043_occlusion_low.png",
+        "class1": 482,
+        "class2": -1,
+        "composition_type": "occlusion",
+        "salience": "low",
+        "model": "CLIP",
+        "top1_pred": 848,
+        "top1_conf": 0.5733821392059326,
+        "top5_preds": [
+            848,
+            713,
+            742,
+            482,
+            481
+        ]
+    },
+    {
+        "filename": "00045_superimposition_low.png",
+        "class1": 482,
+        "class2": 491,
+        "composition_type": "superimposition",
+        "salience": "low",
+        "model": "CLIP",
+        "top1_pred": 595,
+        "top1_conf": 0.6292524337768555,
+        "top5_preds": [
+            595,
+            856,
+            866,
+            958,
+            730
+        ]
+    },
+    {
+        "filename": "00048_adain_high.png",
+        "class1": 491,
+        "class2": 701,
+        "composition_type": "adain",
+        "salience": "high",
+        "model": "ResNet50",
+        "top1_pred": 491,
+        "top1_conf": 0.9897739291191101,
+        "top5_preds": [
+            491,
+            621,
+            573,
+            561,
+            802
+        ]
+    },
+    {
+        "filename": "00050_occlusion_high.png",
+        "class1": 491,
+        "class2": -1,
+        "composition_type": "occlusion",
+        "salience": "high",
+        "model": "ResNet50",
+        "top1_pred": 920,
+        "top1_conf": 0.2595130205154419,
+        "top5_preds": [
+            920,
+            410,
+            632,
+            807,
+            711
+        ]
+    },
+    {
+        "filename": "00055_texture_shape_low.png",
+        "class1": 491,
+        "class2": 701,
+        "composition_type": "texture_shape",
+        "salience": "low",
+        "model": "ResNet50",
+        "top1_pred": 802,
+        "top1_conf": 0.12444892525672913,
+        "top5_preds": [
+            802,
+            408,
+            450,
+            573,
+            830
+        ]
+    },
+    {
+        "filename": "00056_adain_high.png",
+        "class1": 491,
+        "class2": 571,
+        "composition_type": "adain",
+        "salience": "high",
+        "model": "ResNet50",
+        "top1_pred": 491,
+        "top1_conf": 0.9996834993362427,
+        "top5_preds": [
+            491,
+            208,
+            205,
+            803,
+            246
+        ]
+    },
+    {
+        "filename": "00059_occlusion_low.png",
+        "class1": 491,
+        "class2": -1,
+        "composition_type": "occlusion",
+        "salience": "low",
+        "model": "ResNet50",
+        "top1_pred": 491,
+        "top1_conf": 0.8264801502227783,
+        "top5_preds": [
+            491,
+            205,
+            208,
+            206,
+            224
+        ]
+    },
+    {
+        "filename": "00064_adain_high.png",
+        "class1": 497,
+        "class2": 482,
+        "composition_type": "adain",
+        "salience": "high",
+        "model": "ResNet50",
+        "top1_pred": 497,
+        "top1_conf": 0.896877110004425,
+        "top5_preds": [
+            497,
+            663,
+            442,
+            483,
+            698
+        ]
+    },
+    {
+        "filename": "00066_occlusion_high.png",
+        "class1": 497,
+        "class2": -1,
+        "composition_type": "occlusion",
+        "salience": "high",
+        "model": "ResNet50",
+        "top1_pred": 497,
+        "top1_conf": 0.7588144540786743,
+        "top5_preds": [
+            497,
+            483,
+            442,
+            663,
+            409
+        ]
+    },
+    {
+        "filename": "00068_superimposition_high.png",
+        "class1": 497,
+        "class2": 482,
+        "composition_type": "superimposition",
+        "salience": "high",
+        "model": "ResNet50",
+        "top1_pred": 497,
+        "top1_conf": 0.5501267910003662,
+        "top5_preds": [
+            497,
+            442,
+            406,
+            884,
+            663
+        ]
+    },
+    {
+        "filename": "00071_texture_shape_low.png",
+        "class1": 497,
+        "class2": 482,
+        "composition_type": "texture_shape",
+        "salience": "low",
+        "model": "ResNet50",
+        "top1_pred": 562,
+        "top1_conf": 0.3289930820465088,
+        "top5_preds": [
+            562,
+            698,
+            904,
+            497,
+            483
+        ]
+    },
+    {
+        "filename": "00072_adain_high.png",
+        "class1": 497,
+        "class2": 482,
+        "composition_type": "adain",
+        "salience": "high",
+        "model": "ResNet50",
+        "top1_pred": 483,
+        "top1_conf": 0.42964041233062744,
+        "top5_preds": [
+            483,
+            562,
+            525,
+            437,
+            884
+        ]
+    },
+    {
+        "filename": "00097_adain_low.png",
+        "class1": 569,
+        "class2": 482,
+        "composition_type": "adain",
+        "salience": "low",
+        "model": "ResNet50",
+        "top1_pred": 569,
+        "top1_conf": 0.9981315732002258,
+        "top5_preds": [
+            569,
+            867,
+            675,
+            819,
+            517
+        ]
+    },
+    {
+        "filename": "00108_superimposition_high.png",
+        "class1": 569,
+        "class2": 491,
+        "composition_type": "superimposition",
+        "salience": "high",
+        "model": "ResNet50",
+        "top1_pred": 569,
+        "top1_conf": 0.9415850043296814,
+        "top5_preds": [
+            569,
+            675,
+            867,
+            757,
+            864
+        ]
+    },
+    {
+        "filename": "00110_texture_shape_high.png",
+        "class1": 569,
+        "class2": 491,
+        "composition_type": "texture_shape",
+        "salience": "high",
+        "model": "ResNet50",
+        "top1_pred": 569,
+        "top1_conf": 0.9489660859107971,
+        "top5_preds": [
+            569,
+            675,
+            867,
+            517,
+            654
+        ]
+    },
+    {
+        "filename": "00112_adain_high.png",
+        "class1": 571,
+        "class2": 574,
+        "composition_type": "adain",
+        "salience": "high",
+        "model": "ResNet50",
+        "top1_pred": 571,
+        "top1_conf": 0.5893232226371765,
+        "top5_preds": [
+            571,
+            688,
+            754,
+            662,
+            848
+        ]
+    },
+    {
+        "filename": "00113_adain_low.png",
+        "class1": 571,
+        "class2": 574,
+        "composition_type": "adain",
+        "salience": "low",
+        "model": "ResNet50",
+        "top1_pred": 571,
+        "top1_conf": 0.9069027900695801,
+        "top5_preds": [
+            571,
+            688,
+            754,
+            848,
+            482
+        ]
+    },
+    {
+        "filename": "00117_superimposition_low.png",
+        "class1": 571,
+        "class2": 574,
+        "composition_type": "superimposition",
+        "salience": "low",
+        "model": "ResNet50",
+        "top1_pred": 574,
+        "top1_conf": 0.6784793734550476,
+        "top5_preds": [
+            574,
+            722,
+            522,
+            429,
+            890
+        ]
+    },
+    {
+        "filename": "00048_adain_high.png",
+        "class1": 491,
+        "class2": 701,
+        "composition_type": "adain",
+        "salience": "high",
+        "model": "ResNet101",
+        "top1_pred": 491,
+        "top1_conf": 0.9998764991760254,
+        "top5_preds": [
+            491,
+            621,
+            634,
+            802,
+            595
+        ]
+    },
+    {
+        "filename": "00050_occlusion_high.png",
+        "class1": 491,
+        "class2": -1,
+        "composition_type": "occlusion",
+        "salience": "high",
+        "model": "ResNet101",
+        "top1_pred": 632,
+        "top1_conf": 0.39241519570350647,
+        "top5_preds": [
+            632,
+            598,
+            634,
+            807,
+            664
+        ]
+    },
+    {
+        "filename": "00055_texture_shape_low.png",
+        "class1": 491,
+        "class2": 701,
+        "composition_type": "texture_shape",
+        "salience": "low",
+        "model": "ResNet101",
+        "top1_pred": 491,
+        "top1_conf": 0.44876745343208313,
+        "top5_preds": [
+            491,
+            802,
+            621,
+            882,
+            450
+        ]
+    },
+    {
+        "filename": "00056_adain_high.png",
+        "class1": 491,
+        "class2": 571,
+        "composition_type": "adain",
+        "salience": "high",
+        "model": "ResNet101",
+        "top1_pred": 491,
+        "top1_conf": 0.9999152421951294,
+        "top5_preds": [
+            491,
+            634,
+            205,
+            208,
+            537
+        ]
+    },
+    {
+        "filename": "00059_occlusion_low.png",
+        "class1": 491,
+        "class2": -1,
+        "composition_type": "occlusion",
+        "salience": "low",
+        "model": "ResNet101",
+        "top1_pred": 491,
+        "top1_conf": 0.7346516251564026,
+        "top5_preds": [
+            491,
+            244,
+            208,
+            256,
+            634
+        ]
+    },
+    {
+        "filename": "00064_adain_high.png",
+        "class1": 497,
+        "class2": 482,
+        "composition_type": "adain",
+        "salience": "high",
+        "model": "ResNet101",
+        "top1_pred": 497,
+        "top1_conf": 0.5955865383148193,
+        "top5_preds": [
+            497,
+            663,
+            442,
+            406,
+            698
+        ]
+    },
+    {
+        "filename": "00066_occlusion_high.png",
+        "class1": 497,
+        "class2": -1,
+        "composition_type": "occlusion",
+        "salience": "high",
+        "model": "ResNet101",
+        "top1_pred": 497,
+        "top1_conf": 0.7428852915763855,
+        "top5_preds": [
+            497,
+            663,
+            483,
+            442,
+            698
+        ]
+    },
+    {
+        "filename": "00068_superimposition_high.png",
+        "class1": 497,
+        "class2": 482,
+        "composition_type": "superimposition",
+        "salience": "high",
+        "model": "ResNet101",
+        "top1_pred": 497,
+        "top1_conf": 0.5121156573295593,
+        "top5_preds": [
+            497,
+            663,
+            483,
+            406,
+            698
+        ]
+    },
+    {
+        "filename": "00071_texture_shape_low.png",
+        "class1": 497,
+        "class2": 482,
+        "composition_type": "texture_shape",
+        "salience": "low",
+        "model": "ResNet101",
+        "top1_pred": 611,
+        "top1_conf": 0.5612005591392517,
+        "top5_preds": [
+            611,
+            904,
+            562,
+            497,
+            698
+        ]
+    },
+    {
+        "filename": "00072_adain_high.png",
+        "class1": 497,
+        "class2": 482,
+        "composition_type": "adain",
+        "salience": "high",
+        "model": "ResNet101",
+        "top1_pred": 483,
+        "top1_conf": 0.25131529569625854,
+        "top5_preds": [
+            483,
+            663,
+            405,
+            820,
+            803
+        ]
+    },
+    {
+        "filename": "00097_adain_low.png",
+        "class1": 569,
+        "class2": 482,
+        "composition_type": "adain",
+        "salience": "low",
+        "model": "ResNet101",
+        "top1_pred": 867,
+        "top1_conf": 0.5855587720870972,
+        "top5_preds": [
+            867,
+            569,
+            675,
+            812,
+            565
+        ]
+    },
+    {
+        "filename": "00108_superimposition_high.png",
+        "class1": 569,
+        "class2": 491,
+        "composition_type": "superimposition",
+        "salience": "high",
+        "model": "ResNet101",
+        "top1_pred": 569,
+        "top1_conf": 0.6963214874267578,
+        "top5_preds": [
+            569,
+            867,
+            864,
+            675,
+            803
+        ]
+    },
+    {
+        "filename": "00110_texture_shape_high.png",
+        "class1": 569,
+        "class2": 491,
+        "composition_type": "texture_shape",
+        "salience": "high",
+        "model": "ResNet101",
+        "top1_pred": 569,
+        "top1_conf": 0.9951474070549011,
+        "top5_preds": [
+            569,
+            867,
+            675,
+            803,
+            864
+        ]
+    },
+    {
+        "filename": "00112_adain_high.png",
+        "class1": 571,
+        "class2": 574,
+        "composition_type": "adain",
+        "salience": "high",
+        "model": "ResNet101",
+        "top1_pred": 571,
+        "top1_conf": 0.6409420967102051,
+        "top5_preds": [
+            571,
+            688,
+            754,
+            662,
+            844
+        ]
+    },
+    {
+        "filename": "00113_adain_low.png",
+        "class1": 571,
+        "class2": 574,
+        "composition_type": "adain",
+        "salience": "low",
+        "model": "ResNet101",
+        "top1_pred": 571,
+        "top1_conf": 0.9506006836891174,
+        "top5_preds": [
+            571,
+            754,
+            688,
+            662,
+            886
+        ]
+    },
+    {
+        "filename": "00117_superimposition_low.png",
+        "class1": 571,
+        "class2": 574,
+        "composition_type": "superimposition",
+        "salience": "low",
+        "model": "ResNet101",
+        "top1_pred": 574,
+        "top1_conf": 0.9127915501594543,
+        "top5_preds": [
+            574,
+            722,
+            890,
+            852,
+            805
+        ]
+    },
+    {
+        "filename": "00048_adain_high.png",
+        "class1": 491,
+        "class2": 701,
+        "composition_type": "adain",
+        "salience": "high",
+        "model": "ConvNeXt",
+        "top1_pred": 491,
+        "top1_conf": 0.618273913860321,
+        "top5_preds": [
+            491,
+            634,
+            802,
+            882,
+            726
+        ]
+    },
+    {
+        "filename": "00050_occlusion_high.png",
+        "class1": 491,
+        "class2": -1,
+        "composition_type": "occlusion",
+        "salience": "high",
+        "model": "ConvNeXt",
+        "top1_pred": 491,
+        "top1_conf": 0.5692764520645142,
+        "top5_preds": [
+            491,
+            634,
+            882,
+            726,
+            802
+        ]
+    },
+    {
+        "filename": "00055_texture_shape_low.png",
+        "class1": 491,
+        "class2": 701,
+        "composition_type": "texture_shape",
+        "salience": "low",
+        "model": "ConvNeXt",
+        "top1_pred": 491,
+        "top1_conf": 0.0789763331413269,
+        "top5_preds": [
+            491,
+            621,
+            573,
+            802,
+            575
+        ]
+    },
+    {
+        "filename": "00056_adain_high.png",
+        "class1": 491,
+        "class2": 571,
+        "composition_type": "adain",
+        "salience": "high",
+        "model": "ConvNeXt",
+        "top1_pred": 491,
+        "top1_conf": 0.5128322839736938,
+        "top5_preds": [
+            491,
+            208,
+            205,
+            244,
+            256
+        ]
+    },
+    {
+        "filename": "00059_occlusion_low.png",
+        "class1": 491,
+        "class2": -1,
+        "composition_type": "occlusion",
+        "salience": "low",
+        "model": "ConvNeXt",
+        "top1_pred": 491,
+        "top1_conf": 0.5932579636573792,
+        "top5_preds": [
+            491,
+            208,
+            205,
+            244,
+            256
+        ]
+    },
+    {
+        "filename": "00064_adain_high.png",
+        "class1": 497,
+        "class2": 482,
+        "composition_type": "adain",
+        "salience": "high",
+        "model": "ConvNeXt",
+        "top1_pred": 663,
+        "top1_conf": 0.23728340864181519,
+        "top5_preds": [
+            663,
+            497,
+            442,
+            698,
+            884
+        ]
+    },
+    {
+        "filename": "00066_occlusion_high.png",
+        "class1": 497,
+        "class2": -1,
+        "composition_type": "occlusion",
+        "salience": "high",
+        "model": "ConvNeXt",
+        "top1_pred": 497,
+        "top1_conf": 0.24587175250053406,
+        "top5_preds": [
+            497,
+            442,
+            663,
+            698,
+            483
+        ]
+    },
+    {
+        "filename": "00068_superimposition_high.png",
+        "class1": 497,
+        "class2": 482,
+        "composition_type": "superimposition",
+        "salience": "high",
+        "model": "ConvNeXt",
+        "top1_pred": 482,
+        "top1_conf": 0.08382303267717361,
+        "top5_preds": [
+            482,
+            548,
+            497,
+            651,
+            598
+        ]
+    },
+    {
+        "filename": "00071_texture_shape_low.png",
+        "class1": 497,
+        "class2": 482,
+        "composition_type": "texture_shape",
+        "salience": "low",
+        "model": "ConvNeXt",
+        "top1_pred": 904,
+        "top1_conf": 0.0790572389960289,
+        "top5_preds": [
+            904,
+            698,
+            663,
+            497,
+            905
+        ]
+    },
+    {
+        "filename": "00072_adain_high.png",
+        "class1": 497,
+        "class2": 482,
+        "composition_type": "adain",
+        "salience": "high",
+        "model": "ConvNeXt",
+        "top1_pred": 663,
+        "top1_conf": 0.14352110028266907,
+        "top5_preds": [
+            663,
+            497,
+            425,
+            405,
+            483
+        ]
+    },
+    {
+        "filename": "00097_adain_low.png",
+        "class1": 569,
+        "class2": 482,
+        "composition_type": "adain",
+        "salience": "low",
+        "model": "ConvNeXt",
+        "top1_pred": 569,
+        "top1_conf": 0.419269323348999,
+        "top5_preds": [
+            569,
+            867,
+            675,
+            660,
+            864
+        ]
+    },
+    {
+        "filename": "00108_superimposition_high.png",
+        "class1": 569,
+        "class2": 491,
+        "composition_type": "superimposition",
+        "salience": "high",
+        "model": "ConvNeXt",
+        "top1_pred": 569,
+        "top1_conf": 0.363129585981369,
+        "top5_preds": [
+            569,
+            675,
+            867,
+            916,
+            864
+        ]
+    },
+    {
+        "filename": "00110_texture_shape_high.png",
+        "class1": 569,
+        "class2": 491,
+        "composition_type": "texture_shape",
+        "salience": "high",
+        "model": "ConvNeXt",
+        "top1_pred": 569,
+        "top1_conf": 0.26209068298339844,
+        "top5_preds": [
+            569,
+            675,
+            867,
+            660,
+            864
+        ]
+    },
+    {
+        "filename": "00112_adain_high.png",
+        "class1": 571,
+        "class2": 574,
+        "composition_type": "adain",
+        "salience": "high",
+        "model": "ConvNeXt",
+        "top1_pred": 571,
+        "top1_conf": 0.8271209597587585,
+        "top5_preds": [
+            571,
+            754,
+            662,
+            487,
+            590
+        ]
+    },
+    {
+        "filename": "00113_adain_low.png",
+        "class1": 571,
+        "class2": 574,
+        "composition_type": "adain",
+        "salience": "low",
+        "model": "ConvNeXt",
+        "top1_pred": 571,
+        "top1_conf": 0.8722792267799377,
+        "top5_preds": [
+            571,
+            754,
+            662,
+            482,
+            844
+        ]
+    },
+    {
+        "filename": "00117_superimposition_low.png",
+        "class1": 571,
+        "class2": 574,
+        "composition_type": "superimposition",
+        "salience": "low",
+        "model": "ConvNeXt",
+        "top1_pred": 574,
+        "top1_conf": 0.7069131731987,
+        "top5_preds": [
+            574,
+            553,
+            556,
+            493,
+            662
+        ]
+    },
+    {
+        "filename": "00048_adain_high.png",
+        "class1": 491,
+        "class2": 701,
+        "composition_type": "adain",
+        "salience": "high",
+        "model": "ViT-B/16",
+        "top1_pred": 491,
+        "top1_conf": 0.8986486196517944,
+        "top5_preds": [
+            491,
+            621,
+            802,
+            634,
+            596
+        ]
+    },
+    {
+        "filename": "00050_occlusion_high.png",
+        "class1": 491,
+        "class2": -1,
+        "composition_type": "occlusion",
+        "salience": "high",
+        "model": "ViT-B/16",
+        "top1_pred": 491,
+        "top1_conf": 0.8049882054328918,
+        "top5_preds": [
+            491,
+            423,
+            598,
+            526,
+            632
+        ]
+    },
+    {
+        "filename": "00055_texture_shape_low.png",
+        "class1": 491,
+        "class2": 701,
+        "composition_type": "texture_shape",
+        "salience": "low",
+        "model": "ViT-B/16",
+        "top1_pred": 573,
+        "top1_conf": 0.19183912873268127,
+        "top5_preds": [
+            573,
+            491,
+            621,
+            708,
+            802
+        ]
+    },
+    {
+        "filename": "00056_adain_high.png",
+        "class1": 491,
+        "class2": 571,
+        "composition_type": "adain",
+        "salience": "high",
+        "model": "ViT-B/16",
+        "top1_pred": 491,
+        "top1_conf": 0.8179658651351929,
+        "top5_preds": [
+            491,
+            205,
+            208,
+            206,
+            244
+        ]
+    },
+    {
+        "filename": "00059_occlusion_low.png",
+        "class1": 491,
+        "class2": -1,
+        "composition_type": "occlusion",
+        "salience": "low",
+        "model": "ViT-B/16",
+        "top1_pred": 491,
+        "top1_conf": 0.8102026581764221,
+        "top5_preds": [
+            491,
+            205,
+            208,
+            244,
+            256
+        ]
+    },
+    {
+        "filename": "00064_adain_high.png",
+        "class1": 497,
+        "class2": 482,
+        "composition_type": "adain",
+        "salience": "high",
+        "model": "ViT-B/16",
+        "top1_pred": 497,
+        "top1_conf": 0.5187974572181702,
+        "top5_preds": [
+            497,
+            663,
+            442,
+            884,
+            698
+        ]
+    },
+    {
+        "filename": "00066_occlusion_high.png",
+        "class1": 497,
+        "class2": -1,
+        "composition_type": "occlusion",
+        "salience": "high",
+        "model": "ViT-B/16",
+        "top1_pred": 497,
+        "top1_conf": 0.4725379943847656,
+        "top5_preds": [
+            497,
+            442,
+            663,
+            884,
+            483
+        ]
+    },
+    {
+        "filename": "00068_superimposition_high.png",
+        "class1": 497,
+        "class2": 482,
+        "composition_type": "superimposition",
+        "salience": "high",
+        "model": "ViT-B/16",
+        "top1_pred": 497,
+        "top1_conf": 0.2590697407722473,
+        "top5_preds": [
+            497,
+            766,
+            442,
+            848,
+            482
+        ]
+    },
+    {
+        "filename": "00071_texture_shape_low.png",
+        "class1": 497,
+        "class2": 482,
+        "composition_type": "texture_shape",
+        "salience": "low",
+        "model": "ViT-B/16",
+        "top1_pred": 497,
+        "top1_conf": 0.3891964554786682,
+        "top5_preds": [
+            497,
+            904,
+            483,
+            663,
+            698
+        ]
+    },
+    {
+        "filename": "00072_adain_high.png",
+        "class1": 497,
+        "class2": 482,
+        "composition_type": "adain",
+        "salience": "high",
+        "model": "ViT-B/16",
+        "top1_pred": 497,
+        "top1_conf": 0.7149127125740051,
+        "top5_preds": [
+            497,
+            483,
+            425,
+            663,
+            437
+        ]
+    },
+    {
+        "filename": "00097_adain_low.png",
+        "class1": 569,
+        "class2": 482,
+        "composition_type": "adain",
+        "salience": "low",
+        "model": "ViT-B/16",
+        "top1_pred": 569,
+        "top1_conf": 0.754751980304718,
+        "top5_preds": [
+            569,
+            867,
+            675,
+            978,
+            821
+        ]
+    },
+    {
+        "filename": "00108_superimposition_high.png",
+        "class1": 569,
+        "class2": 491,
+        "composition_type": "superimposition",
+        "salience": "high",
+        "model": "ViT-B/16",
+        "top1_pred": 569,
+        "top1_conf": 0.616445004940033,
+        "top5_preds": [
+            569,
+            491,
+            740,
+            482,
+            477
+        ]
+    },
+    {
+        "filename": "00110_texture_shape_high.png",
+        "class1": 569,
+        "class2": 491,
+        "composition_type": "texture_shape",
+        "salience": "high",
+        "model": "ViT-B/16",
+        "top1_pred": 569,
+        "top1_conf": 0.8029280304908752,
+        "top5_preds": [
+            569,
+            867,
+            675,
+            864,
+            800
+        ]
+    },
+    {
+        "filename": "00112_adain_high.png",
+        "class1": 571,
+        "class2": 574,
+        "composition_type": "adain",
+        "salience": "high",
+        "model": "ViT-B/16",
+        "top1_pred": 571,
+        "top1_conf": 0.8810437917709351,
+        "top5_preds": [
+            571,
+            754,
+            688,
+            848,
+            482
+        ]
+    },
+    {
+        "filename": "00113_adain_low.png",
+        "class1": 571,
+        "class2": 574,
+        "composition_type": "adain",
+        "salience": "low",
+        "model": "ViT-B/16",
+        "top1_pred": 571,
+        "top1_conf": 0.9048707485198975,
+        "top5_preds": [
+            571,
+            754,
+            848,
+            688,
+            482
+        ]
+    },
+    {
+        "filename": "00117_superimposition_low.png",
+        "class1": 571,
+        "class2": 574,
+        "composition_type": "superimposition",
+        "salience": "low",
+        "model": "ViT-B/16",
+        "top1_pred": 574,
+        "top1_conf": 0.6245144605636597,
+        "top5_preds": [
+            574,
+            754,
+            848,
+            590,
+            482
+        ]
+    },
+    {
+        "filename": "00048_adain_high.png",
+        "class1": 491,
+        "class2": 701,
+        "composition_type": "adain",
+        "salience": "high",
+        "model": "DeiT",
+        "top1_pred": 491,
+        "top1_conf": 0.9149014353752136,
+        "top5_preds": [
+            491,
+            634,
+            621,
+            596,
+            573
+        ]
+    },
+    {
+        "filename": "00050_occlusion_high.png",
+        "class1": 491,
+        "class2": -1,
+        "composition_type": "occlusion",
+        "salience": "high",
+        "model": "DeiT",
+        "top1_pred": 491,
+        "top1_conf": 0.7788270711898804,
+        "top5_preds": [
+            491,
+            596,
+            634,
+            916,
+            508
+        ]
+    },
+    {
+        "filename": "00055_texture_shape_low.png",
+        "class1": 491,
+        "class2": 701,
+        "composition_type": "texture_shape",
+        "salience": "low",
+        "model": "DeiT",
+        "top1_pred": 491,
+        "top1_conf": 0.60893315076828,
+        "top5_preds": [
+            491,
+            621,
+            653,
+            428,
+            463
+        ]
+    },
+    {
+        "filename": "00056_adain_high.png",
+        "class1": 491,
+        "class2": 571,
+        "composition_type": "adain",
+        "salience": "high",
+        "model": "DeiT",
+        "top1_pred": 491,
+        "top1_conf": 0.5522323846817017,
+        "top5_preds": [
+            491,
+            208,
+            205,
+            244,
+            256
+        ]
+    },
+    {
+        "filename": "00059_occlusion_low.png",
+        "class1": 491,
+        "class2": -1,
+        "composition_type": "occlusion",
+        "salience": "low",
+        "model": "DeiT",
+        "top1_pred": 491,
+        "top1_conf": 0.755004346370697,
+        "top5_preds": [
+            491,
+            205,
+            208,
+            256,
+            244
+        ]
+    },
+    {
+        "filename": "00064_adain_high.png",
+        "class1": 497,
+        "class2": 482,
+        "composition_type": "adain",
+        "salience": "high",
+        "model": "DeiT",
+        "top1_pred": 497,
+        "top1_conf": 0.5088748931884766,
+        "top5_preds": [
+            497,
+            442,
+            663,
+            884,
+            406
+        ]
+    },
+    {
+        "filename": "00066_occlusion_high.png",
+        "class1": 497,
+        "class2": -1,
+        "composition_type": "occlusion",
+        "salience": "high",
+        "model": "DeiT",
+        "top1_pred": 497,
+        "top1_conf": 0.5047590732574463,
+        "top5_preds": [
+            497,
+            442,
+            663,
+            884,
+            406
+        ]
+    },
+    {
+        "filename": "00068_superimposition_high.png",
+        "class1": 497,
+        "class2": 482,
+        "composition_type": "superimposition",
+        "salience": "high",
+        "model": "DeiT",
+        "top1_pred": 497,
+        "top1_conf": 0.3665122985839844,
+        "top5_preds": [
+            497,
+            766,
+            442,
+            663,
+            482
+        ]
+    },
+    {
+        "filename": "00071_texture_shape_low.png",
+        "class1": 497,
+        "class2": 482,
+        "composition_type": "texture_shape",
+        "salience": "low",
+        "model": "DeiT",
+        "top1_pred": 904,
+        "top1_conf": 0.2556172013282776,
+        "top5_preds": [
+            904,
+            497,
+            698,
+            483,
+            663
+        ]
+    },
+    {
+        "filename": "00072_adain_high.png",
+        "class1": 497,
+        "class2": 482,
+        "composition_type": "adain",
+        "salience": "high",
+        "model": "DeiT",
+        "top1_pred": 405,
+        "top1_conf": 0.4685852825641632,
+        "top5_preds": [
+            405,
+            803,
+            812,
+            408,
+            525
+        ]
+    },
+    {
+        "filename": "00097_adain_low.png",
+        "class1": 569,
+        "class2": 482,
+        "composition_type": "adain",
+        "salience": "low",
+        "model": "DeiT",
+        "top1_pred": 569,
+        "top1_conf": 0.37684205174446106,
+        "top5_preds": [
+            569,
+            867,
+            675,
+            864,
+            803
+        ]
+    },
+    {
+        "filename": "00108_superimposition_high.png",
+        "class1": 569,
+        "class2": 491,
+        "composition_type": "superimposition",
+        "salience": "high",
+        "model": "DeiT",
+        "top1_pred": 491,
+        "top1_conf": 0.45127323269844055,
+        "top5_preds": [
+            491,
+            569,
+            675,
+            867,
+            795
+        ]
+    },
+    {
+        "filename": "00110_texture_shape_high.png",
+        "class1": 569,
+        "class2": 491,
+        "composition_type": "texture_shape",
+        "salience": "high",
+        "model": "DeiT",
+        "top1_pred": 569,
+        "top1_conf": 0.633864164352417,
+        "top5_preds": [
+            569,
+            675,
+            867,
+            116,
+            962
+        ]
+    },
+    {
+        "filename": "00112_adain_high.png",
+        "class1": 571,
+        "class2": 574,
+        "composition_type": "adain",
+        "salience": "high",
+        "model": "DeiT",
+        "top1_pred": 571,
+        "top1_conf": 0.6172889471054077,
+        "top5_preds": [
+            571,
+            844,
+            754,
+            848,
+            482
+        ]
+    },
+    {
+        "filename": "00113_adain_low.png",
+        "class1": 571,
+        "class2": 574,
+        "composition_type": "adain",
+        "salience": "low",
+        "model": "DeiT",
+        "top1_pred": 571,
+        "top1_conf": 0.8224219083786011,
+        "top5_preds": [
+            571,
+            844,
+            848,
+            482,
+            754
+        ]
+    },
+    {
+        "filename": "00117_superimposition_low.png",
+        "class1": 571,
+        "class2": 574,
+        "composition_type": "superimposition",
+        "salience": "low",
+        "model": "DeiT",
+        "top1_pred": 574,
+        "top1_conf": 0.6102535128593445,
+        "top5_preds": [
+            574,
+            754,
+            662,
+            507,
+            688
+        ]
+    },
+    {
+        "filename": "00048_adain_high.png",
+        "class1": 491,
+        "class2": 701,
+        "composition_type": "adain",
+        "salience": "high",
+        "model": "CLIP",
+        "top1_pred": 491,
+        "top1_conf": 0.9995297193527222,
+        "top5_preds": [
+            491,
+            596,
+            792,
+            621,
+            693
+        ]
+    },
+    {
+        "filename": "00050_occlusion_high.png",
+        "class1": 491,
+        "class2": -1,
+        "composition_type": "occlusion",
+        "salience": "high",
+        "model": "CLIP",
+        "top1_pred": 491,
+        "top1_conf": 0.48878976702690125,
+        "top5_preds": [
+            491,
+            596,
+            587,
+            862,
+            792
+        ]
+    },
+    {
+        "filename": "00055_texture_shape_low.png",
+        "class1": 491,
+        "class2": 701,
+        "composition_type": "texture_shape",
+        "salience": "low",
+        "model": "CLIP",
+        "top1_pred": 751,
+        "top1_conf": 0.19457709789276123,
+        "top5_preds": [
+            751,
+            802,
+            573,
+            576,
+            450
+        ]
+    },
+    {
+        "filename": "00056_adain_high.png",
+        "class1": 491,
+        "class2": 571,
+        "composition_type": "adain",
+        "salience": "high",
+        "model": "CLIP",
+        "top1_pred": 491,
+        "top1_conf": 0.9989637136459351,
+        "top5_preds": [
+            491,
+            596,
+            803,
+            792,
+            587
+        ]
+    },
+    {
+        "filename": "00059_occlusion_low.png",
+        "class1": 491,
+        "class2": -1,
+        "composition_type": "occlusion",
+        "salience": "low",
+        "model": "CLIP",
+        "top1_pred": 491,
+        "top1_conf": 0.9949091076850891,
+        "top5_preds": [
+            491,
+            596,
+            587,
+            792,
+            676
+        ]
+    },
+    {
+        "filename": "00064_adain_high.png",
+        "class1": 497,
+        "class2": 482,
+        "composition_type": "adain",
+        "salience": "high",
+        "model": "CLIP",
+        "top1_pred": 497,
+        "top1_conf": 0.7650783061981201,
+        "top5_preds": [
+            497,
+            263,
+            881,
+            682,
+            687
+        ]
+    },
+    {
+        "filename": "00066_occlusion_high.png",
+        "class1": 497,
+        "class2": -1,
+        "composition_type": "occlusion",
+        "salience": "high",
+        "model": "CLIP",
+        "top1_pred": 263,
+        "top1_conf": 0.8382230997085571,
+        "top5_preds": [
+            263,
+            497,
+            553,
+            782,
+            881
+        ]
+    },
+    {
+        "filename": "00068_superimposition_high.png",
+        "class1": 497,
+        "class2": 482,
+        "composition_type": "superimposition",
+        "salience": "high",
+        "model": "CLIP",
+        "top1_pred": 782,
+        "top1_conf": 0.3992335796356201,
+        "top5_preds": [
+            782,
+            497,
+            263,
+            553,
+            916
+        ]
+    },
+    {
+        "filename": "00071_texture_shape_low.png",
+        "class1": 497,
+        "class2": 482,
+        "composition_type": "texture_shape",
+        "salience": "low",
+        "model": "CLIP",
+        "top1_pred": 497,
+        "top1_conf": 0.4766494631767273,
+        "top5_preds": [
+            497,
+            663,
+            782,
+            263,
+            204
+        ]
+    },
+    {
+        "filename": "00072_adain_high.png",
+        "class1": 497,
+        "class2": 482,
+        "composition_type": "adain",
+        "salience": "high",
+        "model": "CLIP",
+        "top1_pred": 255,
+        "top1_conf": 0.5806884765625,
+        "top5_preds": [
+            255,
+            497,
+            442,
+            663,
+            224
+        ]
+    },
+    {
+        "filename": "00097_adain_low.png",
+        "class1": 569,
+        "class2": 482,
+        "composition_type": "adain",
+        "salience": "low",
+        "model": "CLIP",
+        "top1_pred": 867,
+        "top1_conf": 0.9173774123191833,
+        "top5_preds": [
+            867,
+            569,
+            675,
+            565,
+            717
+        ]
+    },
+    {
+        "filename": "00108_superimposition_high.png",
+        "class1": 569,
+        "class2": 491,
+        "composition_type": "superimposition",
+        "salience": "high",
+        "model": "CLIP",
+        "top1_pred": 569,
+        "top1_conf": 0.979709267616272,
+        "top5_preds": [
+            569,
+            867,
+            803,
+            595,
+            970
+        ]
+    },
+    {
+        "filename": "00110_texture_shape_high.png",
+        "class1": 569,
+        "class2": 491,
+        "composition_type": "texture_shape",
+        "salience": "high",
+        "model": "CLIP",
+        "top1_pred": 569,
+        "top1_conf": 0.9478013515472412,
+        "top5_preds": [
+            569,
+            867,
+            717,
+            412,
+            675
+        ]
+    },
+    {
+        "filename": "00112_adain_high.png",
+        "class1": 571,
+        "class2": 574,
+        "composition_type": "adain",
+        "salience": "high",
+        "model": "CLIP",
+        "top1_pred": 571,
+        "top1_conf": 0.4213748276233673,
+        "top5_preds": [
+            571,
+            886,
+            707,
+            754,
+            480
+        ]
+    },
+    {
+        "filename": "00113_adain_low.png",
+        "class1": 571,
+        "class2": 574,
+        "composition_type": "adain",
+        "salience": "low",
+        "model": "CLIP",
+        "top1_pred": 571,
+        "top1_conf": 0.9150952696800232,
+        "top5_preds": [
+            571,
+            480,
+            707,
+            886,
+            704
+        ]
+    },
+    {
+        "filename": "00117_superimposition_low.png",
+        "class1": 571,
+        "class2": 574,
+        "composition_type": "superimposition",
+        "salience": "low",
+        "model": "CLIP",
+        "top1_pred": 574,
+        "top1_conf": 0.9650803804397583,
+        "top5_preds": [
+            574,
+            722,
+            692,
+            522,
+            999
+        ]
+    },
+    {
+        "filename": "00124_superimposition_high.png",
+        "class1": 571,
+        "class2": 217,
+        "composition_type": "superimposition",
+        "salience": "high",
+        "model": "ResNet50",
+        "top1_pred": 571,
+        "top1_conf": 0.8525930643081665,
+        "top5_preds": [
+            571,
+            827,
+            412,
+            534,
+            897
+        ]
+    },
+    {
+        "filename": "00126_texture_shape_high.png",
+        "class1": 571,
+        "class2": 217,
+        "composition_type": "texture_shape",
+        "salience": "high",
+        "model": "ResNet50",
+        "top1_pred": 571,
+        "top1_conf": 0.9998835325241089,
+        "top5_preds": [
+            571,
+            707,
+            412,
+            637,
+            827
+        ]
+    },
+    {
+        "filename": "00136_adain_high.png",
+        "class1": 574,
+        "class2": 497,
+        "composition_type": "adain",
+        "salience": "high",
+        "model": "ResNet50",
+        "top1_pred": 574,
+        "top1_conf": 0.9968212842941284,
+        "top5_preds": [
+            574,
+            577,
+            852,
+            494,
+            722
+        ]
+    },
+    {
+        "filename": "00144_adain_high.png",
+        "class1": 701,
+        "class2": 571,
+        "composition_type": "adain",
+        "salience": "high",
+        "model": "ResNet50",
+        "top1_pred": 701,
+        "top1_conf": 0.9862305521965027,
+        "top5_preds": [
+            701,
+            417,
+            917,
+            921,
+            405
+        ]
+    },
+    {
+        "filename": "00147_occlusion_low.png",
+        "class1": 701,
+        "class2": -1,
+        "composition_type": "occlusion",
+        "salience": "low",
+        "model": "ResNet50",
+        "top1_pred": 610,
+        "top1_conf": 0.16634783148765564,
+        "top5_preds": [
+            610,
+            701,
+            549,
+            620,
+            419
+        ]
+    },
+    {
+        "filename": "00154_occlusion_high.png",
+        "class1": 701,
+        "class2": -1,
+        "composition_type": "occlusion",
+        "salience": "high",
+        "model": "ResNet50",
+        "top1_pred": 701,
+        "top1_conf": 0.46805524826049805,
+        "top5_preds": [
+            701,
+            417,
+            843,
+            879,
+            851
+        ]
+    },
+    {
+        "filename": "00157_superimposition_low.png",
+        "class1": 701,
+        "class2": 574,
+        "composition_type": "superimposition",
+        "salience": "low",
+        "model": "ResNet50",
+        "top1_pred": 574,
+        "top1_conf": 0.9999384880065918,
+        "top5_preds": [
+            574,
+            722,
+            807,
+            544,
+            472
+        ]
+    },
+    {
+        "filename": "00158_texture_shape_high.png",
+        "class1": 701,
+        "class2": 574,
+        "composition_type": "texture_shape",
+        "salience": "high",
+        "model": "ResNet50",
+        "top1_pred": 701,
+        "top1_conf": 0.943550169467926,
+        "top5_preds": [
+            701,
+            562,
+            176,
+            80,
+            708
+        ]
+    },
+    {
+        "filename": "00159_texture_shape_low.png",
+        "class1": 701,
+        "class2": 574,
+        "composition_type": "texture_shape",
+        "salience": "low",
+        "model": "ResNet50",
+        "top1_pred": 701,
+        "top1_conf": 0.743920624256134,
+        "top5_preds": [
+            701,
+            562,
+            843,
+            80,
+            972
+        ]
+    },
+    {
+        "filename": "00124_superimposition_high.png",
+        "class1": 571,
+        "class2": 217,
+        "composition_type": "superimposition",
+        "salience": "high",
+        "model": "ResNet101",
+        "top1_pred": 571,
+        "top1_conf": 0.7919942736625671,
+        "top5_preds": [
+            571,
+            827,
+            412,
+            637,
+            877
+        ]
+    },
+    {
+        "filename": "00126_texture_shape_high.png",
+        "class1": 571,
+        "class2": 217,
+        "composition_type": "texture_shape",
+        "salience": "high",
+        "model": "ResNet101",
+        "top1_pred": 571,
+        "top1_conf": 0.9997866749763489,
+        "top5_preds": [
+            571,
+            827,
+            637,
+            412,
+            877
+        ]
+    },
+    {
+        "filename": "00136_adain_high.png",
+        "class1": 574,
+        "class2": 497,
+        "composition_type": "adain",
+        "salience": "high",
+        "model": "ResNet101",
+        "top1_pred": 574,
+        "top1_conf": 0.9970126152038574,
+        "top5_preds": [
+            574,
+            577,
+            852,
+            494,
+            752
+        ]
+    },
+    {
+        "filename": "00144_adain_high.png",
+        "class1": 701,
+        "class2": 571,
+        "composition_type": "adain",
+        "salience": "high",
+        "model": "ResNet101",
+        "top1_pred": 701,
+        "top1_conf": 0.9769530296325684,
+        "top5_preds": [
+            701,
+            917,
+            417,
+            443,
+            549
+        ]
+    },
+    {
+        "filename": "00147_occlusion_low.png",
+        "class1": 701,
+        "class2": -1,
+        "composition_type": "occlusion",
+        "salience": "low",
+        "model": "ResNet101",
+        "top1_pred": 701,
+        "top1_conf": 0.35222718119621277,
+        "top5_preds": [
+            701,
+            892,
+            417,
+            549,
+            530
+        ]
+    },
+    {
+        "filename": "00154_occlusion_high.png",
+        "class1": 701,
+        "class2": -1,
+        "composition_type": "occlusion",
+        "salience": "high",
+        "model": "ResNet101",
+        "top1_pred": 701,
+        "top1_conf": 0.9379410743713379,
+        "top5_preds": [
+            701,
+            417,
+            895,
+            405,
+            600
+        ]
+    },
+    {
+        "filename": "00157_superimposition_low.png",
+        "class1": 701,
+        "class2": 574,
+        "composition_type": "superimposition",
+        "salience": "low",
+        "model": "ResNet101",
+        "top1_pred": 574,
+        "top1_conf": 0.9975200295448303,
+        "top5_preds": [
+            574,
+            722,
+            469,
+            807,
+            431
+        ]
+    },
+    {
+        "filename": "00158_texture_shape_high.png",
+        "class1": 701,
+        "class2": 574,
+        "composition_type": "texture_shape",
+        "salience": "high",
+        "model": "ResNet101",
+        "top1_pred": 701,
+        "top1_conf": 0.8414607644081116,
+        "top5_preds": [
+            701,
+            917,
+            708,
+            417,
+            461
+        ]
+    },
+    {
+        "filename": "00159_texture_shape_low.png",
+        "class1": 701,
+        "class2": 574,
+        "composition_type": "texture_shape",
+        "salience": "low",
+        "model": "ResNet101",
+        "top1_pred": 80,
+        "top1_conf": 0.5176718831062317,
+        "top5_preds": [
+            80,
+            701,
+            917,
+            708,
+            21
+        ]
+    },
+    {
+        "filename": "00124_superimposition_high.png",
+        "class1": 571,
+        "class2": 217,
+        "composition_type": "superimposition",
+        "salience": "high",
+        "model": "ConvNeXt",
+        "top1_pred": 571,
+        "top1_conf": 0.5439497828483582,
+        "top5_preds": [
+            571,
+            169,
+            218,
+            166,
+            482
+        ]
+    },
+    {
+        "filename": "00126_texture_shape_high.png",
+        "class1": 571,
+        "class2": 217,
+        "composition_type": "texture_shape",
+        "salience": "high",
+        "model": "ConvNeXt",
+        "top1_pred": 571,
+        "top1_conf": 0.5370492935180664,
+        "top5_preds": [
+            571,
+            166,
+            739,
+            371,
+            194
+        ]
+    },
+    {
+        "filename": "00136_adain_high.png",
+        "class1": 574,
+        "class2": 497,
+        "composition_type": "adain",
+        "salience": "high",
+        "model": "ConvNeXt",
+        "top1_pred": 574,
+        "top1_conf": 0.8174853324890137,
+        "top5_preds": [
+            574,
+            852,
+            577,
+            572,
+            722
+        ]
+    },
+    {
+        "filename": "00144_adain_high.png",
+        "class1": 701,
+        "class2": 571,
+        "composition_type": "adain",
+        "salience": "high",
+        "model": "ConvNeXt",
+        "top1_pred": 701,
+        "top1_conf": 0.7213940024375916,
+        "top5_preds": [
+            701,
+            921,
+            917,
+            443,
+            868
+        ]
+    },
+    {
+        "filename": "00147_occlusion_low.png",
+        "class1": 701,
+        "class2": -1,
+        "composition_type": "occlusion",
+        "salience": "low",
+        "model": "ConvNeXt",
+        "top1_pred": 701,
+        "top1_conf": 0.800658643245697,
+        "top5_preds": [
+            701,
+            419,
+            892,
+            719,
+            494
+        ]
+    },
+    {
+        "filename": "00154_occlusion_high.png",
+        "class1": 701,
+        "class2": -1,
+        "composition_type": "occlusion",
+        "salience": "high",
+        "model": "ConvNeXt",
+        "top1_pred": 701,
+        "top1_conf": 0.8845149278640747,
+        "top5_preds": [
+            701,
+            981,
+            465,
+            574,
+            405
+        ]
+    },
+    {
+        "filename": "00157_superimposition_low.png",
+        "class1": 701,
+        "class2": 574,
+        "composition_type": "superimposition",
+        "salience": "low",
+        "model": "ConvNeXt",
+        "top1_pred": 574,
+        "top1_conf": 0.33697888255119324,
+        "top5_preds": [
+            574,
+            469,
+            431,
+            632,
+            914
+        ]
+    },
+    {
+        "filename": "00158_texture_shape_high.png",
+        "class1": 701,
+        "class2": 574,
+        "composition_type": "texture_shape",
+        "salience": "high",
+        "model": "ConvNeXt",
+        "top1_pred": 701,
+        "top1_conf": 0.9163505434989929,
+        "top5_preds": [
+            701,
+            921,
+            456,
+            371,
+            917
+        ]
+    },
+    {
+        "filename": "00159_texture_shape_low.png",
+        "class1": 701,
+        "class2": 574,
+        "composition_type": "texture_shape",
+        "salience": "low",
+        "model": "ConvNeXt",
+        "top1_pred": 275,
+        "top1_conf": 0.18632028996944427,
+        "top5_preds": [
+            275,
+            701,
+            291,
+            274,
+            276
+        ]
+    },
+    {
+        "filename": "00124_superimposition_high.png",
+        "class1": 571,
+        "class2": 217,
+        "composition_type": "superimposition",
+        "salience": "high",
+        "model": "ViT-B/16",
+        "top1_pred": 571,
+        "top1_conf": 0.6836557388305664,
+        "top5_preds": [
+            571,
+            217,
+            218,
+            152,
+            232
+        ]
+    },
+    {
+        "filename": "00126_texture_shape_high.png",
+        "class1": 571,
+        "class2": 217,
+        "composition_type": "texture_shape",
+        "salience": "high",
+        "model": "ViT-B/16",
+        "top1_pred": 571,
+        "top1_conf": 0.8074818849563599,
+        "top5_preds": [
+            571,
+            911,
+            811,
+            480,
+            658
+        ]
+    },
+    {
+        "filename": "00136_adain_high.png",
+        "class1": 574,
+        "class2": 497,
+        "composition_type": "adain",
+        "salience": "high",
+        "model": "ViT-B/16",
+        "top1_pred": 574,
+        "top1_conf": 0.9109039902687073,
+        "top5_preds": [
+            574,
+            852,
+            572,
+            956,
+            522
+        ]
+    },
+    {
+        "filename": "00144_adain_high.png",
+        "class1": 701,
+        "class2": 571,
+        "composition_type": "adain",
+        "salience": "high",
+        "model": "ViT-B/16",
+        "top1_pred": 701,
+        "top1_conf": 0.8879317045211792,
+        "top5_preds": [
+            701,
+            921,
+            868,
+            794,
+            355
+        ]
+    },
+    {
+        "filename": "00147_occlusion_low.png",
+        "class1": 701,
+        "class2": -1,
+        "composition_type": "occlusion",
+        "salience": "low",
+        "model": "ViT-B/16",
+        "top1_pred": 701,
+        "top1_conf": 0.8502663373947144,
+        "top5_preds": [
+            701,
+            902,
+            895,
+            512,
+            623
+        ]
+    },
+    {
+        "filename": "00154_occlusion_high.png",
+        "class1": 701,
+        "class2": -1,
+        "composition_type": "occlusion",
+        "salience": "high",
+        "model": "ViT-B/16",
+        "top1_pred": 701,
+        "top1_conf": 0.8218367099761963,
+        "top5_preds": [
+            701,
+            978,
+            439,
+            977,
+            413
+        ]
+    },
+    {
+        "filename": "00157_superimposition_low.png",
+        "class1": 701,
+        "class2": 574,
+        "composition_type": "superimposition",
+        "salience": "low",
+        "model": "ViT-B/16",
+        "top1_pred": 574,
+        "top1_conf": 0.8031413555145264,
+        "top5_preds": [
+            574,
+            701,
+            405,
+            417,
+            456
+        ]
+    },
+    {
+        "filename": "00158_texture_shape_high.png",
+        "class1": 701,
+        "class2": 574,
+        "composition_type": "texture_shape",
+        "salience": "high",
+        "model": "ViT-B/16",
+        "top1_pred": 701,
+        "top1_conf": 0.8637692928314209,
+        "top5_preds": [
+            701,
+            331,
+            83,
+            21,
+            80
+        ]
+    },
+    {
+        "filename": "00159_texture_shape_low.png",
+        "class1": 701,
+        "class2": 574,
+        "composition_type": "texture_shape",
+        "salience": "low",
+        "model": "ViT-B/16",
+        "top1_pred": 701,
+        "top1_conf": 0.6098973155021667,
+        "top5_preds": [
+            701,
+            9,
+            275,
+            331,
+            80
+        ]
+    },
+    {
+        "filename": "00124_superimposition_high.png",
+        "class1": 571,
+        "class2": 217,
+        "composition_type": "superimposition",
+        "salience": "high",
+        "model": "DeiT",
+        "top1_pred": 571,
+        "top1_conf": 0.6155838966369629,
+        "top5_preds": [
+            571,
+            188,
+            232,
+            152,
+            218
+        ]
+    },
+    {
+        "filename": "00126_texture_shape_high.png",
+        "class1": 571,
+        "class2": 217,
+        "composition_type": "texture_shape",
+        "salience": "high",
+        "model": "DeiT",
+        "top1_pred": 571,
+        "top1_conf": 0.8328399658203125,
+        "top5_preds": [
+            571,
+            533,
+            998,
+            911,
+            707
+        ]
+    },
+    {
+        "filename": "00136_adain_high.png",
+        "class1": 574,
+        "class2": 497,
+        "composition_type": "adain",
+        "salience": "high",
+        "model": "DeiT",
+        "top1_pred": 574,
+        "top1_conf": 0.8111375570297241,
+        "top5_preds": [
+            574,
+            852,
+            722,
+            522,
+            429
+        ]
+    },
+    {
+        "filename": "00144_adain_high.png",
+        "class1": 701,
+        "class2": 571,
+        "composition_type": "adain",
+        "salience": "high",
+        "model": "DeiT",
+        "top1_pred": 701,
+        "top1_conf": 0.8740178346633911,
+        "top5_preds": [
+            701,
+            879,
+            417,
+            107,
+            111
+        ]
+    },
+    {
+        "filename": "00147_occlusion_low.png",
+        "class1": 701,
+        "class2": -1,
+        "composition_type": "occlusion",
+        "salience": "low",
+        "model": "DeiT",
+        "top1_pred": 701,
+        "top1_conf": 0.8574087619781494,
+        "top5_preds": [
+            701,
+            417,
+            879,
+            111,
+            107
+        ]
+    },
+    {
+        "filename": "00154_occlusion_high.png",
+        "class1": 701,
+        "class2": -1,
+        "composition_type": "occlusion",
+        "salience": "high",
+        "model": "DeiT",
+        "top1_pred": 701,
+        "top1_conf": 0.765931248664856,
+        "top5_preds": [
+            701,
+            600,
+            895,
+            417,
+            405
+        ]
+    },
+    {
+        "filename": "00157_superimposition_low.png",
+        "class1": 701,
+        "class2": 574,
+        "composition_type": "superimposition",
+        "salience": "low",
+        "model": "DeiT",
+        "top1_pred": 574,
+        "top1_conf": 0.7463698983192444,
+        "top5_preds": [
+            574,
+            405,
+            417,
+            701,
+            755
+        ]
+    },
+    {
+        "filename": "00158_texture_shape_high.png",
+        "class1": 701,
+        "class2": 574,
+        "composition_type": "texture_shape",
+        "salience": "high",
+        "model": "DeiT",
+        "top1_pred": 701,
+        "top1_conf": 0.8990756869316101,
+        "top5_preds": [
+            701,
+            895,
+            21,
+            417,
+            600
+        ]
+    },
+    {
+        "filename": "00159_texture_shape_low.png",
+        "class1": 701,
+        "class2": 574,
+        "composition_type": "texture_shape",
+        "salience": "low",
+        "model": "DeiT",
+        "top1_pred": 701,
+        "top1_conf": 0.7322446703910828,
+        "top5_preds": [
+            701,
+            176,
+            177,
+            21,
+            170
+        ]
+    },
+    {
+        "filename": "00124_superimposition_high.png",
+        "class1": 571,
+        "class2": 217,
+        "composition_type": "superimposition",
+        "salience": "high",
+        "model": "CLIP",
+        "top1_pred": 571,
+        "top1_conf": 0.5182167887687683,
+        "top5_preds": [
+            571,
+            707,
+            704,
+            637,
+            480
+        ]
+    },
+    {
+        "filename": "00126_texture_shape_high.png",
+        "class1": 571,
+        "class2": 217,
+        "composition_type": "texture_shape",
+        "salience": "high",
+        "model": "CLIP",
+        "top1_pred": 571,
+        "top1_conf": 0.898747980594635,
+        "top5_preds": [
+            571,
+            704,
+            707,
+            637,
+            708
+        ]
+    },
+    {
+        "filename": "00136_adain_high.png",
+        "class1": 574,
+        "class2": 497,
+        "composition_type": "adain",
+        "salience": "high",
+        "model": "CLIP",
+        "top1_pred": 574,
+        "top1_conf": 0.9816992282867432,
+        "top5_preds": [
+            574,
+            522,
+            722,
+            714,
+            572
+        ]
+    },
+    {
+        "filename": "00144_adain_high.png",
+        "class1": 701,
+        "class2": 571,
+        "composition_type": "adain",
+        "salience": "high",
+        "model": "CLIP",
+        "top1_pred": 701,
+        "top1_conf": 0.8500733375549316,
+        "top5_preds": [
+            701,
+            21,
+            751,
+            417,
+            843
+        ]
+    },
+    {
+        "filename": "00147_occlusion_low.png",
+        "class1": 701,
+        "class2": -1,
+        "composition_type": "occlusion",
+        "salience": "low",
+        "model": "CLIP",
+        "top1_pred": 701,
+        "top1_conf": 0.5576454401016235,
+        "top5_preds": [
+            701,
+            21,
+            417,
+            843,
+            983
+        ]
+    },
+    {
+        "filename": "00154_occlusion_high.png",
+        "class1": 701,
+        "class2": -1,
+        "composition_type": "occlusion",
+        "salience": "high",
+        "model": "CLIP",
+        "top1_pred": 21,
+        "top1_conf": 0.5328182578086853,
+        "top5_preds": [
+            21,
+            701,
+            843,
+            981,
+            417
+        ]
+    },
+    {
+        "filename": "00157_superimposition_low.png",
+        "class1": 701,
+        "class2": 574,
+        "composition_type": "superimposition",
+        "salience": "low",
+        "model": "CLIP",
+        "top1_pred": 431,
+        "top1_conf": 0.8301705718040466,
+        "top5_preds": [
+            431,
+            516,
+            574,
+            520,
+            669
+        ]
+    },
+    {
+        "filename": "00158_texture_shape_high.png",
+        "class1": 701,
+        "class2": 574,
+        "composition_type": "texture_shape",
+        "salience": "high",
+        "model": "CLIP",
+        "top1_pred": 701,
+        "top1_conf": 0.9628903269767761,
+        "top5_preds": [
+            701,
+            21,
+            417,
+            993,
+            751
+        ]
+    },
+    {
+        "filename": "00159_texture_shape_low.png",
+        "class1": 701,
+        "class2": 574,
+        "composition_type": "texture_shape",
+        "salience": "low",
+        "model": "CLIP",
+        "top1_pred": 701,
+        "top1_conf": 0.37257105112075806,
+        "top5_preds": [
+            701,
+            71,
+            21,
+            843,
+            73
+        ]
+    }
+]

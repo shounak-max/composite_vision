@@ -7,14 +7,11 @@ class GlimpseNetwork(nn.Module):
     def __init__(self, patch_size=32, hidden_dim=256):
         super().__init__()
         self.patch_size = patch_size
-        self.conv = nn.Sequential(
-            nn.Conv2d(3, 16, 3, padding=1), nn.ReLU(),
-            nn.MaxPool2d(2),
-            nn.Conv2d(16, 32, 3, padding=1), nn.ReLU(),
-            nn.MaxPool2d(2),
-            nn.Flatten()
-        )
-        conv_out_dim = 32 * (patch_size // 4) * (patch_size // 4)
+        import torchvision.models as models
+        resnet = models.resnet18(weights=models.ResNet18_Weights.IMAGENET1K_V1)
+        self.conv = nn.Sequential(*list(resnet.children())[:-1], nn.Flatten())
+            
+        conv_out_dim = 512
         self.fc_img = nn.Linear(conv_out_dim, hidden_dim)
         self.fc_loc = nn.Linear(2, hidden_dim)
         self.fc_out = nn.Linear(hidden_dim * 2, hidden_dim)
@@ -35,7 +32,7 @@ class LocationNetwork(nn.Module):
         return mean, self.std
 
 class RecurrentAttentionModel(nn.Module):
-    def __init__(self, patch_size=32, num_classes=50, hidden_dim=256, num_glimpses=6):
+    def __init__(self, patch_size=64, num_classes=50, hidden_dim=256, num_glimpses=6):
         super().__init__()
         self.patch_size = patch_size
         self.num_glimpses = num_glimpses
