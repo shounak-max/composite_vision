@@ -8,11 +8,20 @@ import pandas as pd
 from tqdm import tqdm
 from src.data.generation import CompositeDatasetGenerator
 from src.models.baselines import evaluate_models, CompositeDataset
-from src.models.rl_attention import RecurrentAttentionModel, compute_reinforce_loss
+from src.models.rl_attention import RecurrentAttentionModel, RecurrentAttentionEnsemble, compute_reinforce_loss
 from src.metrics.error_consistency import generate_reports_and_figures
 import time
 
 def train_rl_agent(dataset_dir, output_dir, epochs=20):
+    """
+    Trains the Recurrent Attention Ensemble agent on the CompositeVision dataset.
+    
+    CONCEPT: 
+    The agent is rewarded (+1) only if its final classification matches the PRIMARY 
+    shape class ('class1') of the composite image. This forces the agent's location 
+    policy to learn to seek out shape-defining features rather than being distracted 
+    by conflicting textures or colors.
+    """
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     print(f"Training on {device}")
     
@@ -22,89 +31,152 @@ def train_rl_agent(dataset_dir, output_dir, epochs=20):
         transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
     ])
     
-    dataset = CompositeDataset(os.path.join(dataset_dir, "metadata.json"), 
+    dataset_train = CompositeDataset(os.path.join(dataset_dir, "metadata.json"), 
                                os.path.join(dataset_dir, "images"), 
                                transform=transform, split="train")
+    dataloader_train = DataLoader(dataset_train, batch_size=16, shuffle=True)
     
-    dataloader = DataLoader(dataset, batch_size=16, shuffle=True)
+    dataset_val = CompositeDataset(os.path.join(dataset_dir, "metadata.json"), 
+                               os.path.join(dataset_dir, "images"), 
+                               transform=transform, split="test")
+    dataloader_val = DataLoader(dataset_val, batch_size=16, shuffle=False)
     
-    model = RecurrentAttentionModel(num_classes=1000).to(device)
-    optimizer = optim.Adam(model.parameters(), lr=3e-4)
+    # Fine-tuned hyperparameters: larger patches (48), wider LSTM (512), more glimpses (8)
+    model = RecurrentAttentionEnsemble(num_models=3, patch_size=48, num_classes=1000, hidden_dim=512, num_glimpses=8).to(device)
+    optimizer = optim.Adam(model.parameters(), lr=2e-4)
     scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=epochs)
     
     model.train()
     import matplotlib.pyplot as plt
     batch_losses = []
     batch_rewards = []
+    batch_rl_losses = []
+    batch_cls_losses = []
+    
+    val_losses = []
+    val_rewards = []
     
     for epoch in range(epochs):
+        model.train()
         total_loss = 0
         total_reward = 0
         
-        for images, items in tqdm(dataloader, desc=f"Epoch {epoch+1}/{epochs}"):
+        for images, items in tqdm(dataloader_train, desc=f"Epoch {epoch+1}/{epochs} [Train]"):
             images = images.to(device)
             target1 = items['class1'].clone().detach().to(device)
-            target2 = items['class2'].clone().detach().to(device)
             
             optimizer.zero_grad()
             logits, log_probs, values, entropies = model(images)
             
+            if hasattr(model, 'models') and model.training:
+                num_models = len(model.models)
+                target1_expanded = target1.repeat(num_models)
+            else:
+                target1_expanded = target1
+                
             probs = torch.softmax(logits, dim=-1)
             preds = torch.argmax(probs, dim=-1)
             
-            # Reward agent if it identifies EITHER the shape (class1) or texture/occlusion (class2)
-            rewards = ((preds == target1) | (preds == target2)).float().to(device)
+            # Reward agent ONLY for identifying the primary shape class (class1)
+            # This is the core mechanism that instills a shape-bias in the agent.
+            rewards = (preds == target1_expanded).float().to(device)
             
-            # Normalize rewards to stabilize REINFORCE variance
-            rewards = (rewards - rewards.mean()) / (rewards.std() + 1e-8)
+            # RL Policy Loss + Value Loss + Entropy Bonus
+            rl_loss = compute_reinforce_loss(log_probs, values, rewards, entropies=entropies)
+            # Standard Classification Loss (Cross Entropy)
+            cls_loss = torch.nn.functional.cross_entropy(logits, target1_expanded)
             
-            rl_loss = compute_reinforce_loss(log_probs, values, rewards)
-            cls_loss = torch.nn.functional.cross_entropy(logits, target1)
-            
-            # Maximize entropy to prevent premature mode collapse
-            ENTROPY_COEF = 0.01
-            entropy_loss = -ENTROPY_COEF * entropies.mean()
-            
-            loss = rl_loss + cls_loss + entropy_loss
+            # The total loss jointly optimizes the feature extractor/classifier (via cls_loss) 
+            # and the location policy (via rl_loss)
+            loss = rl_loss + cls_loss
             
             loss.backward()
             torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=0.5)
             optimizer.step()
             
             total_loss += loss.item()
-            # Track raw accuracy as reward for graphing
-            raw_rewards = ((preds == target1) | (preds == target2)).float().mean().item()
+            raw_rewards = (preds == target1_expanded).float().mean().item()
             total_reward += raw_rewards
             
             batch_losses.append(loss.item())
+            batch_rl_losses.append(rl_loss.item())
+            batch_cls_losses.append(cls_loss.item())
             batch_rewards.append(raw_rewards)
             
-        print(f"Epoch {epoch+1} Loss: {total_loss/len(dataloader):.4f} Reward: {total_reward/len(dataloader):.4f}")
+        train_loss = total_loss / len(dataloader_train)
+        train_reward = total_reward / len(dataloader_train)
+        batch_losses.append(train_loss)
+        batch_rewards.append(train_reward)
+        
+        # Validation Phase
+        model.eval()
+        val_loss_epoch = 0
+        val_reward_epoch = 0
+        with torch.no_grad():
+            for images, items in tqdm(dataloader_val, desc=f"Epoch {epoch+1}/{epochs} [Val]"):
+                images = images.to(device)
+                target1 = items['class1'].clone().detach().to(device)
+                
+                logits, log_probs, values, entropies = model(images)
+                
+                probs = torch.softmax(logits, dim=-1)
+                preds = torch.argmax(probs, dim=-1)
+                
+                rewards = (preds == target1).float().to(device)
+                
+                # CONCEPT: During validation, the agent acts deterministically (log_probs=0).
+                # The RL policy loss is therefore 0. The returned rl_loss here only reflects 
+                # the Value Network's mean squared error (MSE) against the ensemble reward,
+                # which acts as a helpful metric for tracking baseline accuracy over time.
+                rl_loss = compute_reinforce_loss(log_probs, values, rewards)
+                cls_loss = torch.nn.functional.cross_entropy(logits, target1)
+                
+                loss = rl_loss + cls_loss
+                
+                val_loss_epoch += loss.item()
+                val_reward_epoch += (preds == target1).float().mean().item()
+                
+        val_loss = val_loss_epoch / len(dataloader_val)
+        val_reward = val_reward_epoch / len(dataloader_val)
+        val_losses.append(val_loss)
+        val_rewards.append(val_reward)
+            
+        print(f"Epoch {epoch+1} | Train Loss: {train_loss:.4f}, Acc: {train_reward:.4f} | Val Loss: {val_loss:.4f}, Acc: {val_reward:.4f}")
         scheduler.step()
         
     os.makedirs(output_dir, exist_ok=True)
     
     import numpy as np
-    def smooth(data, window=10):
+    def smooth(data, window=50):
         if len(data) < window: return data
         return np.convolve(data, np.ones(window)/window, mode='valid')
-
-    # Plotting
-    plt.figure(figsize=(12, 5))
-    plt.subplot(1, 2, 1)
-    plt.plot(batch_losses, alpha=0.3, label='Raw Loss', color='red')
-    plt.plot(smooth(batch_losses), label='Smoothed Loss', color='darkred')
-    plt.xlabel('Batch')
+    
+    # Plotting 3-panel RL Dashboard
+    plt.figure(figsize=(18, 5))
+    
+    plt.subplot(1, 3, 1)
+    plt.plot(range(1, epochs+1), [bl for i, bl in enumerate(batch_losses) if i % (len(batch_losses)//epochs) == 0][:epochs], label='Train Loss', color='red')
+    plt.plot(range(1, epochs+1), val_losses, label='Val Loss', color='orange')
+    plt.xlabel('Epoch')
     plt.ylabel('Loss')
-    plt.title('RL Agent Training Loss')
+    plt.title('Total Loss (Train vs Val)')
     plt.legend()
     
-    plt.subplot(1, 2, 2)
-    plt.plot(batch_rewards, alpha=0.3, label='Raw Reward', color='blue')
-    plt.plot(smooth(batch_rewards), label='Smoothed Reward (Accuracy)', color='darkblue')
-    plt.xlabel('Batch')
-    plt.ylabel('Reward')
-    plt.title('RL Agent Training Reward')
+    plt.subplot(1, 3, 2)
+    plt.plot(range(1, epochs+1), [br for i, br in enumerate(batch_rewards) if i % (len(batch_rewards)//epochs) == 0][:epochs], label='Train Reward (Acc)', color='blue')
+    plt.plot(range(1, epochs+1), val_rewards, label='Val Reward (Acc)', color='cyan')
+    plt.xlabel('Epoch')
+    plt.ylabel('Reward / Accuracy')
+    plt.title('RL Agent Reward over Epochs')
+    plt.legend()
+    
+    plt.subplot(1, 3, 3)
+    plt.plot(smooth(batch_rl_losses), label='Policy (RL) Loss', alpha=0.7)
+    plt.plot(smooth(batch_cls_losses), label='Classification Loss', alpha=0.7)
+    plt.plot(smooth(batch_rewards), label='Raw Batch Reward', color='black', alpha=0.8, linewidth=2)
+    plt.xlabel('Batch Step')
+    plt.ylabel('Value')
+    plt.title('RL Internal Metrics (Smoothed)')
     plt.legend()
     
     plt.tight_layout()
@@ -166,6 +238,16 @@ def evaluate_rl_agent(model, dataset_dir, results_dir):
         pd.DataFrame(results).to_csv(csv_path, index=False)
 
 def run_full_pipeline(force_regenerate=False):
+    """
+    Executes the entire CompositeVision research pipeline end-to-end.
+    
+    Phases:
+    1. Dataset Generation: Downloads true ImageNet data, creates cognitive conflict composites.
+    2. Baselines: Evaluates standard CNNs/ViTs/CLIP to establish baseline shape/texture biases.
+    3. RL Training: Trains the Recurrent Attention Ensemble to develop a human-like shape bias.
+    4. RL Evaluation: Tests the RL agent on the same composites.
+    5. Analysis: Generates error consistency matrices and comprehensive scientific reports.
+    """
     base_dir = "d:/gitfork/composite_vision_research"
     dataset_dir = os.path.join(base_dir, "dataset")
     results_dir = os.path.join(base_dir, "results")
@@ -210,4 +292,4 @@ def run_full_pipeline(force_regenerate=False):
     print("Pipeline complete!")
 
 if __name__ == '__main__':
-    run_full_pipeline(force_regenerate=False)
+    run_full_pipeline(force_regenerate=True)
