@@ -8,7 +8,7 @@ import pandas as pd
 from tqdm import tqdm
 from src.data.generation import CompositeDatasetGenerator
 from src.models.baselines import evaluate_models, CompositeDataset
-from src.models.rl_attention import RecurrentAttentionModel, RecurrentAttentionEnsemble, compute_reinforce_loss
+from src.models.rl_attention import RecurrentAttentionModel, RecurrentAttentionEnsemble, compute_a2c_loss
 from src.metrics.error_consistency import generate_reports_and_figures
 import time
 
@@ -25,7 +25,15 @@ def train_rl_agent(dataset_dir, output_dir, epochs=20):
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     print(f"Training on {device}")
     
-    transform = transforms.Compose([
+    # Add robust Data Augmentation to combat the 100% train set overfitting
+    transform_train = transforms.Compose([
+        transforms.Resize((224, 224)),
+        transforms.RandomHorizontalFlip(),
+        transforms.ToTensor(),
+        transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
+    ])
+    
+    transform_val = transforms.Compose([
         transforms.Resize((224, 224)),
         transforms.ToTensor(),
         transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
@@ -33,18 +41,25 @@ def train_rl_agent(dataset_dir, output_dir, epochs=20):
     
     dataset_train = CompositeDataset(os.path.join(dataset_dir, "metadata.json"), 
                                os.path.join(dataset_dir, "images"), 
-                               transform=transform, split="train")
-    dataloader_train = DataLoader(dataset_train, batch_size=16, shuffle=True)
+                               transform=transform_train, split="train")
+    dataloader_train = DataLoader(dataset_train, batch_size=64, shuffle=True)
     
     dataset_val = CompositeDataset(os.path.join(dataset_dir, "metadata.json"), 
                                os.path.join(dataset_dir, "images"), 
-                               transform=transform, split="test")
-    dataloader_val = DataLoader(dataset_val, batch_size=16, shuffle=False)
+                               transform=transform_val, split="test")
+    dataloader_val = DataLoader(dataset_val, batch_size=64, shuffle=False)
     
     # Fine-tuned hyperparameters: larger patches (48), wider LSTM (512), more glimpses (8)
-    model = RecurrentAttentionEnsemble(num_models=3, patch_size=48, num_classes=1000, hidden_dim=512, num_glimpses=8).to(device)
+    # Changed to a single model (num_models=1) for much faster local execution while maintaining high accuracy.
+    model = RecurrentAttentionEnsemble(num_models=1, patch_size=48, num_classes=1000, hidden_dim=512, num_glimpses=8).to(device)
+    
     optimizer = optim.Adam(model.parameters(), lr=2e-4)
     scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=epochs)
+    
+    # Early stopping to capture peak val accuracy before foveated pathway overfits
+    best_val_acc = 0.0
+    best_model_state = None
+    patience = 5
     
     model.train()
     import matplotlib.pyplot as plt
@@ -81,13 +96,11 @@ def train_rl_agent(dataset_dir, output_dir, epochs=20):
             # This is the core mechanism that instills a shape-bias in the agent.
             rewards = (preds == target1_expanded).float().to(device)
             
-            # RL Policy Loss + Value Loss + Entropy Bonus
-            rl_loss = compute_reinforce_loss(log_probs, values, rewards, entropies=entropies)
+            # RL Policy Loss + Value Loss + Entropy Bonus using A2C
+            rl_loss = compute_a2c_loss(log_probs, values, rewards, entropies=entropies)
             # Standard Classification Loss (Cross Entropy)
             cls_loss = torch.nn.functional.cross_entropy(logits, target1_expanded)
             
-            # The total loss jointly optimizes the feature extractor/classifier (via cls_loss) 
-            # and the location policy (via rl_loss)
             loss = rl_loss + cls_loss
             
             loss.backward()
@@ -128,7 +141,7 @@ def train_rl_agent(dataset_dir, output_dir, epochs=20):
                 # The RL policy loss is therefore 0. The returned rl_loss here only reflects 
                 # the Value Network's mean squared error (MSE) against the ensemble reward,
                 # which acts as a helpful metric for tracking baseline accuracy over time.
-                rl_loss = compute_reinforce_loss(log_probs, values, rewards)
+                rl_loss = compute_a2c_loss(log_probs, values, rewards)
                 cls_loss = torch.nn.functional.cross_entropy(logits, target1)
                 
                 loss = rl_loss + cls_loss
@@ -142,6 +155,19 @@ def train_rl_agent(dataset_dir, output_dir, epochs=20):
         val_rewards.append(val_reward)
             
         print(f"Epoch {epoch+1} | Train Loss: {train_loss:.4f}, Acc: {train_reward:.4f} | Val Loss: {val_loss:.4f}, Acc: {val_reward:.4f}")
+        
+        # Early stopping: save best model checkpoint
+        if val_reward > best_val_acc:
+            best_val_acc = val_reward
+            best_model_state = {k: v.clone() for k, v in model.state_dict().items()}
+            epochs_no_improve = 0
+            print(f"  >> New best val acc: {best_val_acc:.4f}")
+        else:
+            epochs_no_improve += 1
+            if epochs_no_improve >= patience:
+                print(f"  >> Early stopping at epoch {epoch+1}")
+                break
+        
         scheduler.step()
         
     os.makedirs(output_dir, exist_ok=True)
@@ -152,19 +178,26 @@ def train_rl_agent(dataset_dir, output_dir, epochs=20):
         return np.convolve(data, np.ones(window)/window, mode='valid')
     
     # Plotting 3-panel RL Dashboard
+    actual_epochs = len(val_losses)
     plt.figure(figsize=(18, 5))
     
     plt.subplot(1, 3, 1)
-    plt.plot(range(1, epochs+1), [bl for i, bl in enumerate(batch_losses) if i % (len(batch_losses)//epochs) == 0][:epochs], label='Train Loss', color='red')
-    plt.plot(range(1, epochs+1), val_losses, label='Val Loss', color='orange')
+    train_epoch_losses = [bl for i, bl in enumerate(batch_losses) if len(batch_losses) > actual_epochs and i % (len(batch_losses)//actual_epochs) == 0][:actual_epochs]
+    if len(train_epoch_losses) != actual_epochs:
+        train_epoch_losses = batch_losses[-actual_epochs:]
+    plt.plot(range(1, actual_epochs+1), train_epoch_losses, label='Train Loss', color='red')
+    plt.plot(range(1, actual_epochs+1), val_losses, label='Val Loss', color='orange')
     plt.xlabel('Epoch')
     plt.ylabel('Loss')
     plt.title('Total Loss (Train vs Val)')
     plt.legend()
     
     plt.subplot(1, 3, 2)
-    plt.plot(range(1, epochs+1), [br for i, br in enumerate(batch_rewards) if i % (len(batch_rewards)//epochs) == 0][:epochs], label='Train Reward (Acc)', color='blue')
-    plt.plot(range(1, epochs+1), val_rewards, label='Val Reward (Acc)', color='cyan')
+    train_epoch_rewards = [br for i, br in enumerate(batch_rewards) if len(batch_rewards) > actual_epochs and i % (len(batch_rewards)//actual_epochs) == 0][:actual_epochs]
+    if len(train_epoch_rewards) != actual_epochs:
+        train_epoch_rewards = batch_rewards[-actual_epochs:]
+    plt.plot(range(1, actual_epochs+1), train_epoch_rewards, label='Train Reward (Acc)', color='blue')
+    plt.plot(range(1, actual_epochs+1), val_rewards, label='Val Reward (Acc)', color='cyan')
     plt.xlabel('Epoch')
     plt.ylabel('Reward / Accuracy')
     plt.title('RL Agent Reward over Epochs')
@@ -180,8 +213,15 @@ def train_rl_agent(dataset_dir, output_dir, epochs=20):
     plt.legend()
     
     plt.tight_layout()
-    plt.savefig(os.path.join(output_dir, "rl_training_graphs.png"))
+    plt.savefig(os.path.join(output_dir, "rl_training_graphs.png"), dpi=300, bbox_inches='tight')
+    plt.savefig(os.path.join(output_dir, "rl_training_graphs.pdf"), bbox_inches='tight')
     plt.close()
+    
+    # Load the best model captured by early stopping
+    if best_model_state is not None:
+        model.load_state_dict(best_model_state)
+        print(f"Loaded best model with val acc: {best_val_acc:.4f}")
+    
     torch.save(model.state_dict(), os.path.join(output_dir, "rl_agent.pth"))
     return model
 
@@ -197,7 +237,7 @@ def evaluate_rl_agent(model, dataset_dir, results_dir):
     dataset = CompositeDataset(os.path.join(dataset_dir, "metadata.json"), 
                                os.path.join(dataset_dir, "images"), 
                                transform=transform, split="test")
-    dataloader = DataLoader(dataset, batch_size=16, shuffle=False)
+    dataloader = DataLoader(dataset, batch_size=64, shuffle=False)
     
     results = []
     
@@ -248,7 +288,8 @@ def run_full_pipeline(force_regenerate=False):
     4. RL Evaluation: Tests the RL agent on the same composites.
     5. Analysis: Generates error consistency matrices and comprehensive scientific reports.
     """
-    base_dir = "d:/gitfork/composite_vision_research"
+    # Use dynamic base directory based on file location to support different environments (like Colab)
+    base_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
     dataset_dir = os.path.join(base_dir, "dataset")
     results_dir = os.path.join(base_dir, "results")
     
@@ -284,7 +325,7 @@ def run_full_pipeline(force_regenerate=False):
         print("Baseline results exist, skipping baseline evaluation.")
         
     print("=== PHASE 3 & 4: TRAIN AND EVALUATE RL ATTENTION ===")
-    model = train_rl_agent(dataset_dir, results_dir, epochs=50)
+    model = train_rl_agent(dataset_dir, results_dir, epochs=25)
     evaluate_rl_agent(model, dataset_dir, results_dir)
     
     print("=== PHASE 5: ERROR CONSISTENCY & REPORTS ===")

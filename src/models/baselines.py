@@ -116,6 +116,8 @@ def evaluate_models(metadata_path, images_dir, output_dir):
     print("Evaluation complete. Results saved.")
 
 if __name__ == '__main__':
-    evaluate_models("d:/gitfork/composite_vision_research/dataset/metadata.json", 
-                    "d:/gitfork/composite_vision_research/dataset/images", 
-                    "d:/gitfork/composite_vision_research/results")
+    import os
+    base_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+    evaluate_models(os.path.join(base_dir, "dataset", "metadata.json"), 
+                    os.path.join(base_dir, "dataset", "images"), 
+                    os.path.join(base_dir, "results"))

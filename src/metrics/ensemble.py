@@ -2,7 +2,8 @@ import pandas as pd
 import os
 
 def evaluate_ensemble():
-    base_dir = "d:/gitfork/composite_vision_research"
+    import os
+    base_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
     results_file = os.path.join(base_dir, "results", "benchmark_results.csv")
     accuracy_file = os.path.join(base_dir, "results", "model_accuracy.csv")
     

@@ -61,7 +61,8 @@ def generate_reports_and_figures(results_dir):
     sns.heatmap(consistency_matrix.astype(float), annot=True, cmap='coolwarm', vmin=0, vmax=1)
     plt.title('Model-Model Error Consistency')
     plt.tight_layout()
-    plt.savefig(os.path.join(results_dir, "consistency_heatmap.png"))
+    plt.savefig(os.path.join(results_dir, "consistency_heatmap.png"), dpi=300, bbox_inches='tight')
+    plt.savefig(os.path.join(results_dir, "consistency_heatmap.pdf"), bbox_inches='tight')
     plt.close()
     
     plt.figure(figsize=(8, 6))
@@ -69,7 +70,8 @@ def generate_reports_and_figures(results_dir):
     plt.title('Composition-wise Error Consistency')
     plt.ylabel('Average Agreement')
     plt.tight_layout()
-    plt.savefig(os.path.join(results_dir, "composition_consistency.png"))
+    plt.savefig(os.path.join(results_dir, "composition_consistency.png"), dpi=300, bbox_inches='tight')
+    plt.savefig(os.path.join(results_dir, "composition_consistency.pdf"), bbox_inches='tight')
     plt.close()
     
     # Fair metric: only class1 (primary shape) counts as correct
@@ -84,7 +86,8 @@ def generate_reports_and_figures(results_dir):
     plt.ylabel('Accuracy')
     plt.xticks(rotation=45)
     plt.tight_layout()
-    plt.savefig(os.path.join(results_dir, "model_accuracy.png"))
+    plt.savefig(os.path.join(results_dir, "model_accuracy.png"), dpi=300, bbox_inches='tight')
+    plt.savefig(os.path.join(results_dir, "model_accuracy.pdf"), bbox_inches='tight')
     plt.close()
     
     # 2. Accuracy by Composition Type
@@ -95,7 +98,8 @@ def generate_reports_and_figures(results_dir):
     plt.ylabel('Accuracy')
     plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left')
     plt.tight_layout()
-    plt.savefig(os.path.join(results_dir, "composition_accuracy.png"))
+    plt.savefig(os.path.join(results_dir, "composition_accuracy.png"), dpi=300, bbox_inches='tight')
+    plt.savefig(os.path.join(results_dir, "composition_accuracy.pdf"), bbox_inches='tight')
     plt.close()
     
     # 3. Accuracy by Salience Level
@@ -106,7 +110,8 @@ def generate_reports_and_figures(results_dir):
     plt.ylabel('Accuracy')
     plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left')
     plt.tight_layout()
-    plt.savefig(os.path.join(results_dir, "salience_accuracy.png"))
+    plt.savefig(os.path.join(results_dir, "salience_accuracy.png"), dpi=300, bbox_inches='tight')
+    plt.savefig(os.path.join(results_dir, "salience_accuracy.pdf"), bbox_inches='tight')
     plt.close()
     
     # 4. Inference Time Comparison
@@ -118,7 +123,8 @@ def generate_reports_and_figures(results_dir):
         plt.ylabel('Inference Time (s / image)')
         plt.xticks(rotation=45)
         plt.tight_layout()
-        plt.savefig(os.path.join(results_dir, "inference_time.png"))
+        plt.savefig(os.path.join(results_dir, "inference_time.png"), dpi=300, bbox_inches='tight')
+        plt.savefig(os.path.join(results_dir, "inference_time.pdf"), bbox_inches='tight')
         plt.close()
         
     # 5. Comprehensive Radar Chart for Model Comparison
@@ -168,10 +174,13 @@ def generate_reports_and_figures(results_dir):
     plt.title('Comprehensive Model Comparison (Aspects)', size=16, y=1.1)
     plt.legend(loc='upper right', bbox_to_anchor=(1.3, 1.1))
     plt.tight_layout()
-    plt.savefig(os.path.join(results_dir, "model_comparison_radar.png"))
+    plt.savefig(os.path.join(results_dir, "model_comparison_radar.png"), dpi=300, bbox_inches='tight')
+    plt.savefig(os.path.join(results_dir, "model_comparison_radar.pdf"), bbox_inches='tight')
     plt.close()
     
     print("Metrics and figures generated successfully.")
 
-if __name__ == '__main__':
-    generate_reports_and_figures("d:/gitfork/composite_vision_research/results")
+if __name__ == "__main__":
+    import os
+    base_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+    generate_reports_and_figures(os.path.join(base_dir, "results"))

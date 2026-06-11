@@ -319,7 +319,9 @@ class CompositeDatasetGenerator:
 
 
 if __name__ == "__main__":
+    import os
+    base_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
     generator = CompositeDatasetGenerator(
-        output_dir="d:/gitfork/composite_vision_research/dataset"
+        output_dir=os.path.join(base_dir, "dataset")
     )
     generator.generate()
