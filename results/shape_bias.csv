@@ -1,0 +1,8 @@
+model,shape_matches,texture_matches,total_decisive,shape_bias_pct,texture_bias_pct
+CLIP,266,86,352,75.57,24.43
+ConvNeXt,453,212,665,68.12,31.88
+DeiT,460,214,674,68.25,31.75
+RL_Attention,559,253,812,68.84,31.16
+ResNet101,332,129,461,72.02,27.98
+ResNet50,311,119,430,72.33,27.67
+ViT-B/16,473,224,697,67.86,32.14

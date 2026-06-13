@@ -302,8 +302,8 @@ class CompositeDatasetGenerator:
         print(f"Generated {train_count} training composites.")
         
         print("Generating TEST composites (from test source images - ZERO overlap)...")
-        # 4 samples per pair for testing
-        idx = self._generate_composites_for_split(test_images, "test", 4, idx)
+        # 8 samples per pair for testing (produces 1120 test stimuli)
+        idx = self._generate_composites_for_split(test_images, "test", 8, idx)
         test_count = idx - train_count
         
         print(f"Generated {test_count} test composites.")

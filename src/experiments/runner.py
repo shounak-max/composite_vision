@@ -241,14 +241,23 @@ def evaluate_rl_agent(model, dataset_dir, results_dir):
     
     results = []
     
-    start_time = time.time()
-    
     with torch.no_grad():
         for images, items in tqdm(dataloader, desc="Evaluating RL Agent"):
             images = images.to(device)
             
+            # Per-batch timing with CUDA sync for accurate GPU measurement
+            if device.type == 'cuda':
+                torch.cuda.synchronize()
+            batch_start = time.time()
+            
             logits, log_probs, values, entropies = model(images)
             probs = torch.softmax(logits, dim=-1)
+            
+            if device.type == 'cuda':
+                torch.cuda.synchronize()
+            batch_elapsed = time.time() - batch_start
+            per_image_time = batch_elapsed / images.size(0)
+            
             top5_prob, top5_idx = torch.topk(probs, 5, dim=-1)
             
             for i in range(images.size(0)):
@@ -262,7 +271,7 @@ def evaluate_rl_agent(model, dataset_dir, results_dir):
                     'top1_pred': top5_idx[i][0].item(),
                     'top1_conf': top5_prob[i][0].item(),
                     'top5_preds': top5_idx[i].cpu().numpy().tolist(),
-                    'inference_time': (time.time() - start_time) / len(dataset),
+                    'inference_time': per_image_time,
                     'glimpses': model.num_glimpses
                 }
                 results.append(result)

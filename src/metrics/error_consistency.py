@@ -46,6 +46,51 @@ def compute_error_consistency(df):
 
     return consistency_matrix, comp_consistency, sal_consistency
 
+def compute_shape_bias(df):
+    """
+    Compute shape bias per model using the Geirhos et al. (2019) metric.
+    
+    For each prediction where both class1 (shape) and class2 (texture) are valid,
+    check if the model predicted the shape class or the texture class.
+    
+    Shape Bias = shape_matches / (shape_matches + texture_matches)
+    
+    A shape bias > 50% means the model relies more on shape than texture.
+    A shape bias < 50% means the model has a texture bias.
+    """
+    # Exclude occlusion samples where class2 == -1 (no texture class)
+    df_filtered = df[df['class2'] != -1].copy()
+    
+    if len(df_filtered) == 0:
+        print("Warning: No valid samples for shape bias computation (all class2 == -1)")
+        return None
+    
+    df_filtered['matched_shape'] = (df_filtered['top1_pred'] == df_filtered['class1'])
+    df_filtered['matched_texture'] = (df_filtered['top1_pred'] == df_filtered['class2'])
+    
+    results = []
+    for model in sorted(df_filtered['model'].unique()):
+        df_m = df_filtered[df_filtered['model'] == model]
+        shape_count = df_m['matched_shape'].sum()
+        texture_count = df_m['matched_texture'].sum()
+        total_decisive = shape_count + texture_count
+        
+        if total_decisive > 0:
+            shape_bias = shape_count / total_decisive
+        else:
+            shape_bias = 0.0
+        
+        results.append({
+            'model': model,
+            'shape_matches': int(shape_count),
+            'texture_matches': int(texture_count),
+            'total_decisive': int(total_decisive),
+            'shape_bias_pct': round(shape_bias * 100, 2),
+            'texture_bias_pct': round((1 - shape_bias) * 100, 2)
+        })
+    
+    return pd.DataFrame(results)
+
 def generate_reports_and_figures(results_dir):
     csv_path = os.path.join(results_dir, "benchmark_results.csv")
     if not os.path.exists(csv_path):
@@ -177,6 +222,33 @@ def generate_reports_and_figures(results_dir):
     plt.savefig(os.path.join(results_dir, "model_comparison_radar.png"), dpi=300, bbox_inches='tight')
     plt.savefig(os.path.join(results_dir, "model_comparison_radar.pdf"), bbox_inches='tight')
     plt.close()
+    
+    # 6. Shape Bias Analysis (Geirhos et al. metric)
+    shape_bias_results = compute_shape_bias(df)
+    if shape_bias_results is not None:
+        shape_bias_results.to_csv(os.path.join(results_dir, "shape_bias.csv"), index=False)
+        
+        plt.figure(figsize=(10, 6))
+        colors = ['#e74c3c' if sb < 50 else '#2ecc71' for sb in shape_bias_results['shape_bias_pct']]
+        bars = plt.bar(shape_bias_results['model'], shape_bias_results['shape_bias_pct'], color=colors)
+        plt.axhline(y=50, color='gray', linestyle='--', alpha=0.7, label='50% (no bias)')
+        plt.title('Shape Bias by Model (Geirhos et al. Metric)', fontsize=14)
+        plt.ylabel('Shape Bias (%)')
+        plt.xlabel('Model')
+        plt.xticks(rotation=45, ha='right')
+        plt.legend()
+        
+        # Add value labels on bars
+        for bar, val in zip(bars, shape_bias_results['shape_bias_pct']):
+            plt.text(bar.get_x() + bar.get_width()/2., bar.get_height() + 1,
+                    f'{val:.1f}%', ha='center', va='bottom', fontsize=10)
+        
+        plt.tight_layout()
+        plt.savefig(os.path.join(results_dir, "shape_bias.png"), dpi=300, bbox_inches='tight')
+        plt.savefig(os.path.join(results_dir, "shape_bias.pdf"), bbox_inches='tight')
+        plt.close()
+        print("\nShape Bias Results:")
+        print(shape_bias_results.to_string(index=False))
     
     print("Metrics and figures generated successfully.")
 

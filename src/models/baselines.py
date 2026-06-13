@@ -1,5 +1,6 @@
 import os
 import json
+import time
 import torch
 import torch.nn.functional as F
 from torch.utils.data import Dataset, DataLoader
@@ -83,6 +84,11 @@ def evaluate_models(metadata_path, images_dir, output_dir):
             images = images.to(device)
             
             for model_name, model in models.items():
+                # Warm up GPU for timing accuracy on first batch
+                if device.type == 'cuda':
+                    torch.cuda.synchronize()
+                batch_start = time.time()
+                
                 if model_name == 'CLIP':
                     image_features = model.encode_image(images)
                     image_features /= image_features.norm(dim=-1, keepdim=True)
@@ -91,6 +97,11 @@ def evaluate_models(metadata_path, images_dir, output_dir):
                 else:
                     logits = model(images)
                     probs = F.softmax(logits, dim=-1)
+                
+                if device.type == 'cuda':
+                    torch.cuda.synchronize()
+                batch_elapsed = time.time() - batch_start
+                per_image_time = batch_elapsed / images.size(0)
                     
                 top5_prob, top5_idx = torch.topk(probs, 5, dim=-1)
                 
@@ -104,7 +115,8 @@ def evaluate_models(metadata_path, images_dir, output_dir):
                         'model': model_name,
                         'top1_pred': top5_idx[i][0].item(),
                         'top1_conf': top5_prob[i][0].item(),
-                        'top5_preds': top5_idx[i].cpu().numpy().tolist()
+                        'top5_preds': top5_idx[i].cpu().numpy().tolist(),
+                        'inference_time': per_image_time
                     }
                     results.append(result)
                     
