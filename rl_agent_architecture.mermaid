@@ -1,0 +1,51 @@
+graph TD
+    %% Main Input
+    Image[Full Image 224x224] -->|Raw Pixel Input| GlobalPath[Global Pathway: Frozen ResNet50]
+    Image -->|Raw Pixel Input| GlimpseNet[Glimpse Network]
+    
+    %% Feedback Loop
+    Locs[Current Location x, y] -->|Fixation Coordinates| GlimpseNet
+    
+    %% Step 1 & 2: Glimpse Network & Backbone
+    subgraph Glimpse Extraction & Backbone [Glimpse & Feature Extraction]
+        GlimpseNet -->|Extracts 3 Multi-scale Crops| ResNet[Shared ResNet50 Backbone]
+        ResNet -->|Detached Gradients| FC_Out[Glimpse Feature Vector]
+        ResNet -->|Avg Visual Features| FoveatedCls[Foveated Classifier]
+    end
+    
+    %% Step 3: Recurrent Core
+    subgraph Recurrent Memory [Recurrent Core]
+        FC_Out -->|Input Vector g_t| LSTM[LSTM Cell Core]
+        LSTM -->|Hidden State h_t| LocNet[Location Network Policy]
+        LSTM -->|Hidden State h_t| Baseline[Baseline Value Network]
+    end
+    
+    %% Step 4: Policy & Sampling
+    subgraph Location Policy [Location Policy & Action Space]
+        LocNet -->|Gaussian Mean mu_t| SampleLocs[Sample Next Location]
+        SampleLocs -->|Clamped to -1, 1| Locs
+    end
+    
+    %% Step 5: Classification Pathway
+    subgraph Classification [Dual-Pathway Classification Ensemble]
+        GlobalPath -->|Global Logits| Combine[Weighted Logit Combination]
+        FoveatedCls -->|Foveated Logits| Combine
+        Combine -->|0.5 * Global + 0.5 * Foveated| Prediction[Final Classification Prediction]
+    end
+
+    %% Styles
+    classDef gray fill:#f9f9f9,stroke:#333,stroke-width:2px;
+    classDef teal fill:#e1f5ee,stroke:#0f6e56,stroke-width:2px;
+    classDef pink fill:#fbeaf0,stroke:#993556,stroke-width:2px;
+    classDef coral fill:#faece7,stroke:#d85a30,stroke-width:2px;
+    classDef purple fill:#eeedfe,stroke:#534ab7,stroke-width:2px;
+    classDef green fill:#eaf3de,stroke:#3b6d11,stroke-width:2px;
+    classDef amber fill:#faeeda,stroke:#854f0b,stroke-width:2px;
+
+    class Image,GlobalPath gray;
+    class GlimpseNet,ResNet,FC_Out teal;
+    class LSTM pink;
+    class LocNet,SampleLocs,Locs coral;
+    class Baseline amber;
+    class FoveatedCls,Combine purple;
+    class Prediction green;
