@@ -69,6 +69,7 @@ The RL Agent is a foveation network optimized using Advantage Actor-Critic (A2C)
 *Figure: Architecture of the RL Attention Agent.*
 
 ![RL Training Graphs](results/rl_training_graphs.png)
+
 *Figure: RL Agent Training Curves.*
 
 ---
@@ -94,7 +95,7 @@ The primary metric for success is correctly predicting the `class1` (Shape) labe
 | **CLIP_Sketch** | 32.17% |
 | **CLIP_Standard** | 31.66% |
 
-![Overall Model Accuracy](results/model_accuracy.png)
+![Overall Model Accuracy](result_2/model_accuracy.png)
 *Figure: Overall Model Accuracy on the composite benchmark.*
 
 **Methodological Note: Self-Supervised Latent Embeddings**
@@ -104,10 +105,10 @@ We excluded DINOv2 and MAE from the main evaluation table because their 0.00% ac
 
 **Key Finding 2: The Efficacy of the Zero-Shot RL Agent.** The `RL_Attention_ZeroShot` model (which never saw a composite image) achieved **64.09% accuracy**, vastly outperforming all standard Zero-Shot baselines (which hovered around ~53% for ViTs and ~35% for ResNets). This strongly validates **Proposition 1**: the structural constraint of foveation forces the model to rely on shape features that are robust to cue-conflict, even without explicit fine-tuning on those conflicts.
 
-![Accuracy by Composition](results/composition_accuracy.png)
+![Accuracy by Composition](result_2/composition_accuracy.png)
 *Figure: Accuracy breakdown by Composition Type.*
 
-![Accuracy by Salience](results/salience_accuracy.png)
+![Accuracy by Salience](result_2/salience_accuracy.png)
 *Figure: Accuracy trends based on shape salience.*
 
 **Key Finding 3: Composition-Specific Salience Degradation.** The monotonic accuracy decline from high to low salience is expected. However, this dataset uniquely enables disaggregating salience sensitivity *per composition type*. Future diagnostic analysis could investigate whether occlusion degrades accuracy faster than patch_shuffle, and whether the rate of degradation reveals distinct architectural vulnerabilities between ViTs, CNNs, and RL foveation models.
@@ -126,7 +127,7 @@ Standard ratio-based metrics for shape bias have been recently criticized for ob
 | **DeiT_ZeroShot** | 49.80 | 21.30 | 28.90 | 70.04 |
 | **ViT-B/16_ZeroShot** | 48.55 | 22.55 | 28.90 | 68.28 |
 
-![Shape Bias Chart](results/shape_bias.png)
+![Shape Bias Chart](result_2/shape_bias.png)
 *Figure: Absolute Shape Bias by Model.*
 
 **Key Finding 4: Unmasking "Confused" Shape Bias.** Notice that `ResNet50_ZeroShot` has a Geirhos Shape Bias of 74.55%, which looks impressively high. However, our absolute metric breakdown reveals that its **Neither Rate is 55.23%**. The model is completely confused by the composites more than half the time. It only appears shape-biased because when it *does* make a decisive prediction, it leans slightly toward shape (33% vs 11%). 
@@ -163,17 +164,17 @@ The Model-Model Error Consistency matrix (`model_error_consistency.csv`) measure
 - **The RL Agent's Unique Representation:** The `RL_Attention_ZeroShot` model has high consistency with the Fine-Tuned cluster (~68-71%), but much lower consistency with the Zero-Shot baselines (~43-46%). 
 - **Implication:** The architectural constraint of foveation natively forces the RL Agent to learn a representation that standard models can only learn through explicit fine-tuning on corrupted data.
 
-![Error Consistency Heatmap](results/consistency_heatmap.png)
+![Error Consistency Heatmap](result_2/consistency_heatmap.png)
 *Figure: Model-Model Error Consistency Heatmap.*
 
-![Composition Consistency](results/composition_consistency.png)
+![Composition Consistency](result_2/composition_consistency.png)
 *Figure: Model Consistency by Composition Type.*
 
 ---
 
 ## 6. Inference Profiling
 
-![Inference Time Chart](results/inference_time.png)
+![Inference Time Chart](result_2/inference_time.png)
 *Figure: Average inference time per image.*
 
 ---

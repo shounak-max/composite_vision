@@ -25,7 +25,7 @@ The primary metric evaluating the ability to correctly predict the shape class u
 > [!NOTE]
 > **Methodological Note:** We excluded DINOv2 and MAE from the main evaluation table. Their 0.00% accuracy reflects an evaluation pipeline limitation (absent linear probes mapping latent embeddings to our label space) rather than a true failure of shape recognition. Recent literature (Wen et al., 2023; Doshi et al., 2025) demonstrates that self-supervised ViTs strongly encode global structural shape when properly probed. Fine-tuned models achieved the highest shape recognition capacity.
 
-![Overall Model Accuracy](results/model_accuracy.png)
+![Overall Model Accuracy](result_2/model_accuracy.png)
 *Figure 1: Overall accuracy comparison across models.*
 
 ## 2. Absolute Cue Sensitivities & Shape Bias
@@ -46,17 +46,17 @@ Standard ratio-based metrics for shape bias have been recently criticized for ob
 > [!WARNING]
 > High Geirhos Shape Bias in models like `ResNet50_ZeroShot` (74.55%) is misleading, as its absolute Neither Rate is over 55%. In contrast, `RL_Attention_ZeroShot` demonstrates true engagement with a 14.07% Neither Rate.
 
-![Shape Bias Chart](results/shape_bias.png)
+![Shape Bias Chart](result_2/shape_bias.png)
 *Figure 2: Shape bias and absolute cue sensitivity breakdown.*
 
 ## 3. Composition & Salience Profiles
 
 The accuracy of models varies heavily based on the type of composition artifact and the target salience.
 
-![Accuracy by Composition](results/composition_accuracy.png)
+![Accuracy by Composition](result_2/composition_accuracy.png)
 *Figure 3: Breakdown of accuracy metrics grouped by composition type.*
 
-![Accuracy by Salience](results/salience_accuracy.png)
+![Accuracy by Salience](result_2/salience_accuracy.png)
 *Figure 4: Performance degradation when moving from high to low shape salience.*
 
 **Finding: Composition-Specific Salience Degradation.** The monotonic accuracy decline from high to low salience is expected. However, this dataset uniquely enables disaggregating salience sensitivity *per composition type*. Future diagnostic analysis could investigate whether occlusion degrades accuracy faster than patch_shuffle, and whether the rate of degradation reveals distinct architectural vulnerabilities between ViTs, CNNs, and RL foveation models.
@@ -65,10 +65,10 @@ The accuracy of models varies heavily based on the type of composition artifact 
 
 Measuring prediction agreement between model pairs to identify shared decision boundaries. 
 
-![Error Consistency Heatmap](results/consistency_heatmap.png)
+![Error Consistency Heatmap](result_2/consistency_heatmap.png)
 *Figure 5: Model-Model error consistency. Fine-tuned models form a distinct cluster of high agreement. This demonstrates that when provided explicit supervision on the composite domain, disparate architectures (ViT, ResNet, ConvNeXt) converge on highly similar decision boundaries. To our knowledge, no existing paper has characterized this specific fine-tuned convergence under compositional cue-conflict, representing a standalone finding of this benchmark.*
 
-![Composition Consistency](results/composition_consistency.png)
+![Composition Consistency](result_2/composition_consistency.png)
 *Figure 6: Consistency clustered by composition method.*
 
 ## 5. Statistical Significance Highlights
@@ -92,5 +92,5 @@ The following 8 model pairs demonstrated **non-significant** performance differe
 
 The computational cost of models during inference.
 
-![Inference Time Chart](results/inference_time.png)
+![Inference Time Chart](result_2/inference_time.png)
 *Figure 7: Average inference time (in seconds).*
