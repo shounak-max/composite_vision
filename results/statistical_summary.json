@@ -1,0 +1,23 @@
+{
+  "n_models": 15,
+  "n_stimuli_per_model": 11200,
+  "n_pairwise_tests": 105,
+  "n_significant_bonferroni": 97,
+  "models": [
+    "ResNet50_ZeroShot",
+    "ResNet101_ZeroShot",
+    "ConvNeXt_ZeroShot",
+    "ViT-B/16_ZeroShot",
+    "DeiT_ZeroShot",
+    "MAE",
+    "DINOv2",
+    "CLIP_Standard",
+    "CLIP_Sketch",
+    "CLIP_Shape",
+    "RL_Attention_ZeroShot",
+    "ResNet50_FineTuned",
+    "ViT-B_16_FineTuned",
+    "ConvNeXt_FineTuned",
+    "RL_Attention_FineTuned"
+  ]
+}

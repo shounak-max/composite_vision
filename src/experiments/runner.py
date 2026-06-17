@@ -11,6 +11,8 @@ from src.models.baselines import evaluate_models, CompositeDataset
 from src.models.rl_attention import RecurrentAttentionModel, RecurrentAttentionEnsemble, compute_a2c_loss
 from src.metrics.error_consistency import generate_reports_and_figures
 import time
+from src.experiments.train_rl_imagenette import train_rl_on_raw_imagenette
+from src.experiments.finetune_baselines import finetune_model, setup_finetune_model
 
 def train_rl_agent(dataset_dir, output_dir, epochs=20):
     """
@@ -286,7 +288,71 @@ def evaluate_rl_agent(model, dataset_dir, results_dir):
     else:
         pd.DataFrame(results).to_csv(csv_path, index=False)
 
-def run_full_pipeline(force_regenerate=False):
+
+def evaluate_custom_model(model, model_name, dataset_dir, results_dir):
+    """Evaluates any PyTorch model on the test split and appends to benchmark_results.csv."""
+    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    model.eval()
+    
+    transform = transforms.Compose([
+        transforms.Resize((224, 224)),
+        transforms.ToTensor(),
+        transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
+    ])
+    dataset = CompositeDataset(os.path.join(dataset_dir, "metadata.json"), 
+                               os.path.join(dataset_dir, "images"), 
+                               transform=transform, split="test")
+    dataloader = DataLoader(dataset, batch_size=64, shuffle=False)
+    
+    results = []
+    
+    with torch.no_grad():
+        for images, items in tqdm(dataloader, desc=f"Evaluating {model_name}"):
+            images = images.to(device)
+            
+            if device.type == 'cuda':
+                torch.cuda.synchronize()
+            batch_start = time.time()
+            
+            if 'RL_Attention' in model_name:
+                logits, _, _, _ = model(images)
+            else:
+                logits = model(images)
+                
+            probs = torch.softmax(logits, dim=-1)
+            
+            if device.type == 'cuda':
+                torch.cuda.synchronize()
+            per_image_time = (time.time() - batch_start) / images.size(0)
+            
+            top5_prob, top5_idx = torch.topk(probs, 5, dim=-1)
+            
+            for i in range(images.size(0)):
+                result = {
+                    'filename': items['filename'][i],
+                    'class1': items['class1'][i].item() if isinstance(items['class1'][i], torch.Tensor) else items['class1'][i],
+                    'class2': items['class2'][i].item() if isinstance(items['class2'][i], torch.Tensor) else items['class2'][i],
+                    'composition_type': items['composition_type'][i],
+                    'salience': items['salience'][i],
+                    'model': model_name,
+                    'top1_pred': top5_idx[i][0].item(),
+                    'top1_conf': top5_prob[i][0].item(),
+                    'top5_preds': top5_idx[i].cpu().numpy().tolist(),
+                    'inference_time': per_image_time
+                }
+                results.append(result)
+                
+    csv_path = os.path.join(results_dir, "benchmark_results.csv")
+    if os.path.exists(csv_path):
+        df_base = pd.read_csv(csv_path)
+        df_base = df_base[df_base['model'] != model_name]
+        df_new = pd.DataFrame(results)
+        df_combined = pd.concat([df_base, df_new], ignore_index=True)
+        df_combined.to_csv(csv_path, index=False)
+    else:
+        pd.DataFrame(results).to_csv(csv_path, index=False)
+
+def run_full_pipeline(force_regenerate=False, scale_factor=1):
     """
     Executes the entire CompositeVision research pipeline end-to-end.
     
@@ -320,26 +386,59 @@ def run_full_pipeline(force_regenerate=False):
     
     print("=== PHASE 1: GENERATE DATASET (Real ImageNet via Imagenette) ===")
     if not os.path.exists(os.path.join(dataset_dir, "metadata.json")):
-        generator = CompositeDatasetGenerator(output_dir=dataset_dir)
+        generator = CompositeDatasetGenerator(output_dir=dataset_dir, scale_factor=scale_factor)
         generator.generate()
     else:
         print("Dataset already exists, skipping generation.")
         
-    print("=== PHASE 2: EVALUATE BASELINES ===")
+    print("=== PHASE 2: BASELINES (Pre-trained ImageNet = Zero-Shot on Composites) ===")
     if not os.path.exists(os.path.join(results_dir, "benchmark_results.json")):
         evaluate_models(os.path.join(dataset_dir, "metadata.json"), 
                         os.path.join(dataset_dir, "images"), 
                         results_dir)
+        # Rename standard models to suffix _ZeroShot in CSV for clarity
+        csv_path = os.path.join(results_dir, "benchmark_results.csv")
+        df = pd.read_csv(csv_path)
+        df.loc[df['model'].isin(['ResNet50', 'ResNet101', 'ConvNeXt', 'ViT-B/16', 'DeiT', 'CLIP']), 'model'] += '_ZeroShot'
+        df.to_csv(csv_path, index=False)
     else:
         print("Baseline results exist, skipping baseline evaluation.")
         
-    print("=== PHASE 3 & 4: TRAIN AND EVALUATE RL ATTENTION ===")
+    print("=== PHASE 3: RL ZERO-SHOT (Trained on raw Imagenette, Zero-Shot on Composites) ===")
+    if not os.path.exists(os.path.join(results_dir, "rl_agent_imagenette_zeroshot.pth")):
+        rl_zs_model = train_rl_on_raw_imagenette(dataset_dir, results_dir, epochs=25)
+    else:
+        device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+        rl_zs_model = RecurrentAttentionEnsemble(num_models=1, patch_size=48, num_classes=1000, hidden_dim=512, num_glimpses=8).to(device)
+        rl_zs_model.load_state_dict(torch.load(os.path.join(results_dir, "rl_agent_imagenette_zeroshot.pth"), map_location=device))
+    evaluate_custom_model(rl_zs_model, "RL_Attention_ZeroShot", dataset_dir, results_dir)
+
+    print("=== PHASE 4: BASELINES FINE-TUNED (Trained on Composites) ===")
+    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    for m_name in ["ResNet50", "ViT-B/16", "ConvNeXt"]:
+        m_ft_name = f"{m_name.replace('/', '_')}_FineTuned"
+        model_path = os.path.join(results_dir, f"{m_name.replace('/', '_')}_finetuned.pth")
+        
+        if not os.path.exists(model_path):
+            ft_model = finetune_model(m_name, dataset_dir, results_dir, epochs=10)
+        else:
+            ft_model = setup_finetune_model(m_name).to(device)
+            ft_model.load_state_dict(torch.load(model_path, map_location=device))
+        evaluate_custom_model(ft_model, m_ft_name, dataset_dir, results_dir)
+
+    print("=== PHASE 5: RL FINE-TUNED (Trained on Composites) ===")
     model = train_rl_agent(dataset_dir, results_dir, epochs=25)
-    evaluate_rl_agent(model, dataset_dir, results_dir)
+    evaluate_custom_model(model, "RL_Attention_FineTuned", dataset_dir, results_dir)
     
-    print("=== PHASE 5: ERROR CONSISTENCY & REPORTS ===")
+    print("=== PHASE 6: ERROR CONSISTENCY & REPORTS ===")
     generate_reports_and_figures(results_dir)
     print("Pipeline complete!")
 
 if __name__ == '__main__':
-    run_full_pipeline(force_regenerate=True)
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--force-regenerate", action="store_true", help="Force regenerate dataset and clear results")
+    parser.add_argument("--scale-factor", type=int, default=1, help="Multiplier for dataset size")
+    args = parser.parse_args()
+    
+    run_full_pipeline(force_regenerate=args.force_regenerate, scale_factor=args.scale_factor)

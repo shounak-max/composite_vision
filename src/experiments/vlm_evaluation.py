@@ -171,14 +171,28 @@ def run_vlm_evaluation(dataset_dir="dataset", results_file="results/vlm_results.
     if not test_metadata:
         test_metadata = metadata  # Fallback if no split field
     
-    prompt = (
-        "This is a composite visual stimulus containing conflicting features "
-        "(e.g., shape of one object, texture of another, or occlusion). "
-        "What is the primary object class in this image? "
-        "Reply with ONLY a single noun from this list: "
-        "tench, English springer, cassette player, chain saw, church, "
-        "French horn, garbage truck, gas pump, golf ball, parachute."
-    )
+    prompts = {
+        "Basic": (
+            "This is a composite visual stimulus containing conflicting features "
+            "(e.g., shape of one object, texture of another, or occlusion). "
+            "What is the primary object class in this image? "
+            "Reply with ONLY a single noun from this list: "
+            "tench, English springer, cassette player, chain saw, church, "
+            "French horn, garbage truck, gas pump, golf ball, parachute."
+        ),
+        "CoT": (
+            "Analyze the features of this image step-by-step. What shape do you see? What texture do you see? "
+            "What is the primary object class? Reply with your reasoning followed by the final answer as ONLY a single noun from this list: "
+            "tench, English springer, cassette player, chain saw, church, "
+            "French horn, garbage truck, gas pump, golf ball, parachute."
+        ),
+        "Adversarial": (
+            "This image contains conflicting features designed to trick you. Ignore the texture and focus solely on the structural shape of the object. "
+            "What is the primary object class? Reply with ONLY a single noun from this list: "
+            "tench, English springer, cassette player, chain saw, church, "
+            "French horn, garbage truck, gas pump, golf ball, parachute."
+        )
+    }
     
     # Use subset if specified, otherwise all
     subset = test_metadata[:num_samples] if num_samples else test_metadata
@@ -198,23 +212,24 @@ def run_vlm_evaluation(dataset_dir="dataset", results_file="results/vlm_results.
             print(f"  Skipping {item['filename']}: image not found")
             continue
         
-        gpt4o_raw = evaluate_gpt4o(img_path, prompt) if OPENAI_API_KEY else "Skipped - Missing Key"
-        gemini_raw = evaluate_gemini(img_path, prompt) if GOOGLE_API_KEY else "Skipped - Missing Key"
-        
-        gpt4o_pred = parse_vlm_response(gpt4o_raw)
-        gemini_pred = parse_vlm_response(gemini_raw)
-        
-        results.append({
+        item_results = {
             "filename": item['filename'],
             "class1": item['class1'],
             "class2": item['class2'],
             "composition_type": item['composition_type'],
             "salience": item['salience'],
-            "gpt4o_raw": gpt4o_raw,
-            "gpt4o_pred": gpt4o_pred,
-            "gemini_raw": gemini_raw,
-            "gemini_pred": gemini_pred
-        })
+        }
+        
+        for prompt_name, prompt_text in prompts.items():
+            gpt4o_raw = evaluate_gpt4o(img_path, prompt_text) if OPENAI_API_KEY else "Skipped - Missing Key"
+            gemini_raw = evaluate_gemini(img_path, prompt_text) if GOOGLE_API_KEY else "Skipped - Missing Key"
+            
+            item_results[f"gpt4o_raw_{prompt_name}"] = gpt4o_raw
+            item_results[f"gpt4o_pred_{prompt_name}"] = parse_vlm_response(gpt4o_raw)
+            item_results[f"gemini_raw_{prompt_name}"] = gemini_raw
+            item_results[f"gemini_pred_{prompt_name}"] = parse_vlm_response(gemini_raw)
+            
+        results.append(item_results)
     
     os.makedirs(os.path.dirname(results_file), exist_ok=True)
     with open(results_file, "w") as f:
@@ -230,18 +245,22 @@ def run_vlm_evaluation(dataset_dir="dataset", results_file="results/vlm_results.
 
 def _print_vlm_summary(results):
     """Print accuracy summary for VLM results."""
-    for model_key, pred_key in [("GPT-4o", "gpt4o_pred"), ("Gemini", "gemini_pred")]:
-        preds = [r[pred_key] for r in results if r[pred_key] != -1]
-        if not preds:
-            print(f"  {model_key}: No valid predictions")
-            continue
-        
-        correct = sum(1 for r in results if r[pred_key] == r['class1'])
-        total = len(results)
-        valid = len(preds)
-        
-        print(f"  {model_key}: {correct}/{total} correct ({100*correct/total:.2f}% accuracy), "
-              f"{valid}/{total} parsed successfully ({100*valid/total:.1f}%)")
+    prompt_names = ["Basic", "CoT", "Adversarial"]
+    for model_base in ["gpt4o", "gemini"]:
+        for prompt_name in prompt_names:
+            pred_key = f"{model_base}_pred_{prompt_name}"
+            preds = [r[pred_key] for r in results if r.get(pred_key, -1) != -1]
+            model_key = f"{model_base.upper()}_{prompt_name}"
+            if not preds:
+                print(f"  {model_key}: No valid predictions")
+                continue
+            
+            correct = sum(1 for r in results if r.get(pred_key, -1) == r['class1'])
+            total = len(results)
+            valid = len(preds)
+            
+            print(f"  {model_key}: {correct}/{total} correct ({100*correct/total:.2f}% accuracy), "
+                  f"{valid}/{total} parsed successfully ({100*valid/total:.1f}%)")
 
 
 def _integrate_vlm_results(results, results_dir):
@@ -249,22 +268,26 @@ def _integrate_vlm_results(results, results_dir):
     csv_path = os.path.join(results_dir, "benchmark_results.csv")
     
     vlm_rows = []
+    prompt_names = ["Basic", "CoT", "Adversarial"]
     for r in results:
-        for model_name, pred_key in [("GPT-4o", "gpt4o_pred"), ("Gemini", "gemini_pred")]:
-            if r[pred_key] == -1:
-                continue
-            vlm_rows.append({
-                'filename': r['filename'],
-                'class1': r['class1'],
-                'class2': r['class2'],
-                'composition_type': r['composition_type'],
-                'salience': r['salience'],
-                'model': model_name,
-                'top1_pred': r[pred_key],
-                'top1_conf': -1.0,  # VLMs don't return confidence scores
-                'top5_preds': str([r[pred_key]]),
-                'inference_time': -1.0,  # API latency not comparable
-            })
+        for model_base, display_name in [("gpt4o", "GPT-4o"), ("gemini", "Gemini")]:
+            for prompt_name in prompt_names:
+                pred_key = f"{model_base}_pred_{prompt_name}"
+                model_name = f"{display_name}_{prompt_name}"
+                if r.get(pred_key, -1) == -1:
+                    continue
+                vlm_rows.append({
+                    'filename': r['filename'],
+                    'class1': r['class1'],
+                    'class2': r['class2'],
+                    'composition_type': r['composition_type'],
+                    'salience': r['salience'],
+                    'model': model_name,
+                    'top1_pred': r[pred_key],
+                    'top1_conf': -1.0,  # VLMs don't return confidence scores
+                    'top5_preds': str([r[pred_key]]),
+                    'inference_time': -1.0,  # API latency not comparable
+                })
     
     if not vlm_rows:
         print("Warning: No valid VLM predictions to integrate.")
@@ -275,7 +298,8 @@ def _integrate_vlm_results(results, results_dir):
     if os.path.exists(csv_path):
         df_base = pd.read_csv(csv_path)
         # Remove any existing VLM rows to avoid duplicates
-        df_base = df_base[~df_base['model'].isin(['GPT-4o', 'Gemini'])]
+        vlm_model_names = [f"{m}_{p}" for m in ["GPT-4o", "Gemini"] for p in prompt_names]
+        df_base = df_base[~df_base['model'].isin(vlm_model_names)]
         df_combined = pd.concat([df_base, df_vlm], ignore_index=True)
         df_combined.to_csv(csv_path, index=False)
         print(f"Integrated {len(vlm_rows)} VLM predictions into {csv_path}")

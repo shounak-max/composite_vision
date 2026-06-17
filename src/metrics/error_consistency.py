@@ -4,6 +4,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
+from src.metrics.statistical_tests import generate_statistical_report
 
 def compute_error_consistency(df):
     # Fair metric: only class1 (primary shape) counts as correct.
@@ -48,17 +49,9 @@ def compute_error_consistency(df):
 
 def compute_shape_bias(df):
     """
-    Compute shape bias per model using the Geirhos et al. (2019) metric.
-    
-    For each prediction where both class1 (shape) and class2 (texture) are valid,
-    check if the model predicted the shape class or the texture class.
-    
-    Shape Bias = shape_matches / (shape_matches + texture_matches)
-    
-    A shape bias > 50% means the model relies more on shape than texture.
-    A shape bias < 50% means the model has a texture bias.
+    Compute shape bias and absolute cue sensitivities per model.
+    Addresses REFINED-BIAS (Kim et al., 2026) critique by reporting absolute metrics.
     """
-    # Exclude occlusion samples where class2 == -1 (no texture class)
     df_filtered = df[df['class2'] != -1].copy()
     
     if len(df_filtered) == 0:
@@ -67,13 +60,22 @@ def compute_shape_bias(df):
     
     df_filtered['matched_shape'] = (df_filtered['top1_pred'] == df_filtered['class1'])
     df_filtered['matched_texture'] = (df_filtered['top1_pred'] == df_filtered['class2'])
+    df_filtered['neither'] = (~df_filtered['matched_shape']) & (~df_filtered['matched_texture'])
     
     results = []
     for model in sorted(df_filtered['model'].unique()):
         df_m = df_filtered[df_filtered['model'] == model]
+        total = len(df_m)
+        if total == 0: continue
+        
         shape_count = df_m['matched_shape'].sum()
         texture_count = df_m['matched_texture'].sum()
+        neither_count = df_m['neither'].sum()
         total_decisive = shape_count + texture_count
+        
+        shape_acc = shape_count / total
+        texture_acc = texture_count / total
+        neither_rate = neither_count / total
         
         if total_decisive > 0:
             shape_bias = shape_count / total_decisive
@@ -82,11 +84,10 @@ def compute_shape_bias(df):
         
         results.append({
             'model': model,
-            'shape_matches': int(shape_count),
-            'texture_matches': int(texture_count),
-            'total_decisive': int(total_decisive),
-            'shape_bias_pct': round(shape_bias * 100, 2),
-            'texture_bias_pct': round((1 - shape_bias) * 100, 2)
+            'shape_acc_pct': round(shape_acc * 100, 2),
+            'texture_acc_pct': round(texture_acc * 100, 2),
+            'neither_rate_pct': round(neither_rate * 100, 2),
+            'shape_bias_pct': round(shape_bias * 100, 2)
         })
     
     return pd.DataFrame(results)
@@ -249,6 +250,9 @@ def generate_reports_and_figures(results_dir):
         plt.close()
         print("\nShape Bias Results:")
         print(shape_bias_results.to_string(index=False))
+        
+    print("Running comprehensive statistical tests...")
+    generate_statistical_report(results_dir)
     
     print("Metrics and figures generated successfully.")
 

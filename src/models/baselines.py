@@ -49,6 +49,19 @@ def load_models(device):
     print("Loading DeiT...")
     models['DeiT'] = timm.create_model('deit_small_patch16_224', pretrained=True).to(device).eval()
     
+    try:
+        print("Loading MAE (ImageNet fine-tuned)...")
+        models['MAE'] = timm.create_model('vit_base_patch16_224.mae', pretrained=True).to(device).eval()
+    except Exception as e:
+        print(f"Skipping MAE: {e}")
+        
+    try:
+        print("Loading DINOv2 (ImageNet linear probe/fine-tuned)...")
+        # Attempt to load a timm dinov2 variant with a classification head
+        models['DINOv2'] = timm.create_model('vit_base_patch14_dinov2.lvd142m', pretrained=True).to(device).eval()
+    except Exception as e:
+        print(f"Skipping DINOv2: {e}")
+    
     print("Loading CLIP ViT-B/32...")
     clip_model, _, clip_preprocess = open_clip.create_model_and_transforms('ViT-B-32', pretrained='laion2b_s34b_b79k')
     models['CLIP'] = clip_model.to(device).eval()
@@ -71,11 +84,21 @@ def evaluate_models(metadata_path, images_dir, output_dir):
     clip_tokenizer = open_clip.get_tokenizer('ViT-B-32')
     classes_path = os.path.join(os.path.dirname(__file__), 'imagenet_classes.txt')
     with open(classes_path, 'r') as f:
-        imagenet_classes = [f"a photo of a {line.strip()}" for line in f.readlines()]
-    text = clip_tokenizer(imagenet_classes).to(device)
+        imagenet_classes_raw = [line.strip() for line in f.readlines()]
+        
+    clip_prompts = {
+        'Standard': [f"a photo of a {cls}" for cls in imagenet_classes_raw],
+        'Sketch': [f"a sketch of a {cls}" for cls in imagenet_classes_raw],
+        'Shape': [f"the shape of a {cls}" for cls in imagenet_classes_raw]
+    }
+    
+    clip_text_features = {}
     with torch.no_grad():
-        text_features = models['CLIP'].encode_text(text)
-        text_features /= text_features.norm(dim=-1, keepdim=True)
+        for prompt_name, prompts in clip_prompts.items():
+            text = clip_tokenizer(prompts).to(device)
+            text_features = models['CLIP'].encode_text(text)
+            text_features /= text_features.norm(dim=-1, keepdim=True)
+            clip_text_features[prompt_name] = text_features
     
     results = []
     
@@ -92,7 +115,38 @@ def evaluate_models(metadata_path, images_dir, output_dir):
                 if model_name == 'CLIP':
                     image_features = model.encode_image(images)
                     image_features /= image_features.norm(dim=-1, keepdim=True)
-                    logits = (100.0 * image_features @ text_features.T)
+                    
+                    if device.type == 'cuda':
+                        torch.cuda.synchronize()
+                    batch_elapsed = time.time() - batch_start
+                    per_image_time = batch_elapsed / images.size(0)
+                    
+                    # Evaluate multiple prompts for CLIP
+                    for prompt_name, text_features in clip_text_features.items():
+                        logits = (100.0 * image_features @ text_features.T)
+                        probs = F.softmax(logits, dim=-1)
+                        top5_prob, top5_idx = torch.topk(probs, 5, dim=-1)
+                        
+                        for i in range(images.size(0)):
+                            result = {
+                                'filename': items['filename'][i],
+                                'class1': items['class1'][i].item() if isinstance(items['class1'][i], torch.Tensor) else items['class1'][i],
+                                'class2': items['class2'][i].item() if isinstance(items['class2'][i], torch.Tensor) else items['class2'][i],
+                                'composition_type': items['composition_type'][i],
+                                'salience': items['salience'][i],
+                                'model': f"CLIP_{prompt_name}",
+                                'top1_pred': top5_idx[i][0].item(),
+                                'top1_conf': top5_prob[i][0].item(),
+                                'top5_preds': top5_idx[i].cpu().numpy().tolist(),
+                                'inference_time': per_image_time
+                            }
+                            results.append(result)
+                    
+                    continue # Skip the rest of the loop since CLIP is handled
+                elif model_name == 'DINOv2':
+                    # DINOv2 vit_base_patch14_dinov2.lvd142m strictly requires 518x518 input
+                    resized_images = F.interpolate(images, size=(518, 518), mode='bicubic', align_corners=False)
+                    logits = model(resized_images)
                     probs = F.softmax(logits, dim=-1)
                 else:
                     logits = model(images)
