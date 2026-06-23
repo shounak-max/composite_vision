@@ -43,11 +43,12 @@ class CompositeDatasetGenerator:
     determine its bias (e.g., CNNs often show a texture bias, while humans and 
     foveated agents show a shape bias).
     """
-    def __init__(self, output_dir="dataset", num_samples_per_pair=2):
+    def __init__(self, output_dir="dataset", num_samples_per_pair=2, scale_factor=1):
         self.output_dir = output_dir
         self.images_dir = os.path.join(output_dir, "images")
         self.raw_dir = os.path.join(output_dir, "imagenette_raw")
         self.num_samples_per_pair = num_samples_per_pair
+        self.scale_factor = scale_factor
         os.makedirs(self.images_dir, exist_ok=True)
         self.metadata = []
 
@@ -293,17 +294,19 @@ class CompositeDatasetGenerator:
         print(f"\nLoaded {len(class_indices)} classes: {class_indices}")
 
         # Step 3: Generate composites from SEPARATE source pools
-        print("\nGenerating TRAIN composites (from train source images)...")
+        print(f"\nGenerating TRAIN composites (from train source images, scale_factor={self.scale_factor})...")
         idx = 0
         # 10 samples per pair for training (massive data scale)
-        idx = self._generate_composites_for_split(train_images, "train", 10, idx)
+        train_samples = 10 * self.scale_factor
+        idx = self._generate_composites_for_split(train_images, "train", train_samples, idx)
         train_count = idx
         
         print(f"Generated {train_count} training composites.")
         
         print("Generating TEST composites (from test source images - ZERO overlap)...")
-        # 4 samples per pair for testing
-        idx = self._generate_composites_for_split(test_images, "test", 4, idx)
+        # 8 samples per pair for testing (produces 1120 test stimuli for scale=1)
+        test_samples = 8 * self.scale_factor
+        idx = self._generate_composites_for_split(test_images, "test", test_samples, idx)
         test_count = idx - train_count
         
         print(f"Generated {test_count} test composites.")
@@ -320,8 +323,16 @@ class CompositeDatasetGenerator:
 
 if __name__ == "__main__":
     import os
+    import argparse
+    
+    parser = argparse.ArgumentParser(description="Generate CompositeVision Dataset")
+    parser.add_argument("--scale-factor", type=int, default=1, 
+                        help="Multiplier for dataset size (default 1 = 1120 test stimuli, 10 = 11200)")
+    args = parser.parse_args()
+    
     base_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
     generator = CompositeDatasetGenerator(
-        output_dir=os.path.join(base_dir, "dataset")
+        output_dir=os.path.join(base_dir, "dataset"),
+        scale_factor=args.scale_factor
     )
     generator.generate()

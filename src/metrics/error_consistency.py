@@ -4,6 +4,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
+from src.metrics.statistical_tests import generate_statistical_report
 
 def compute_error_consistency(df):
     # Fair metric: only class1 (primary shape) counts as correct.
@@ -45,6 +46,51 @@ def compute_error_consistency(df):
         sal_consistency[sal] = np.mean(agreements) if agreements else 0.0
 
     return consistency_matrix, comp_consistency, sal_consistency
+
+def compute_shape_bias(df):
+    """
+    Compute shape bias and absolute cue sensitivities per model.
+    Addresses REFINED-BIAS (Kim et al., 2026) critique by reporting absolute metrics.
+    """
+    df_filtered = df[df['class2'] != -1].copy()
+    
+    if len(df_filtered) == 0:
+        print("Warning: No valid samples for shape bias computation (all class2 == -1)")
+        return None
+    
+    df_filtered['matched_shape'] = (df_filtered['top1_pred'] == df_filtered['class1'])
+    df_filtered['matched_texture'] = (df_filtered['top1_pred'] == df_filtered['class2'])
+    df_filtered['neither'] = (~df_filtered['matched_shape']) & (~df_filtered['matched_texture'])
+    
+    results = []
+    for model in sorted(df_filtered['model'].unique()):
+        df_m = df_filtered[df_filtered['model'] == model]
+        total = len(df_m)
+        if total == 0: continue
+        
+        shape_count = df_m['matched_shape'].sum()
+        texture_count = df_m['matched_texture'].sum()
+        neither_count = df_m['neither'].sum()
+        total_decisive = shape_count + texture_count
+        
+        shape_acc = shape_count / total
+        texture_acc = texture_count / total
+        neither_rate = neither_count / total
+        
+        if total_decisive > 0:
+            shape_bias = shape_count / total_decisive
+        else:
+            shape_bias = 0.0
+        
+        results.append({
+            'model': model,
+            'shape_acc_pct': round(shape_acc * 100, 2),
+            'texture_acc_pct': round(texture_acc * 100, 2),
+            'neither_rate_pct': round(neither_rate * 100, 2),
+            'shape_bias_pct': round(shape_bias * 100, 2)
+        })
+    
+    return pd.DataFrame(results)
 
 def generate_reports_and_figures(results_dir):
     csv_path = os.path.join(results_dir, "benchmark_results.csv")
@@ -177,6 +223,36 @@ def generate_reports_and_figures(results_dir):
     plt.savefig(os.path.join(results_dir, "model_comparison_radar.png"), dpi=300, bbox_inches='tight')
     plt.savefig(os.path.join(results_dir, "model_comparison_radar.pdf"), bbox_inches='tight')
     plt.close()
+    
+    # 6. Shape Bias Analysis (Geirhos et al. metric)
+    shape_bias_results = compute_shape_bias(df)
+    if shape_bias_results is not None:
+        shape_bias_results.to_csv(os.path.join(results_dir, "shape_bias.csv"), index=False)
+        
+        plt.figure(figsize=(10, 6))
+        colors = ['#e74c3c' if sb < 50 else '#2ecc71' for sb in shape_bias_results['shape_bias_pct']]
+        bars = plt.bar(shape_bias_results['model'], shape_bias_results['shape_bias_pct'], color=colors)
+        plt.axhline(y=50, color='gray', linestyle='--', alpha=0.7, label='50% (no bias)')
+        plt.title('Shape Bias by Model (Geirhos et al. Metric)', fontsize=14)
+        plt.ylabel('Shape Bias (%)')
+        plt.xlabel('Model')
+        plt.xticks(rotation=45, ha='right')
+        plt.legend()
+        
+        # Add value labels on bars
+        for bar, val in zip(bars, shape_bias_results['shape_bias_pct']):
+            plt.text(bar.get_x() + bar.get_width()/2., bar.get_height() + 1,
+                    f'{val:.1f}%', ha='center', va='bottom', fontsize=10)
+        
+        plt.tight_layout()
+        plt.savefig(os.path.join(results_dir, "shape_bias.png"), dpi=300, bbox_inches='tight')
+        plt.savefig(os.path.join(results_dir, "shape_bias.pdf"), bbox_inches='tight')
+        plt.close()
+        print("\nShape Bias Results:")
+        print(shape_bias_results.to_string(index=False))
+        
+    print("Running comprehensive statistical tests...")
+    generate_statistical_report(results_dir)
     
     print("Metrics and figures generated successfully.")
 
