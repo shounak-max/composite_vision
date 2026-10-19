@@ -1,14 +1,15 @@
-# `dataset/` — CompositeVision stimuli
+# `dataset/` - CompositeVision stimuli
 
 This folder holds 25,200 composite images (11,200 test + 14,000 train) and the label file
 `metadata.json`. Because it is far too large to browse here, the same archive is published as two
 release assets:
 
-- **[compositevision-test-v1.0.zip](../../releases/download/v1.0/compositevision-test-v1.0.zip)** — 11,200 test stimuli (~820 MB). This is the half needed to reproduce the paper's reported numbers.
-- **[compositevision-train-v1.0.zip](../../releases/download/v1.0/compositevision-train-v1.0.zip)** — 14,000 training stimuli (~1.03 GB).
-- **[SHA256SUMS.txt](../../releases/download/v1.0/SHA256SUMS.txt)** — checksums for both.
+- **[compositevision-test-v1.0.zip](https://github.com/shounak-max/composite_vision/releases/download/v1.0/compositevision-test-v1.0.zip)** - 11,200 test stimuli (~820 MB). This is the half needed to reproduce the paper's reported numbers.
+- **[compositevision-train-v1.0.zip](https://github.com/shounak-max/composite_vision/releases/download/v1.0/compositevision-train-v1.0.zip)** - 14,000 training stimuli (~1.03 GB).
+- **[SHA256SUMS.txt](https://github.com/shounak-max/composite_vision/releases/download/v1.0/SHA256SUMS.txt)** - checksums for both.
 
-See the [release page](../../releases/tag/v1.0) for the file list.
+See the [release page](https://github.com/shounak-max/composite_vision/releases/tag/v1.0) for the
+file list.
 
 ## Layout
 
@@ -27,8 +28,8 @@ shape-consistent ImageNet-1K index and `class2` the texture-consistent one.
 Two artifact types have no usable texture class and must be excluded from any Neither Rate or
 Geirhos-ratio computation:
 
-- **occlusion** — `class2` is `-1`; there is no second object.
-- **patch shuffle** — `class2` records a randomly drawn class that is *not present in the image*.
+- **occlusion** - `class2` is `-1`; there is no second object.
+- **patch shuffle** - `class2` records a randomly drawn class that is *not present in the image*.
   The stimulus is one source image with its own patches permuted.
 
 Colour inversion *does* blend a second source image, so its `class2` is genuine.

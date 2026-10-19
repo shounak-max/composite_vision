@@ -9,14 +9,15 @@ Through Multi-Artifact Cue-Conflict Benchmarking* (paper ID 1261).
 
 ## Download
 
-The stimulus archive is served from [Releases](../../releases/tag/v1.0) so you do not have to
+The stimulus archive is served from
+[Releases](https://github.com/shounak-max/composite_vision/releases/tag/v1.0) so you do not have to
 clone the whole repository:
 
 | Archive | Contents | Size |
 |---|---|---|
-| [compositevision-test-v1.0.zip](../../releases/download/v1.0/compositevision-test-v1.0.zip) | 11,200 test stimuli + `metadata.json` | ~820 MB |
-| [compositevision-train-v1.0.zip](../../releases/download/v1.0/compositevision-train-v1.0.zip) | 14,000 training stimuli + `metadata.json` | ~1.03 GB |
-| [SHA256SUMS.txt](../../releases/download/v1.0/SHA256SUMS.txt) | checksums for both | 1 KB |
+| [compositevision-test-v1.0.zip](https://github.com/shounak-max/composite_vision/releases/download/v1.0/compositevision-test-v1.0.zip) | 11,200 test stimuli + `metadata.json` | ~820 MB |
+| [compositevision-train-v1.0.zip](https://github.com/shounak-max/composite_vision/releases/download/v1.0/compositevision-train-v1.0.zip) | 14,000 training stimuli + `metadata.json` | ~1.03 GB |
+| [SHA256SUMS.txt](https://github.com/shounak-max/composite_vision/releases/download/v1.0/SHA256SUMS.txt) | checksums for both | 1 KB |
 
 To reproduce the paper's numbers you need the test archive only. Each archive contains its own
 copy of the full `metadata.json`, so `split` tells you which half you are looking at.
@@ -25,7 +26,7 @@ copy of the full `metadata.json`, so `split` tells you which half you are lookin
 
 | | |
 |---|---|
-| Composition types | 7 — AdaIN texture transfer, partial occlusion, superimposition, FFT texture–shape swap, edge conflict, patch shuffle, colour inversion |
+| Composition types | 7: AdaIN texture transfer, partial occlusion, superimposition, FFT texture-shape swap, edge conflict, patch shuffle, colour inversion |
 | Salience levels | 2 per type (`high`, `low`), 1,600 test stimuli per type |
 | Source classes | 10 Imagenette classes, mapped to their native ImageNet-1K indices |
 | Test split | 11,200 composites (7 x 2 x 10 x 80) |
@@ -73,9 +74,9 @@ to rerun generation to reproduce the paper's numbers.
 
 ## Data and reproducibility
 
-- Stimulus archive: [`dataset/`](dataset) — 11,200 test composites plus the 14,000-composite training pool.
-- Per-stimulus labels: [`dataset/metadata.json`](dataset/metadata.json) — the `split` field separates train from test; `class2` is `-1` where a stimulus has no second class.
-- Results: [`results/benchmark_results.csv`](results) — per-stimulus predictions for every configuration, the source of every number in the paper.
+- Stimulus archive: [`dataset/`](dataset) - 11,200 test composites plus the 14,000-composite training pool.
+- Per-stimulus labels: [`dataset/metadata.json`](dataset/metadata.json) - the `split` field separates train from test; `class2` is `-1` where a stimulus has no second class.
+- Results: [`results/benchmark_results.csv`](results) - per-stimulus predictions for every configuration, the source of every number in the paper.
 - Provenance, construction parameters, licensing and intended use: [`DATASHEET.md`](DATASHEET.md).
 - Seeds, determinism and known variance: [`REPRODUCIBILITY_GUIDE.md`](REPRODUCIBILITY_GUIDE.md).
 
