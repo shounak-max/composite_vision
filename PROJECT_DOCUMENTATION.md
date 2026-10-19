@@ -1,15 +1,35 @@
-# CompositeVision Prototype
+# CompositeVision — project notes
 
-This repository implements the first working prototype of the CompositeVision framework. It is designed to facilitate research on how feedforward and recurrent vision models (including Visual Language Models like CLIP) process composite image stimuli.
+Implementation notes for the CompositeVision benchmark. The entry point for new readers is
+[`README.md`](README.md).
 
-## Features
-- **Benchmark Creation**: Generates 400 composite stimuli based on 50 ImageNet categories, applying AdaIN blending, partial occlusion, superimposition, and texture-shape cue conflicts.
-- **Model Benchmarking**: Automated evaluation for a suite of models including ResNet50, ResNet101, ConvNeXt, ViT-B/16, DeiT, and CLIP ViT-B/32.
-- **Error Consistency**: Calculates model-model, composition-wise, and salience-wise error consistency metrics.
-- **RL Iterative Attention**: Implements a recurrent attention agent simulating cortical feedback, trained via REINFORCE/PPO.
+## What the pipeline does
+
+- **Stimulus generation** (`src/data/generation.py`): 11,200 evaluation stimuli from 10 Imagenette
+  classes, crossing 7 composition types (AdaIN texture transfer, partial occlusion,
+  superimposition, FFT texture–shape swap, edge conflict, patch shuffle, colour inversion) with 2
+  salience levels and 80 exemplars per condition, plus a disjoint 14,000-stimulus training pool.
+  Source classes are mapped to their native ImageNet-1K indices so any ImageNet-pretrained model
+  can be scored in the full 1,000-class space.
+- **Model benchmarking** (`src/experiments/runner.py`): ResNet-50, ResNet-101, ConvNeXt, ViT-B/16,
+  DeiT, CLIP under three prompt templates, and the recurrent RL foveation agent, each evaluated
+  zero-shot and, where applicable, fine-tuned.
+- **Metrics** (`src/metrics/`): the Neither Rate decomposition (shape / texture / neither), pairwise
+  error consistency, bootstrap confidence intervals, and two-proportion significance tests.
+- **RL foveation agent** (`src/models/rl_attention.py`): sequential 48x48 glimpses over T=8 steps,
+  a ResNet-50 encoder frozen except its final residual block, an LSTM core, and actor/value/
+  classifier heads trained with A2C.
 
 ## Structure
-- `src/data/`: Dataset generation logic.
-- `src/models/`: Baseline feedforward models and the RL attention agent.
-- `src/metrics/`: Error consistency evaluation and report generation.
-- `src/experiments/`: The experiment runner orchestrating the end-to-end pipeline.
+
+- `src/data/` — dataset generation.
+- `src/models/` — baselines, CLIP wrappers, RL agent.
+- `src/metrics/` — Neither Rate, error consistency, CIs, significance tests.
+- `src/experiments/` — runner, fine-tuning, VLM evaluation, RL training, ablation suite
+  (`src/experiments/ablation_study.py`).
+
+## Status
+
+The released `results/` directory contains the completed 13-configuration comparison. The
+pathway-decoupling ablation is reported as a preliminary estimate; the random-glimpse control and
+the sequence-length / glimpse-size sweeps are implemented but not yet run.

@@ -4,7 +4,7 @@
 This repository implements a controlled experiment to evaluate how different neural network architectures process ambiguous, composite visual stimuli. 
 
 The pipeline performs four main tasks:
-1. **Dataset Generation:** We construct a custom benchmark of 400 "composite stimuli" using 50 base images. We blend conflicting image pairs using four methods: AdaIN (style matching), Partial Occlusion, Superimposition, and Texture-Shape conflict (via FFT).
+1. **Dataset Generation:** We construct a custom benchmark of 11,200 "composite stimuli" from 10 Imagenette classes, plus a disjoint 14,000-image training pool. Conflicting image pairs are blended with seven artifact types: AdaIN (style matching), Partial Occlusion, Superimposition, Texture-Shape conflict (via FFT), Edge Conflict, Patch Shuffle, and Colour Inversion.
 2. **Feedforward Baselines:** We evaluate State-of-the-Art pretrained feedforward models—including CNNs (ResNet, ConvNeXt) and Vision Transformers (ViT, DeiT, CLIP)—on these composite images to establish how standard architectures resolve visual conflicts.
 3. **Recurrent RL Attention:** We train a custom Reinforcement Learning agent (mimicking human cortical feedback). Instead of processing the whole image at once, it takes sequential spatial "glimpses" (saccades) of the image, updating a recurrent memory state before making a final prediction.
 4. **Error Consistency Analysis:** We calculate the *Error Consistency* between all models. This metric reveals if two distinct models make the *exact same mistakes*. By comparing the RL agent against CNNs and ViTs, we can quantify if recurrent attention resolves visual ambiguity differently than standard feedforward processing.
