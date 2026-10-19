@@ -2,13 +2,6 @@ MIT License
 
 Copyright (c) 2026 Soham Biswas, Shounak Banerjee, Piyush Joshi
 
-Scope: this license covers the source code in this repository (src/, the
-experiment and analysis scripts, and the documentation). It does NOT cover the
-composite stimuli in dataset/images/ or the source photographs in
-dataset/imagenette2-160/, which are derived from ImageNet and remain subject to
-the terms of their original sources. See DATASHEET.md before redistributing any
-image data.
-
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
